@@ -79,6 +79,38 @@ h2 { font-size: 22px; margin: 0 0 6px; letter-spacing: -.01em; }
   opacity: 0; transform: translateY(4px); transition: opacity .12s, transform .12s;
 }
 .tip.on { opacity: 1; transform: none; }
+.tip.pinned { pointer-events: auto; }
+.tip-link { display: inline-block; margin-top: 4px; color: var(--bg); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; cursor: pointer; background: none; border: 0; padding: 0; font: inherit; }
+.hero-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; }
+.hero-tab {
+  font: inherit; font-size: 13px; line-height: 1.2; padding: 7px 10px; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--rule); background: var(--surface); color: var(--ink);
+}
+.hero-tab:hover { border-color: var(--ink-3); }
+.hero-tab.unpicked { color: var(--ink-3); background: transparent; border-style: dashed; }
+.hero-tab[aria-selected="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); border-style: solid; }
+.hero-tab:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.hero-panel { padding: 20px; }
+.hero-panel h3 { margin: 0 0 14px; font-size: 22px; letter-spacing: -.01em; }
+.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-bottom: 20px; }
+.stat { border: 1px solid var(--rule); border-radius: 10px; padding: 10px 12px; }
+.stat .k { font-size: 12px; color: var(--ink-3); }
+.stat .v { font-size: 22px; font-weight: 650; font-variant-numeric: tabular-nums; line-height: 1.3; }
+.stat .s { font-size: 13px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.items-head { font-size: 15px; margin: 0 0 4px; }
+.items-note { font-size: 13px; color: var(--ink-3); margin: 0 0 12px; }
+.item-groups { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.item-group h4 { margin: 0 0 8px; font-size: 13px; color: var(--ink-2); font-weight: 600; }
+.item-group ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+.item-group li { font-size: 14px; display: flex; gap: 8px; align-items: baseline; }
+.item-group .tier { font-size: 11px; color: var(--ink-3); font-variant-numeric: tabular-nums; min-width: 22px; }
+.item-group .none { color: var(--ink-3); font-size: 13px; }
+.not-picked { padding: 14px; border-radius: 10px; background: var(--accent-soft); color: var(--ink); }
+@media (max-width: 640px) {
+  .stats { grid-template-columns: 1fr; }
+  .stat { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+  .item-groups { grid-template-columns: 1fr; }
+}
 .tip b { display: block; font-size: 14px; margin-bottom: 2px; }
 .tip .row { display: flex; justify-content: space-between; gap: 12px; font-variant-numeric: tabular-nums; }
 .prose p, .prose li { color: var(--ink-2); max-width: 72ch; }
@@ -139,6 +171,13 @@ svg text { font-family: inherit; }
       <summary>すべての数値を表で見る</summary>
       <div class="table-scroll"><table id="table"><thead><tr><th>ヒーロー</th><th>ピック数</th><th>ピック率</th><th>勝率</th><th>バン数</th><th>バン率</th></tr></thead><tbody></tbody></table></div>
     </details>
+  </section>
+
+  <section id="heroes">
+    <h2>ヒーロー別</h2>
+    <p class="lede">ヒーロー名を押すと、そのヒーローの今週の数値と、使われたアイテムを確認できます。点線のヒーローは今週ピックされていません。</p>
+    <div class="hero-tabs" id="hero-tabs" role="tablist" aria-label="ヒーロー"></div>
+    <div class="card hero-panel" id="hero-panel" role="tabpanel" aria-live="polite"></div>
   </section>
 
   <section class="prose" id="zero">
@@ -208,6 +247,11 @@ svg text { font-family: inherit; }
     tip.className = "tip";
     tip.setAttribute("role", "status");
     container.appendChild(tip);
+    tip.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const link = e.target.closest("[data-hero]");
+      if (link) { e.preventDefault(); openHero(link.dataset.hero, true); tip.classList.remove("on", "pinned"); pinned = null; }
+    });
     let pinned = null;
     return {
       show(html, x, y, owner) {
@@ -221,9 +265,11 @@ svg text { font-family: inherit; }
         tip.style.left = left + "px";
         tip.style.top = top + "px";
         if (owner) pinned = owner;
+        tip.classList.toggle("pinned", !!owner);
       },
-      hide(force) { if (force || !pinned) { tip.classList.remove("on"); pinned = null; } },
+      hide(force) { if (force || !pinned) { tip.classList.remove("on", "pinned"); pinned = null; } },
       get pinned() { return pinned; },
+      contains(node) { return !!node && tip.contains(node); },
       unpin() { pinned = null; },
     };
   }
@@ -232,7 +278,8 @@ svg text { font-family: inherit; }
       ? `<div class="row"><span>ピック</span><span>${h.picks}試合（${fmt(h.pick_rate)}）</span></div>` +
         `<div class="row"><span>勝利</span><span>${h.wins}試合（勝率 ${fmt(h.win_rate)}）</span></div>`
       : `<div class="row"><span>今週はピックなし</span></div>`) +
-    `<div class="row"><span>バン</span><span>${h.bans}試合</span></div>`
+    `<div class="row"><span>バン</span><span>${h.bans}試合</span></div>` +
+    `<button type="button" class="tip-link" data-hero="${esc(h.hero)}">詳細を見る →</button>`
   ).join('<div style="height:6px"></div>');
 
   // ---------------- scatter
@@ -332,7 +379,7 @@ svg text { font-family: inherit; }
       const hit = el("circle", { cx: p.cx, cy: p.cy, r: 14, class: "hit", tabindex: 0, role: "button", "aria-label": p.zero ? `ピックなし：${p.list.map((h) => h.hero).join(", ")}` : p.label }, hitLayer);
       hitLayer.appendChild(ring);
       const html = p.zero
-        ? `<b>今週ピックされなかったヒーロー</b>${p.list.map((h) => esc(h.hero)).join(", ")}`
+        ? `<b>今週ピックされなかったヒーロー</b>${p.list.map((h) => `<button type="button" class="tip-link" data-hero="${esc(h.hero)}">${esc(h.hero)}</button>`).join(", ")}`
         : heroTipHtml(p.list);
       const show = (pin) => {
         const r = svg.getBoundingClientRect(), s = r.width / W;
@@ -343,7 +390,7 @@ svg text { font-family: inherit; }
       hit.addEventListener("mouseenter", () => { if (!tip.pinned) show(false); });
       hit.addEventListener("mouseleave", () => { if (!tip.pinned) { tip.hide(); ring.classList.remove("on"); } });
       hit.addEventListener("focus", () => show(false));
-      hit.addEventListener("blur", () => { tip.hide(true); ring.classList.remove("on"); });
+      hit.addEventListener("blur", (e) => { if (tip.pinned || tip.contains(e.relatedTarget)) return; tip.hide(true); ring.classList.remove("on"); });
       hit.addEventListener("click", (e) => { e.stopPropagation(); if (tip.pinned === hit) { tip.hide(true); ring.classList.remove("on"); } else show(true); });
     }
     container.addEventListener("click", () => { tip.hide(true); container.querySelectorAll(".focus-ring.on").forEach((n) => n.classList.remove("on")); });
@@ -385,12 +432,12 @@ svg text { font-family: inherit; }
       const lab = el("text", { x: 0, y: 0, "text-anchor": "end", class: "tick", transform: `translate(${cx + 3} ${y(0) + 10}) rotate(-50)` }, svg);
       lab.textContent = d.hero;
       const hit = el("rect", { x: m.l + band * i, y: m.t, width: band, height: ih + labelSpace, class: "bar-hit", tabindex: 0, role: "button", "aria-label": `${d.hero}：${d.bans}試合でバン` }, svg);
-      const html = `<b>${esc(d.hero)}</b><div class="row"><span>バン</span><span>${d.bans}試合（バン率 ${fmt(d.ban_rate)}）</span></div>`;
+      const html = `<b>${esc(d.hero)}</b><div class="row"><span>バン</span><span>${d.bans}試合（バン率 ${fmt(d.ban_rate)}）</span></div><button type="button" class="tip-link" data-hero="${esc(d.hero)}">詳細を見る →</button>`;
       const show = (pin) => { const s = svg.getBoundingClientRect().width / W; tip.show(html, cx * s, top * s, pin ? hit : null); };
       hit.addEventListener("mouseenter", () => { if (!tip.pinned) show(false); });
       hit.addEventListener("mouseleave", () => { if (!tip.pinned) tip.hide(); });
       hit.addEventListener("focus", () => show(false));
-      hit.addEventListener("blur", () => tip.hide(true));
+      hit.addEventListener("blur", (e) => { if (!tip.pinned && !tip.contains(e.relatedTarget)) tip.hide(true); });
       hit.addEventListener("click", (e) => { e.stopPropagation(); tip.pinned === hit ? tip.hide(true) : show(true); });
     });
     container.addEventListener("click", () => tip.hide(true));
@@ -403,6 +450,68 @@ svg text { font-family: inherit; }
     ).join("");
   }
 
+  // ---------------- hero tabs
+  const SLOTS = [["weapon", "武器"], ["vitality", "バイタリティ"], ["spirit", "スピリット"]];
+  let heroData = [];
+  const heroByName = (name) => heroData.find((h) => h.hero === name);
+
+  function buildTabs(heroes) {
+    heroData = [...heroes].sort((a, b) => a.hero.localeCompare(b.hero));
+    const box = $("#hero-tabs");
+    box.innerHTML = heroData.map((h) =>
+      `<button type="button" role="tab" class="hero-tab${h.picks ? "" : " unpicked"}" aria-selected="false" data-tab="${esc(h.hero)}">${esc(h.hero)}</button>`
+    ).join("");
+    box.addEventListener("click", (e) => {
+      const b = e.target.closest("[data-tab]");
+      if (b) openHero(b.dataset.tab, false);
+    });
+  }
+
+  function renderPanel(h) {
+    const panel = $("#hero-panel");
+    const stats = `
+      <div class="stats">
+        <div class="stat"><div class="k">ピック</div><div class="v">${fmt(h.pick_rate)}</div><div class="s">${h.picks}試合</div></div>
+        <div class="stat"><div class="k">勝率</div><div class="v">${h.picks ? fmt(h.win_rate) : "—"}</div><div class="s">${h.picks ? `${h.wins}勝 ${h.picks - h.wins}敗` : "ピックなし"}</div></div>
+        <div class="stat"><div class="k">バン</div><div class="v">${fmt(h.ban_rate)}</div><div class="s">${h.bans}試合</div></div>
+      </div>`;
+    let items;
+    if (!h.picks) {
+      items = '<div class="not-picked">今週はピックされていません。</div>';
+    } else {
+      const list = h.items || [];
+      const groups = SLOTS.map(([slot, label]) => [label, list.filter((i) => i.slot === slot)]);
+      const other = list.filter((i) => !SLOTS.some(([slot]) => slot === i.slot));
+      if (other.length) groups.push(["その他", other]);
+      const col = ([label, arr]) => `
+        <div class="item-group"><h4>${label}（${arr.length}）</h4>
+          ${arr.length
+            ? `<ul>${[...arr].sort((a, b) => a.tier - b.tier || a.name.localeCompare(b.name)).map((i) =>
+                `<li><span class="tier">${i.tier ? "T" + i.tier : ""}</span><span>${esc(i.name)}</span></li>`).join("")}</ul>`
+            : '<div class="none">なし</div>'}
+        </div>`;
+      items = `
+        <h4 class="items-head">使用アイテム（${list.length}種類）</h4>
+        <p class="items-note">今週このヒーローで1回以上購入されたアイテムです（後で売却したものも含む）。使用率ではありません。T1〜T4 はアイテムの段階です。</p>
+        <div class="item-groups">${groups.map(col).join("")}</div>`;
+    }
+    panel.innerHTML = `<h3>${esc(h.hero)}</h3>${stats}${items}`;
+  }
+
+  function openHero(name, scroll) {
+    const h = heroByName(name);
+    if (!h) return false;
+    document.querySelectorAll(".hero-tab").forEach((b) => b.setAttribute("aria-selected", String(b.dataset.tab === name)));
+    renderPanel(h);
+    try { history.replaceState(null, "", "#" + encodeURIComponent(name)); } catch (e) {}
+    if (scroll) $("#heroes").scrollIntoView({ behavior: "smooth", block: "start" });
+    return true;
+  }
+
+  function heroFromHash() {
+    try { return decodeURIComponent(location.hash.slice(1)); } catch (e) { return ""; }
+  }
+
   async function init() {
     let data;
     try {
@@ -412,6 +521,7 @@ svg text { font-family: inherit; }
     } catch (e) {
       $("#scatter").innerHTML = '<div class="empty">データはまだありません。次の土曜日の更新後にご覧ください。</div>';
       $("#bars").innerHTML = "";
+      $("#hero-panel").innerHTML = "";
       return;
     }
     $("#m-week").textContent = `${fmtDate(data.week.start)}〜${fmtDate(data.week.end)}`;
@@ -423,12 +533,24 @@ svg text { font-family: inherit; }
       const msg = '<div class="empty">今週の試合はありませんでした。</div>';
       $("#scatter").innerHTML = msg;
       $("#bars").innerHTML = msg;
+      $("#hero-tabs").innerHTML = "";
+      $("#hero-panel").innerHTML = msg;
       fillTable(data.heroes);
       return;
     }
     const render = () => { drawScatter($("#scatter"), data.heroes); drawBars($("#bars"), data.heroes); };
     render();
     fillTable(data.heroes);
+    buildTabs(data.heroes);
+    const fromHash = heroFromHash();
+    if (!(fromHash && openHero(fromHash, true))) {
+      const top = [...heroData].sort((a, b) => b.picks - a.picks || a.hero.localeCompare(b.hero))[0];
+      if (top) {
+        openHero(top.hero, false);
+        try { history.replaceState(null, "", location.pathname + location.search); } catch (e) {}
+      }
+    }
+    window.addEventListener("hashchange", () => { const n = heroFromHash(); if (heroByName(n)) openHero(n, true); });
     let w = window.innerWidth, t;
     window.addEventListener("resize", () => {
       if (window.innerWidth === w) return;

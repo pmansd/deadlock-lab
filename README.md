@@ -8,7 +8,7 @@ The site is a single static page (`index.html`) that reads `data/latest.json`. E
 
 ```
 data/
-  latest.json          # the week shown on the site
+  latest.json          # the week shown on the site (incl. per-hero item lists with category & tier)
   weeks.json           # index of every saved week
   2026/
     11/

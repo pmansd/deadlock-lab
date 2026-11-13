@@ -158,6 +158,7 @@ export async function aggregate({ weekEnd, fetch: customFetch, log = console.log
 
   // 2. Games inside the window.
   let itemName = null;
+  const itemMeta = new Map(); // name -> { slot, tier }
   const games = [];
   for (const s of candidates) {
     const first = await getData(`/series/${s.id}/match/1.data`);
@@ -171,7 +172,9 @@ export async function aggregate({ weekEnd, fetch: customFetch, log = console.log
       if (!itemName) {
         const html = await get(`/series/${s.id}/match/${sm.gameNumber}`);
         const items = await loadCatalogue(html, "item");
-        itemName = new Map(items.filter(isShopItem).map((i) => [i.id, i.name]));
+        const shop = items.filter(isShopItem);
+        itemName = new Map(shop.map((i) => [i.id, i.name]));
+        for (const i of shop) itemMeta.set(i.name, { slot: i.item_slot_type || "other", tier: i.item_tier || 0 });
       }
       games.push({ series: s.id, gameNumber: sm.gameNumber, game });
     }
@@ -243,7 +246,10 @@ export async function aggregate({ weekEnd, fetch: customFetch, log = console.log
     week: { start: week.startDate, end: week.endDate, timezone: "Asia/Tokyo" },
     games: pickedGames,
     csv: week.csvPath,
-    heroes: rows.map(({ items, ...r }) => r),
+    heroes: rows.map((r) => ({
+      ...r,
+      items: r.items.map((name) => ({ name, ...(itemMeta.get(name) || { slot: "other", tier: 0 }) })),
+    })),
   };
 
   return { week, csv, latest };
