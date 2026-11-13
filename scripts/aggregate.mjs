@@ -100,35 +100,65 @@ function unTemplate(body) {
   );
 }
 
-async function loadCatalogue(html, name) {
-  const re = new RegExp(`/assets/${name}-([A-Za-z0-9_-]{8})\\.js`);
-  const m = html.match(re);
-  if (!m) throw new Error(`Could not find the ${name} catalogue chunk`);
-  const js = await get(m[0]);
-  const start = js.indexOf("JSON.parse(`");
-  const end = js.indexOf("`)", start);
-  if (start < 0 || end < 0) throw new Error(`Unexpected ${name} chunk format`);
-  return JSON.parse(unTemplate(js.slice(start + 12, end)));
+// Deadfrag inlines its hero/item catalogues as JSON.parse(`[...]`) in hashed JS
+// chunks whose names change on every deploy. Look through the chunks the
+// page references (and their imports) for an array that passes `test`.
+async function findDeadfragCatalogue(html, prefix, test) {
+  const seen = new Set();
+  const queue = [...new Set([...html.matchAll(new RegExp(`/assets/${prefix}[\\w-]*\\.js`, "g"))].map((m) => m[0]))];
+  while (queue.length && seen.size < 15) {
+    const path = queue.shift();
+    if (seen.has(path)) continue;
+    seen.add(path);
+    const js = await get(path);
+    for (let at = js.indexOf("JSON.parse(`"); at >= 0; at = js.indexOf("JSON.parse(`", at + 1)) {
+      const end = js.indexOf("`)", at);
+      try {
+        const arr = JSON.parse(unTemplate(js.slice(at + 12, end)));
+        if (Array.isArray(arr) && test(arr)) return arr;
+      } catch {}
+    }
+    for (const m of js.matchAll(/["']\.\/((?:hero|item)[\w-]*\.js)["']/g)) queue.push(`/assets/${m[1]}`);
+  }
+  throw new Error(`Could not find Deadfrag's ${prefix} catalogue`);
 }
 
-// Japanese names as shown in the game client, from the public Deadlock
-// assets API. Optional: if it can't be reached, English names are used.
-const ASSETS = "https://assets.deadlock-api.com/v2";
-const hasJapanese = (s) => /[\u3040-\u30ff\u4e00-\u9fff]/.test(s || "");
-async function loadJapaneseNames(log) {
+// Hero and item names. Primary source: the public Deadlock API, which also
+// has the game's own Japanese translations. Fallback: Deadfrag's bundled
+// catalogue (English only).
+const ASSETS = "https://api.deadlock-api.com/v1/assets";
+const hasJapanese = (s) => /[぀-ヿ一-鿿]/.test(s || "");
+const isHeroList = (a) => a.length > 10 && a.every((h) => h && h.id && h.name) && a.some((h) => "hero_type" in h);
+const isItemList = (a) => a.length > 50 && a.some((i) => i && i.type === "upgrade");
+
+async function loadCatalogues(log) {
+  let heroes, items;
   try {
-    const [heroes, items] = await Promise.all([
-      get(`${ASSETS}/heroes?language=japanese`).then(JSON.parse),
-      get(`${ASSETS}/items?language=japanese`).then(JSON.parse),
-    ]);
-    const heroJa = new Map(heroes.filter((h) => hasJapanese(h.name)).map((h) => [h.id, h.name]));
-    const itemJa = new Map(items.filter((i) => hasJapanese(i.name)).map((i) => [i.id, i.name]));
+    heroes = JSON.parse(await get(`${ASSETS}/heroes?language=english&only_active=true`));
+    items = JSON.parse(await get(`${ASSETS}/items/by-type/upgrade?language=english`));
+    if (!isHeroList(heroes) || !isItemList(items)) throw new Error("unexpected format");
+    log(`Catalogue: Deadlock API (${heroes.length} heroes, ${items.length} items)`);
+  } catch (err) {
+    log(`Deadlock API catalogue unavailable (${err.message}); using Deadfrag's`);
+    heroes = await findDeadfragCatalogue(await get("/series"), "hero", isHeroList);
+    const list = routeData(await getData("/series.data?page=1"), "routes/series").seriesResult.items;
+    const done = list.find((x) => x.status === "completed") || list[0];
+    items = await findDeadfragCatalogue(await get(`/series/${done.id}/match/1`), "item", isItemList);
+  }
+  const heroList = heroes.filter((h) => h.player_selectable && !h.disabled && !h.prerelease_only);
+  const shop = items.filter(isShopItem);
+
+  let heroJa = new Map(), itemJa = new Map();
+  try {
+    const hj = JSON.parse(await get(`${ASSETS}/heroes?language=japanese&only_active=true`));
+    const ij = JSON.parse(await get(`${ASSETS}/items/by-type/upgrade?language=japanese`));
+    heroJa = new Map(hj.filter((h) => hasJapanese(h.name)).map((h) => [h.id, h.name]));
+    itemJa = new Map(ij.filter((i) => hasJapanese(i.name)).map((i) => [i.id, i.name]));
     log(`Japanese names: ${heroJa.size} heroes, ${itemJa.size} items`);
-    return { heroJa, itemJa };
   } catch (err) {
     log(`Japanese names unavailable (${err.message}); using English only`);
-    return { heroJa: new Map(), itemJa: new Map() };
   }
+  return { heroList, shop, heroJa, itemJa };
 }
 
 function isShopItem(item) {
@@ -150,13 +180,10 @@ export async function aggregate({ weekEnd, fetch: customFetch, log = console.log
   const week = resolveWeek(weekEnd);
   log(`Aggregating ${week.label} (JST) -> ${week.csvPath}`);
 
-  // Hero catalogue (from the series listing page).
-  const listHtml = await get("/series");
-  const heroList = (await loadCatalogue(listHtml, "hero")).filter(
-    (h) => h.player_selectable && !h.disabled && !h.prerelease_only,
-  );
+  const { heroList, shop, heroJa, itemJa } = await loadCatalogues(log);
   const heroName = new Map(heroList.map((h) => [h.id, h.name]));
-  const { heroJa, itemJa } = await loadJapaneseNames(log);
+  const itemName = new Map(shop.map((i) => [i.id, i.name]));
+  const itemMeta = new Map(shop.map((i) => [i.name, { id: i.id, slot: i.item_slot_type || "other", tier: i.item_tier || 0 }]));
 
   // 1. Candidate series: walk the listing (newest first) until series start
   //    well before the week. Series that started up to 3 days before the
@@ -178,8 +205,6 @@ export async function aggregate({ weekEnd, fetch: customFetch, log = console.log
   log(`Candidate series: ${candidates.length}`);
 
   // 2. Games inside the window.
-  let itemName = null;
-  const itemMeta = new Map(); // name -> { slot, tier }
   const games = [];
   for (const s of candidates) {
     const first = await getData(`/series/${s.id}/match/1.data`);
@@ -190,13 +215,6 @@ export async function aggregate({ weekEnd, fetch: customFetch, log = console.log
       if (gs == null || gs < week.startMs || gs >= week.endMs) continue;
       const root = sm.gameNumber === 1 ? first : await getData(`/series/${s.id}/match/${sm.gameNumber}.data`);
       const game = routeData(root, "routes/series.$id.match.$gameNumber");
-      if (!itemName) {
-        const html = await get(`/series/${s.id}/match/${sm.gameNumber}`);
-        const items = await loadCatalogue(html, "item");
-        const shop = items.filter(isShopItem);
-        itemName = new Map(shop.map((i) => [i.id, i.name]));
-        for (const i of shop) itemMeta.set(i.name, { id: i.id, slot: i.item_slot_type || "other", tier: i.item_tier || 0 });
-      }
       games.push({ series: s.id, gameNumber: sm.gameNumber, game });
     }
   }
