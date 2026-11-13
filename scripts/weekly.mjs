@@ -25,6 +25,10 @@ async function main() {
   const latestFile = join(ROOT, "data/latest.json");
   let current = null;
   try { current = JSON.parse(await readFile(latestFile, "utf8")); } catch {}
+  // A re-run that finds the same numbers keeps the original timestamp, so
+  // backup runs don't move "last updated" or create a new commit.
+  const same = (a, b) => JSON.stringify({ ...a, generatedAt: 0 }) === JSON.stringify({ ...b, generatedAt: 0 });
+  if (current && same(current, latest)) latest.generatedAt = current.generatedAt;
   if (!current || current.week.start <= latest.week.start) {
     await writeFile(latestFile, JSON.stringify(latest, null, 2) + "\n");
   }
