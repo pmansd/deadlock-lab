@@ -111,6 +111,26 @@ async function loadCatalogue(html, name) {
   return JSON.parse(unTemplate(js.slice(start + 12, end)));
 }
 
+// Japanese names as shown in the game client, from the public Deadlock
+// assets API. Optional: if it can't be reached, English names are used.
+const ASSETS = "https://assets.deadlock-api.com/v2";
+const hasJapanese = (s) => /[\u3040-\u30ff\u4e00-\u9fff]/.test(s || "");
+async function loadJapaneseNames(log) {
+  try {
+    const [heroes, items] = await Promise.all([
+      get(`${ASSETS}/heroes?language=japanese`).then(JSON.parse),
+      get(`${ASSETS}/items?language=japanese`).then(JSON.parse),
+    ]);
+    const heroJa = new Map(heroes.filter((h) => hasJapanese(h.name)).map((h) => [h.id, h.name]));
+    const itemJa = new Map(items.filter((i) => hasJapanese(i.name)).map((i) => [i.id, i.name]));
+    log(`Japanese names: ${heroJa.size} heroes, ${itemJa.size} items`);
+    return { heroJa, itemJa };
+  } catch (err) {
+    log(`Japanese names unavailable (${err.message}); using English only`);
+    return { heroJa: new Map(), itemJa: new Map() };
+  }
+}
+
 function isShopItem(item) {
   // Shop items have display names ("Toxic Bullets"); internal upgrade
   // entries are snake_case identifiers.
@@ -136,6 +156,7 @@ export async function aggregate({ weekEnd, fetch: customFetch, log = console.log
     (h) => h.player_selectable && !h.disabled && !h.prerelease_only,
   );
   const heroName = new Map(heroList.map((h) => [h.id, h.name]));
+  const { heroJa, itemJa } = await loadJapaneseNames(log);
 
   // 1. Candidate series: walk the listing (newest first) until series start
   //    well before the week. Series that started up to 3 days before the
@@ -174,7 +195,7 @@ export async function aggregate({ weekEnd, fetch: customFetch, log = console.log
         const items = await loadCatalogue(html, "item");
         const shop = items.filter(isShopItem);
         itemName = new Map(shop.map((i) => [i.id, i.name]));
-        for (const i of shop) itemMeta.set(i.name, { slot: i.item_slot_type || "other", tier: i.item_tier || 0 });
+        for (const i of shop) itemMeta.set(i.name, { id: i.id, slot: i.item_slot_type || "other", tier: i.item_tier || 0 });
       }
       games.push({ series: s.id, gameNumber: sm.gameNumber, game });
     }
@@ -220,6 +241,7 @@ export async function aggregate({ weekEnd, fetch: customFetch, log = console.log
   const rows = [...stats.entries()]
     .map(([id, s]) => ({
       hero: heroName.get(id),
+      hero_ja: heroJa.get(id) || heroName.get(id),
       picks: s.picks,
       wins: s.wins,
       pick_rate: pct(s.picks, pickedGames),
@@ -248,7 +270,10 @@ export async function aggregate({ weekEnd, fetch: customFetch, log = console.log
     csv: week.csvPath,
     heroes: rows.map((r) => ({
       ...r,
-      items: r.items.map((name) => ({ name, ...(itemMeta.get(name) || { slot: "other", tier: 0 }) })),
+      items: r.items.map((name) => {
+        const meta = itemMeta.get(name) || { slot: "other", tier: 0 };
+        return { name, name_ja: itemJa.get(meta.id) || name, slot: meta.slot, tier: meta.tier };
+      }),
     })),
   };
 
