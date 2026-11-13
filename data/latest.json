@@ -1,0 +1,408 @@
+{
+  "generatedAt": "2026-11-13T12:57:13.826Z",
+  "week": {
+    "start": "2026-10-31",
+    "end": "2026-11-06",
+    "timezone": "Asia/Tokyo"
+  },
+  "games": 29,
+  "csv": "data/2026/10/week-5.csv",
+  "heroes": [
+    {
+      "hero": "Abrams",
+      "picks": 24,
+      "wins": 11,
+      "pick_rate": 82.8,
+      "win_rate": 45.8,
+      "bans": 3,
+      "ban_rate": 10.7
+    },
+    {
+      "hero": "Apollo",
+      "picks": 1,
+      "wins": 0,
+      "pick_rate": 3.4,
+      "win_rate": 0,
+      "bans": 0,
+      "ban_rate": 0
+    },
+    {
+      "hero": "Baba",
+      "picks": 5,
+      "wins": 3,
+      "pick_rate": 17.2,
+      "win_rate": 60,
+      "bans": 21,
+      "ban_rate": 75
+    },
+    {
+      "hero": "Bebop",
+      "picks": 10,
+      "wins": 5,
+      "pick_rate": 34.5,
+      "win_rate": 50,
+      "bans": 2,
+      "ban_rate": 7.1
+    },
+    {
+      "hero": "Billy",
+      "picks": 11,
+      "wins": 7,
+      "pick_rate": 37.9,
+      "win_rate": 63.6,
+      "bans": 0,
+      "ban_rate": 0
+    },
+    {
+      "hero": "Calico",
+      "picks": 1,
+      "wins": 0,
+      "pick_rate": 3.4,
+      "win_rate": 0,
+      "bans": 0,
+      "ban_rate": 0
+    },
+    {
+      "hero": "Celeste",
+      "picks": 14,
+      "wins": 4,
+      "pick_rate": 48.3,
+      "win_rate": 28.6,
+      "bans": 4,
+      "ban_rate": 14.3
+    },
+    {
+      "hero": "Deadman Danny",
+      "picks": 7,
+      "wins": 2,
+      "pick_rate": 24.1,
+      "win_rate": 28.6,
+      "bans": 1,
+      "ban_rate": 3.6
+    },
+    {
+      "hero": "Drifter",
+      "picks": 7,
+      "wins": 4,
+      "pick_rate": 24.1,
+      "win_rate": 57.1,
+      "bans": 0,
+      "ban_rate": 0
+    },
+    {
+      "hero": "Dynamo",
+      "picks": 3,
+      "wins": 1,
+      "pick_rate": 10.3,
+      "win_rate": 33.3,
+      "bans": 0,
+      "ban_rate": 0
+    },
+    {
+      "hero": "Graves",
+      "picks": 0,
+      "wins": 0,
+      "pick_rate": 0,
+      "win_rate": 0,
+      "bans": 0,
+      "ban_rate": 0
+    },
+    {
+      "hero": "Grey Talon",
+      "picks": 10,
+      "wins": 4,
+      "pick_rate": 34.5,
+      "win_rate": 40,
+      "bans": 17,
+      "ban_rate": 60.7
+    },
+    {
+      "hero": "Haze",
+      "picks": 2,
+      "wins": 0,
+      "pick_rate": 6.9,
+      "win_rate": 0,
+      "bans": 0,
+      "ban_rate": 0
+    },
+    {
+      "hero": "Holliday",
+      "picks": 14,
+      "wins": 7,
+      "pick_rate": 48.3,
+      "win_rate": 50,
+      "bans": 12,
+      "ban_rate": 42.9
+    },
+    {
+      "hero": "Infernus",
+      "picks": 1,
+      "wins": 0,
+      "pick_rate": 3.4,
+      "win_rate": 0,
+      "bans": 0,
+      "ban_rate": 0
+    },
+    {
+      "hero": "Ivy",
+      "picks": 11,
+      "wins": 5,
+      "pick_rate": 37.9,
+      "win_rate": 45.5,
+      "bans": 4,
+      "ban_rate": 14.3
+    },
+    {
+      "hero": "Kelvin",
+      "picks": 1,
+      "wins": 0,
+      "pick_rate": 3.4,
+      "win_rate": 0,
+      "bans": 0,
+      "ban_rate": 0
+    },
+    {
+      "hero": "Lady Geist",
+      "picks": 4,
+      "wins": 2,
+      "pick_rate": 13.8,
+      "win_rate": 50,
+      "bans": 0,
+      "ban_rate": 0
+    },
+    {
+      "hero": "Lash",
+      "picks": 2,
+      "wins": 1,
+      "pick_rate": 6.9,
+      "win_rate": 50,
+      "bans": 0,
+      "ban_rate": 0
+    },
+    {
+      "hero": "McGinnis",
+      "picks": 3,
+      "wins": 1,
+      "pick_rate": 10.3,
+      "win_rate": 33.3,
+      "bans": 0,
+      "ban_rate": 0
+    },
+    {
+      "hero": "Mina",
+      "picks": 13,
+      "wins": 10,
+      "pick_rate": 44.8,
+      "win_rate": 76.9,
+      "bans": 11,
+      "ban_rate": 39.3
+    },
+    {
+      "hero": "Mirage",
+      "picks": 16,
+      "wins": 11,
+      "pick_rate": 55.2,
+      "win_rate": 68.8,
+      "bans": 5,
+      "ban_rate": 17.9
+    },
+    {
+      "hero": "Mo & Krill",
+      "picks": 13,
+      "wins": 7,
+      "pick_rate": 44.8,
+      "win_rate": 53.8,
+      "bans": 3,
+      "ban_rate": 10.7
+    },
+    {
+      "hero": "Nurse Harrow",
+      "picks": 5,
+      "wins": 2,
+      "pick_rate": 17.2,
+      "win_rate": 40,
+      "bans": 6,
+      "ban_rate": 21.4
+    },
+    {
+      "hero": "Paige",
+      "picks": 13,
+      "wins": 8,
+      "pick_rate": 44.8,
+      "win_rate": 61.5,
+      "bans": 6,
+      "ban_rate": 21.4
+    },
+    {
+      "hero": "Paradox",
+      "picks": 15,
+      "wins": 9,
+      "pick_rate": 51.7,
+      "win_rate": 60,
+      "bans": 4,
+      "ban_rate": 14.3
+    },
+    {
+      "hero": "Pocket",
+      "picks": 14,
+      "wins": 8,
+      "pick_rate": 48.3,
+      "win_rate": 57.1,
+      "bans": 15,
+      "ban_rate": 53.6
+    },
+    {
+      "hero": "Rat King",
+      "picks": 1,
+      "wins": 1,
+      "pick_rate": 3.4,
+      "win_rate": 100,
+      "bans": 0,
+      "ban_rate": 0
+    },
+    {
+      "hero": "Rem",
+      "picks": 7,
+      "wins": 4,
+      "pick_rate": 24.1,
+      "win_rate": 57.1,
+      "bans": 4,
+      "ban_rate": 14.3
+    },
+    {
+      "hero": "Seven",
+      "picks": 2,
+      "wins": 0,
+      "pick_rate": 6.9,
+      "win_rate": 0,
+      "bans": 0,
+      "ban_rate": 0
+    },
+    {
+      "hero": "Shiv",
+      "picks": 15,
+      "wins": 8,
+      "pick_rate": 51.7,
+      "win_rate": 53.3,
+      "bans": 14,
+      "ban_rate": 50
+    },
+    {
+      "hero": "Silver",
+      "picks": 5,
+      "wins": 2,
+      "pick_rate": 17.2,
+      "win_rate": 40,
+      "bans": 4,
+      "ban_rate": 14.3
+    },
+    {
+      "hero": "Sinclair",
+      "picks": 1,
+      "wins": 0,
+      "pick_rate": 3.4,
+      "win_rate": 0,
+      "bans": 1,
+      "ban_rate": 3.6
+    },
+    {
+      "hero": "Solomon",
+      "picks": 20,
+      "wins": 11,
+      "pick_rate": 69,
+      "win_rate": 55,
+      "bans": 8,
+      "ban_rate": 28.6
+    },
+    {
+      "hero": "The Doorman",
+      "picks": 2,
+      "wins": 1,
+      "pick_rate": 6.9,
+      "win_rate": 50,
+      "bans": 1,
+      "ban_rate": 3.6
+    },
+    {
+      "hero": "Venator",
+      "picks": 15,
+      "wins": 6,
+      "pick_rate": 51.7,
+      "win_rate": 40,
+      "bans": 3,
+      "ban_rate": 10.7
+    },
+    {
+      "hero": "Victor",
+      "picks": 1,
+      "wins": 0,
+      "pick_rate": 3.4,
+      "win_rate": 0,
+      "bans": 1,
+      "ban_rate": 3.6
+    },
+    {
+      "hero": "Vindicta",
+      "picks": 0,
+      "wins": 0,
+      "pick_rate": 0,
+      "win_rate": 0,
+      "bans": 0,
+      "ban_rate": 0
+    },
+    {
+      "hero": "Violet",
+      "picks": 17,
+      "wins": 7,
+      "pick_rate": 58.6,
+      "win_rate": 41.2,
+      "bans": 8,
+      "ban_rate": 28.6
+    },
+    {
+      "hero": "Viscous",
+      "picks": 3,
+      "wins": 2,
+      "pick_rate": 10.3,
+      "win_rate": 66.7,
+      "bans": 1,
+      "ban_rate": 3.6
+    },
+    {
+      "hero": "Vyper",
+      "picks": 0,
+      "wins": 0,
+      "pick_rate": 0,
+      "win_rate": 0,
+      "bans": 0,
+      "ban_rate": 0
+    },
+    {
+      "hero": "Warden",
+      "picks": 11,
+      "wins": 3,
+      "pick_rate": 37.9,
+      "win_rate": 27.3,
+      "bans": 1,
+      "ban_rate": 3.6
+    },
+    {
+      "hero": "Wraith",
+      "picks": 21,
+      "wins": 15,
+      "pick_rate": 72.4,
+      "win_rate": 71.4,
+      "bans": 7,
+      "ban_rate": 25
+    },
+    {
+      "hero": "Yamato",
+      "picks": 7,
+      "wins": 2,
+      "pick_rate": 24.1,
+      "win_rate": 28.6,
+      "bans": 1,
+      "ban_rate": 3.6
+    }
+  ]
+}
