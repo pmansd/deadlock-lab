@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="ja">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Deadlock Competitive Meta — Weekly</title>
-<meta name="description" content="Unofficial weekly pick, win and ban stats for Deadlock heroes, from pro and amateur matches recorded on Deadfrag.">
+<title>Deadlock 競技シーン週間統計</title>
+<meta name="description" content="Deadfrag に記録されたプロ・アマチュアの試合から集計した、Deadlock ヒーローのピック率・勝率・バン数の非公式な週間統計です。">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23161a20'/%3E%3Cpath d='M8 23V9M8 23h16' stroke='%23e8b04a' stroke-width='2.5' stroke-linecap='round'/%3E%3Ccircle cx='14' cy='17' r='2.4' fill='%23e8b04a'/%3E%3Ccircle cx='20' cy='12' r='2.4' fill='%23e8b04a'/%3E%3C/svg%3E">
 <style>
 :root {
@@ -48,12 +48,13 @@
 html { -webkit-text-size-adjust: 100%; }
 body {
   margin: 0; background: var(--bg); color: var(--ink);
-  font: 16px/1.6 "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font: 16px/1.7 system-ui, -apple-system, "Segoe UI", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", Meiryo, sans-serif;
 }
 .wrap { max-width: 980px; margin: 0 auto; padding: 0 16px; }
 header.top { padding: 48px 0 28px; border-bottom: 1px solid var(--rule); }
 .eyebrow { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin: 0 0 10px; }
-h1 { font-size: clamp(28px, 5vw, 44px); line-height: 1.1; margin: 0 0 10px; letter-spacing: -.02em; }
+h1 { font-size: clamp(28px, 5vw, 44px); line-height: 1.2; margin: 0 0 10px; letter-spacing: -.01em; word-break: auto-phrase; }
+h2, .sub, .lede { word-break: auto-phrase; }
 .sub { margin: 0; color: var(--ink-2); font-size: 17px; }
 .meta { display: flex; flex-wrap: wrap; gap: 8px 28px; margin: 22px 0 0; padding: 0; list-style: none; font-size: 14px; color: var(--ink-2); }
 .meta b { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
@@ -109,73 +110,73 @@ svg text { font-family: inherit; }
 <body>
 <header class="top">
   <div class="wrap">
-    <p class="eyebrow">Deadlock · Competitive stats · Updated weekly</p>
-    <h1>Deadlock Competitive Meta — Weekly</h1>
-    <p class="sub">Unofficial weekly pick, win &amp; ban stats from pro and amateur matches.</p>
+    <p class="eyebrow">Deadlock · 競技シーン統計 · 毎週更新</p>
+    <h1>Deadlock 競技シーン週間統計</h1>
+    <p class="sub">プロ・アマチュアの試合から集計した、ヒーローごとのピック率・勝率・バン数の非公式な週間統計です。</p>
     <ul class="meta">
-      <li>Week: <b id="m-week">—</b></li>
-      <li>Games: <b id="m-games">—</b></li>
-      <li>Last updated: <b id="m-updated">—</b></li>
-      <li>Next update: <b>every Saturday, 00:00 JST</b></li>
+      <li>集計期間：<b id="m-week">—</b></li>
+      <li>試合数：<b id="m-games">—</b></li>
+      <li>最終更新：<b id="m-updated">—</b></li>
+      <li>更新：<b>毎週土曜 0:00（日本時間）</b></li>
     </ul>
   </div>
 </header>
 
 <main class="wrap">
   <section id="map">
-    <h2>Pick rate × win rate</h2>
-    <p class="lede">Each dot is a hero. Further right means picked more often; higher means won more of the games it was picked in. The dashed lines mark a 50% win rate and the average pick rate.</p>
+    <h2>ピック率 × 勝率</h2>
+    <p class="lede">点はそれぞれヒーローを表します。右にあるほどよくピックされ、上にあるほどピックされた試合で勝っています。点線は勝率50%と平均ピック率の位置です。</p>
     <div class="card"><div class="chart" id="scatter"></div></div>
-    <p class="note">The number in parentheses after a hero's name is how many games that hero was picked in this week — e.g. <i>Haze (5)</i> = picked in 5 games. With few games, rates swing a lot, so read small numbers with care. Where names would overlap, heroes nearer the top-right keep their label; tap or hover any dot to see the rest.</p>
+    <p class="note">ヒーロー名の後ろの括弧内の数字は、その週にピックされた試合数です（例：<i>Haze (5)</i> は5試合でピック）。試合数が少ないと率が大きく振れるため、数字が小さいヒーローは参考程度に見てください。名前が重なる場合は右上に近いヒーローの名前を優先して表示しています。表示されていない名前は、点をタップまたはマウスオーバーすると確認できます。</p>
   </section>
 
   <section id="bans">
-    <h2>Bans</h2>
-    <p class="lede">How many games each hero was banned in this week. Heroes with no bans are not shown.</p>
-    <div class="card"><div class="chart" id="bars"></div><p class="note scroll-hint">Swipe sideways to see every hero.</p></div>
+    <h2>バン数</h2>
+    <p class="lede">その週に各ヒーローがバンされた試合数です。一度もバンされなかったヒーローは表示していません。</p>
+    <div class="card"><div class="chart" id="bars"></div><p class="note scroll-hint">横にスワイプするとすべてのヒーローを確認できます。</p></div>
     <details>
-      <summary>Show all numbers as a table</summary>
-      <div class="table-scroll"><table id="table"><thead><tr><th>Hero</th><th>Picks</th><th>Pick %</th><th>Win %</th><th>Bans</th><th>Ban %</th></tr></thead><tbody></tbody></table></div>
+      <summary>すべての数値を表で見る</summary>
+      <div class="table-scroll"><table id="table"><thead><tr><th>ヒーロー</th><th>ピック数</th><th>ピック率</th><th>勝率</th><th>バン数</th><th>バン率</th></tr></thead><tbody></tbody></table></div>
     </details>
   </section>
 
   <section class="prose" id="zero">
-    <h2>Why some heroes sit at zero</h2>
-    <p>Every hero is listed every week, even if nobody played them.</p>
+    <h2>数値がゼロのヒーローについて</h2>
+    <p>誰も使わなかったヒーローも含め、毎週すべてのヒーローを記録しています。</p>
     <ul>
-      <li><b>Bottom-left corner (0% pick, 0% win):</b> the hero was not picked in any game this week. There were no games to win, so the win rate is recorded as 0. These heroes are grouped into one grey dot; tap it to see who they are.</li>
-      <li><b>Bottom edge, but to the right of the corner:</b> the hero <i>was</i> picked, but lost every game it was picked in.</li>
-      <li><b>Missing from the ban chart:</b> the hero was not banned in any game this week.</li>
+      <li><b>左下の角（ピック率0%・勝率0%）：</b>その週に一度もピックされなかったヒーローです。勝てる試合がないため、勝率も0として記録しています。これらのヒーローは灰色の点1つにまとめています。点をタップするとヒーロー名を確認できます。</li>
+      <li><b>下端だが角より右：</b>ピックはされたものの、ピックされた試合にすべて負けたヒーローです。</li>
+      <li><b>バン数のグラフにない：</b>その週に一度もバンされなかったヒーローです。</li>
     </ul>
   </section>
 
   <section class="prose" id="archive">
-    <h2>Past weeks</h2>
-    <p>Each week is saved as a CSV file in the <a href="https://github.com/pmansd/deadlock-lab/tree/main/data">data folder on GitHub</a>, organised as <code>data/year/month/week-N.csv</code>. A week is filed under the month of its first day (Saturday), and <code>week-1</code> is the week that starts on that month's first Saturday.</p>
-    <p>Columns: <code>hero</code>, <code>picks</code>, <code>pick_rate</code> (%), <code>win_rate</code> (%), <code>bans</code>, <code>ban_rate</code> (%), <code>items</code> (every item bought at least once by a player on that hero that week, including items later sold).</p>
+    <h2>過去のデータ</h2>
+    <p>各週のデータは CSV ファイルとして <a href="https://github.com/pmansd/deadlock-lab/tree/main/data">GitHub の data フォルダ</a>に保存しています。保存先は <code>data/年/月/week-N.csv</code> です。各週は初日（土曜日）の月のフォルダに入り、その月の最初の土曜日から始まる週が <code>week-1</code> になります。</p>
+    <p>列：<code>hero</code>（ヒーロー名）、<code>picks</code>（ピック数）、<code>pick_rate</code>（ピック率 %）、<code>win_rate</code>（勝率 %）、<code>bans</code>（バン数）、<code>ban_rate</code>（バン率 %）、<code>items</code>（その週にそのヒーローで1回以上購入されたアイテム。後で売却したものも含む）</p>
     <p id="this-week-file"></p>
   </section>
 
   <section class="prose" id="method">
-    <h2>How it's calculated</h2>
+    <h2>集計方法</h2>
     <ul>
-      <li><b>Source:</b> match data published by <a href="https://www.deadfrag.com/series" rel="noopener">Deadfrag</a>, covering all events and all tiers (professional and amateur).</li>
-      <li><b>Week:</b> Saturday 00:00 to Friday 24:00, Japan time (JST, UTC+9). A game counts toward the week it started in. The page updates automatically every Saturday at 00:00 JST.</li>
-      <li><b>Games:</b> every finished game with recorded player data. A best-of-3 counts as up to 3 games.</li>
-      <li><b>Pick rate</b> = games the hero was picked in ÷ total games.</li>
-      <li><b>Win rate</b> = games the hero won ÷ games the hero was picked in.</li>
-      <li><b>Bans</b> = games the hero was banned in. Games where no bans were recorded are left out of the ban numbers. Ban rate = bans ÷ games with recorded bans.</li>
+      <li><b>データ元：</b><a href="https://www.deadfrag.com/series" rel="noopener">Deadfrag</a> が公開している試合データ。すべての大会、すべてのティア（プロ・アマチュア）を対象にしています。</li>
+      <li><b>集計期間：</b>日本時間の土曜 0:00〜金曜 24:00。試合は開始した日時の週に数えます。毎週土曜 0:00 に自動で更新します。</li>
+      <li><b>試合数：</b>終了済みで、プレイヤーのデータが記録されている試合。Bo3 なら最大3試合として数えます。</li>
+      <li><b>ピック率</b> ＝ そのヒーローがピックされた試合数 ÷ 全試合数</li>
+      <li><b>勝率</b> ＝ そのヒーローが勝った試合数 ÷ そのヒーローがピックされた試合数</li>
+      <li><b>バン数</b> ＝ そのヒーローがバンされた試合数。バンの記録がない試合は集計から除いています。バン率 ＝ バン数 ÷ バンの記録がある試合数</li>
     </ul>
   </section>
 
   <section class="prose" id="disclaimer">
-    <h2>Disclaimer</h2>
-    <p>This is an unofficial fan project. It is not affiliated with or endorsed by Valve or Deadfrag. Deadlock is a trademark of Valve Corporation.</p>
-    <p>Each week's numbers are a snapshot taken when the page updates. Games that Deadfrag adds or corrects after that are not reflected, and past weeks are not recalculated. If an update fails, the previous week's page stays up and the "Last updated" date does not change.</p>
+    <h2>注意事項</h2>
+    <p>このサイトは非公式のファンプロジェクトです。Valve および Deadfrag とは関係がなく、承認も受けていません。Deadlock は Valve Corporation の商標です。</p>
+    <p>各週の数値は更新した時点のデータです。その後 Deadfrag に追加・修正された試合は反映しておらず、過去の週を集計し直すこともありません。更新に失敗した場合は前週のページをそのまま表示し、「最終更新」の日付も変わりません。</p>
   </section>
 </main>
 
-<footer><div class="wrap">Data: <a href="https://www.deadfrag.com" rel="noopener">Deadfrag</a> · Source code &amp; data: <a href="https://github.com/pmansd/deadlock-lab">GitHub</a></div></footer>
+<footer><div class="wrap">データ元：<a href="https://www.deadfrag.com" rel="noopener">Deadfrag</a> · ソースコードとデータ：<a href="https://github.com/pmansd/deadlock-lab">GitHub</a></div></footer>
 
 <script>
 (() => {
@@ -192,11 +193,12 @@ svg text { font-family: inherit; }
 
   function fmtDate(iso) {
     const [y, m, d] = iso.split("-").map(Number);
-    return new Date(Date.UTC(y, m - 1, d)).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });
+    return `${y}年${m}月${d}日`;
   }
   function fmtUpdated(iso) {
     const d = new Date(iso);
-    return d.toLocaleString("en-GB", { timeZone: "Asia/Tokyo", day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" }) + " JST";
+    const p = Object.fromEntries(new Intl.DateTimeFormat("en-US", { timeZone: "Asia/Tokyo", year: "numeric", month: "numeric", day: "numeric", hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).formatToParts(d).map((x) => [x.type, x.value]));
+    return `${p.year}年${p.month}月${p.day}日 ${p.hour}:${p.minute}（日本時間）`;
   }
 
   // ---------------- tooltip (hover + tap)
@@ -226,10 +228,10 @@ svg text { font-family: inherit; }
   }
   const heroTipHtml = (list) => list.map((h) =>
     `<b>${esc(h.hero)}</b>` + (h.picks > 0
-      ? `<div class="row"><span>Picked</span><span>${h.picks} games (${fmt(h.pick_rate)})</span></div>` +
-        `<div class="row"><span>Won</span><span>${h.wins} (${fmt(h.win_rate)})</span></div>`
-      : `<div class="row"><span>Not picked this week</span></div>`) +
-    `<div class="row"><span>Banned</span><span>${h.bans} games</span></div>`
+      ? `<div class="row"><span>ピック</span><span>${h.picks}試合（${fmt(h.pick_rate)}）</span></div>` +
+        `<div class="row"><span>勝利</span><span>${h.wins}試合（勝率 ${fmt(h.win_rate)}）</span></div>`
+      : `<div class="row"><span>今週はピックなし</span></div>`) +
+    `<div class="row"><span>バン</span><span>${h.bans}試合</span></div>`
   ).join('<div style="height:6px"></div>');
 
   // ---------------- scatter
@@ -238,7 +240,7 @@ svg text { font-family: inherit; }
     const W = Math.max(320, container.clientWidth);
     const narrow = W < 560;
     const H = narrow ? Math.round(W * 1.05) : Math.round(W * 0.62);
-    const m = { t: 16, r: narrow ? 14 : 24, b: 46, l: 46 };
+    const m = { t: 30, r: narrow ? 14 : 24, b: 46, l: 46 };
     const iw = W - m.l - m.r, ih = H - m.t - m.b;
     const maxPick = Math.max(10, ...heroes.map((h) => h.pick_rate));
     const xMax = Math.min(100, Math.ceil((maxPick * 1.08) / 10) * 10);
@@ -246,7 +248,7 @@ svg text { font-family: inherit; }
     const y = (v) => m.t + ih - (v / 100) * ih;
     const avgPick = heroes.reduce((s, h) => s + h.pick_rate, 0) / heroes.length;
 
-    const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": "Scatter chart of hero pick rate versus win rate" }, container);
+    const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": "ヒーローのピック率と勝率の散布図" }, container);
     // upper-right quadrant tint
     el("rect", { x: x(avgPick), y: y(100), width: x(xMax) - x(avgPick), height: y(50) - y(100), fill: "var(--q-good)" }, svg);
     // grid + ticks
@@ -262,12 +264,11 @@ svg text { font-family: inherit; }
     // crosshair
     el("line", { x1: x(0), x2: x(xMax), y1: y(50), y2: y(50), stroke: "var(--cross)", "stroke-width": 1.25, "stroke-dasharray": "5 4" }, svg);
     el("line", { x1: x(avgPick), x2: x(avgPick), y1: y(0), y2: y(100), stroke: "var(--cross)", "stroke-width": 1.25, "stroke-dasharray": "5 4" }, svg);
-    el("text", { x: x(avgPick) + 5, y: y(100) + 12, class: "tick" }, svg).textContent = `avg pick ${fmt(avgPick)}`;
-    el("text", { x: x(xMax) - 4, y: y(50) - 6, "text-anchor": "end", class: "tick" }, svg).textContent = "50% win";
+    el("text", { x: x(avgPick) + 5, y: y(100) + 12, class: "tick" }, svg).textContent = `平均ピック率 ${fmt(avgPick)}`;
+    el("text", { x: x(xMax) - 4, y: y(50) - 6, "text-anchor": "end", class: "tick" }, svg).textContent = "勝率50%";
     // axis titles
-    el("text", { x: m.l + iw / 2, y: H - 8, "text-anchor": "middle", class: "axis-label" }, svg).textContent = "Pick rate →";
-    const yt = el("text", { x: 0, y: 0, "text-anchor": "middle", class: "axis-label", transform: `translate(12 ${m.t + ih / 2}) rotate(-90)` }, svg);
-    yt.textContent = "Win rate →";
+    el("text", { x: m.l + iw / 2, y: H - 8, "text-anchor": "middle", class: "axis-label" }, svg).textContent = "ピック率 →";
+    el("text", { x: 4, y: 14, class: "axis-label" }, svg).textContent = "↑ 勝率";
 
     // group heroes that share exact coordinates (e.g. all unpicked heroes at 0,0)
     const groups = new Map();
@@ -285,7 +286,7 @@ svg text { font-family: inherit; }
         // priority: closer to top-right first
         score: h.pick_rate / xMax + h.win_rate / 100,
         label: zero
-          ? `Not picked (${list.length} heroes)`
+          ? `ピックなし（${list.length}体）`
           : list.map((g) => `${g.hero} (${g.picks})`).join(", "),
       };
     });
@@ -327,10 +328,10 @@ svg text { font-family: inherit; }
     for (const p of [...pts].sort((a, b) => a.score - b.score)) {
       el("circle", { cx: p.cx, cy: p.cy, r: p.zero || p.list.length > 1 ? R + 1.5 : R, class: "dot" + (p.zero ? " zero" : "") }, dotsLayer);
       const ring = el("circle", { cx: p.cx, cy: p.cy, r: R + 5, class: "focus-ring" });
-      const hit = el("circle", { cx: p.cx, cy: p.cy, r: 14, class: "hit", tabindex: 0, role: "button", "aria-label": p.zero ? `Not picked: ${p.list.map((h) => h.hero).join(", ")}` : p.label }, hitLayer);
+      const hit = el("circle", { cx: p.cx, cy: p.cy, r: 14, class: "hit", tabindex: 0, role: "button", "aria-label": p.zero ? `ピックなし：${p.list.map((h) => h.hero).join(", ")}` : p.label }, hitLayer);
       hitLayer.appendChild(ring);
       const html = p.zero
-        ? `<b>Not picked this week</b>${p.list.map((h) => esc(h.hero)).join(", ")}`
+        ? `<b>今週ピックされなかったヒーロー</b>${p.list.map((h) => esc(h.hero)).join(", ")}`
         : heroTipHtml(p.list);
       const show = (pin) => {
         const r = svg.getBoundingClientRect(), s = r.width / W;
@@ -351,7 +352,7 @@ svg text { font-family: inherit; }
   function drawBars(container, heroes) {
     container.innerHTML = "";
     const data = heroes.filter((h) => h.bans > 0).sort((a, b) => b.bans - a.bans || a.hero.localeCompare(b.hero));
-    if (!data.length) { container.innerHTML = '<div class="empty">No bans were recorded this week.</div>'; return; }
+    if (!data.length) { container.innerHTML = '<div class="empty">今週はバンの記録がありませんでした。</div>'; return; }
     // keep at least ~24px per bar; on narrow screens the chart scrolls sideways
     const W = Math.max(320, container.clientWidth, data.length * 24 + 44);
     const labelSpace = 92;
@@ -365,7 +366,7 @@ svg text { font-family: inherit; }
     const band = iw / data.length;
     const bw = Math.max(4, Math.min(36, band - 2));
 
-    const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, width: W, height: H, role: "img", "aria-label": "Bar chart of bans per hero" }, container);
+    const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, width: W, height: H, role: "img", "aria-label": "ヒーローごとのバン数の棒グラフ" }, container);
     svg.style.width = W + "px";
     container.classList.toggle("scroll", W > container.clientWidth);
     for (let v = 0; v <= yMax; v += step) {
@@ -382,8 +383,8 @@ svg text { font-family: inherit; }
       if (band >= 16) el("text", { x: cx, y: top - 5, "text-anchor": "middle", class: "bar-val" }, svg).textContent = d.bans;
       const lab = el("text", { x: 0, y: 0, "text-anchor": "end", class: "tick", transform: `translate(${cx + 3} ${y(0) + 10}) rotate(-50)` }, svg);
       lab.textContent = d.hero;
-      const hit = el("rect", { x: m.l + band * i, y: m.t, width: band, height: ih + labelSpace, class: "bar-hit", tabindex: 0, role: "button", "aria-label": `${d.hero}: banned in ${d.bans} games` }, svg);
-      const html = `<b>${esc(d.hero)}</b><div class="row"><span>Banned</span><span>${d.bans} games (${fmt(d.ban_rate)})</span></div>`;
+      const hit = el("rect", { x: m.l + band * i, y: m.t, width: band, height: ih + labelSpace, class: "bar-hit", tabindex: 0, role: "button", "aria-label": `${d.hero}：${d.bans}試合でバン` }, svg);
+      const html = `<b>${esc(d.hero)}</b><div class="row"><span>バン</span><span>${d.bans}試合（バン率 ${fmt(d.ban_rate)}）</span></div>`;
       const show = (pin) => { const s = svg.getBoundingClientRect().width / W; tip.show(html, cx * s, top * s, pin ? hit : null); };
       hit.addEventListener("mouseenter", () => { if (!tip.pinned) show(false); });
       hit.addEventListener("mouseleave", () => { if (!tip.pinned) tip.hide(); });
@@ -408,17 +409,17 @@ svg text { font-family: inherit; }
       if (!res.ok) throw new Error(res.status);
       data = await res.json();
     } catch (e) {
-      $("#scatter").innerHTML = '<div class="empty">Data is not available yet. Check back after the next Saturday update.</div>';
+      $("#scatter").innerHTML = '<div class="empty">データはまだありません。次の土曜日の更新後にご覧ください。</div>';
       $("#bars").innerHTML = "";
       return;
     }
-    $("#m-week").textContent = `${fmtDate(data.week.start)} – ${fmtDate(data.week.end)} (JST)`;
+    $("#m-week").textContent = `${fmtDate(data.week.start)}〜${fmtDate(data.week.end)}`;
     $("#m-games").textContent = data.games;
     $("#m-updated").textContent = fmtUpdated(data.generatedAt);
-    $("#this-week-file").innerHTML = `This week's file: <a href="https://github.com/pmansd/deadlock-lab/blob/main/${esc(data.csv)}"><code>${esc(data.csv)}</code></a>`;
+    $("#this-week-file").innerHTML = `今週のファイル：<a href="https://github.com/pmansd/deadlock-lab/blob/main/${esc(data.csv)}"><code>${esc(data.csv)}</code></a>`;
 
     if (!data.games) {
-      const msg = '<div class="empty">There were no matches this week.</div>';
+      const msg = '<div class="empty">今週の試合はありませんでした。</div>';
       $("#scatter").innerHTML = msg;
       $("#bars").innerHTML = msg;
       fillTable(data.heroes);
