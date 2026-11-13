@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deadlock Competitive Meta — Weekly</title>
+<meta name="description" content="Unofficial weekly pick, win and ban stats for Deadlock heroes, from pro and amateur matches recorded on Deadfrag.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23161a20'/%3E%3Cpath d='M8 23V9M8 23h16' stroke='%23e8b04a' stroke-width='2.5' stroke-linecap='round'/%3E%3Ccircle cx='14' cy='17' r='2.4' fill='%23e8b04a'/%3E%3Ccircle cx='20' cy='12' r='2.4' fill='%23e8b04a'/%3E%3C/svg%3E">
+<style>
+:root {
+  --bg: #f6f4ef;
+  --surface: #ffffff;
+  --ink: #1b1d21;
+  --ink-2: #4a4f58;
+  --ink-3: #7a808a;
+  --rule: #e2ded5;
+  --grid: #ece8e0;
+  --accent: #b0700f;
+  --accent-soft: #f3e3c4;
+  --mark: #b0700f;
+  --mark-muted: #b9b4aa;
+  --cross: #8c8579;
+  --q-good: rgba(176,112,15,.06);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111317;
+    --surface: #181b21;
+    --ink: #eceae5;
+    --ink-2: #b4b8bf;
+    --ink-3: #848a94;
+    --rule: #2a2f37;
+    --grid: #232830;
+    --accent: #e8b04a;
+    --accent-soft: #3a2e17;
+    --mark: #e8b04a;
+    --mark-muted: #5d626b;
+    --cross: #79808b;
+    --q-good: rgba(232,176,74,.07);
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111317; --surface: #181b21; --ink: #eceae5; --ink-2: #b4b8bf; --ink-3: #848a94;
+  --rule: #2a2f37; --grid: #232830; --accent: #e8b04a; --accent-soft: #3a2e17;
+  --mark: #e8b04a; --mark-muted: #5d626b; --cross: #79808b; --q-good: rgba(232,176,74,.07);
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font: 16px/1.6 "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+.wrap { max-width: 980px; margin: 0 auto; padding: 0 16px; }
+header.top { padding: 48px 0 28px; border-bottom: 1px solid var(--rule); }
+.eyebrow { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin: 0 0 10px; }
+h1 { font-size: clamp(28px, 5vw, 44px); line-height: 1.1; margin: 0 0 10px; letter-spacing: -.02em; }
+.sub { margin: 0; color: var(--ink-2); font-size: 17px; }
+.meta { display: flex; flex-wrap: wrap; gap: 8px 28px; margin: 22px 0 0; padding: 0; list-style: none; font-size: 14px; color: var(--ink-2); }
+.meta b { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
+section { padding: 36px 0; border-bottom: 1px solid var(--rule); }
+section:last-of-type { border-bottom: 0; }
+h2 { font-size: 22px; margin: 0 0 6px; letter-spacing: -.01em; }
+.lede { color: var(--ink-2); margin: 0 0 18px; max-width: 70ch; }
+.card { background: var(--surface); border: 1px solid var(--rule); border-radius: 12px; padding: 12px; }
+.chart { position: relative; width: 100%; }
+.chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+#bars { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+#bars svg { max-width: none; }
+.scroll-hint { display: none; }
+#bars.scroll + .scroll-hint { display: block; }
+.note { font-size: 14px; color: var(--ink-3); margin: 12px 2px 0; }
+.empty { padding: 48px 16px; text-align: center; color: var(--ink-2); font-size: 18px; }
+.tip {
+  position: absolute; pointer-events: none; z-index: 5; min-width: 150px; max-width: 260px;
+  background: var(--ink); color: var(--bg); border-radius: 8px; padding: 8px 10px;
+  font-size: 13px; line-height: 1.45; box-shadow: 0 6px 24px rgba(0,0,0,.25);
+  opacity: 0; transform: translateY(4px); transition: opacity .12s, transform .12s;
+}
+.tip.on { opacity: 1; transform: none; }
+.tip b { display: block; font-size: 14px; margin-bottom: 2px; }
+.tip .row { display: flex; justify-content: space-between; gap: 12px; font-variant-numeric: tabular-nums; }
+.prose p, .prose li { color: var(--ink-2); max-width: 72ch; }
+.prose ul { padding-left: 20px; margin: 8px 0; }
+.prose code { font-size: 14px; background: var(--accent-soft); padding: 1px 5px; border-radius: 4px; color: var(--ink); }
+a { color: var(--accent); text-underline-offset: 2px; }
+details { margin-top: 14px; }
+summary { cursor: pointer; color: var(--ink-2); font-size: 14px; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 10px; font-variant-numeric: tabular-nums; }
+th, td { text-align: right; padding: 6px 8px; border-bottom: 1px solid var(--rule); }
+th:first-child, td:first-child { text-align: left; }
+th { color: var(--ink-3); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: .06em; }
+.table-scroll { overflow-x: auto; }
+footer { padding: 28px 0 48px; color: var(--ink-3); font-size: 13px; }
+svg text { font-family: inherit; }
+.axis-label { fill: var(--ink-3); font-size: 12px; }
+.tick { fill: var(--ink-3); font-size: 11px; font-variant-numeric: tabular-nums; }
+.hero-label { fill: var(--ink); font-size: 12px; font-weight: 500; paint-order: stroke; stroke: var(--surface); stroke-width: 3px; stroke-linejoin: round; }
+.dot { fill: var(--mark); stroke: var(--surface); stroke-width: 2; }
+.dot.zero { fill: var(--mark-muted); }
+.hit { fill: transparent; cursor: pointer; }
+.hit:focus { outline: none; }
+.hit:focus-visible + .focus-ring, .focus-ring.on { opacity: 1; }
+.focus-ring { fill: none; stroke: var(--ink); stroke-width: 1.5; opacity: 0; }
+.bar { fill: var(--mark); }
+.bar-hit { fill: transparent; cursor: pointer; }
+.bar-val { fill: var(--ink-2); font-size: 11px; font-variant-numeric: tabular-nums; }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <p class="eyebrow">Deadlock · Competitive stats · Updated weekly</p>
+    <h1>Deadlock Competitive Meta — Weekly</h1>
+    <p class="sub">Unofficial weekly pick, win &amp; ban stats from pro and amateur matches.</p>
+    <ul class="meta">
+      <li>Week: <b id="m-week">—</b></li>
+      <li>Games: <b id="m-games">—</b></li>
+      <li>Last updated: <b id="m-updated">—</b></li>
+      <li>Next update: <b>every Saturday, 00:00 JST</b></li>
+    </ul>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="map">
+    <h2>Pick rate × win rate</h2>
+    <p class="lede">Each dot is a hero. Further right means picked more often; higher means won more of the games it was picked in. The dashed lines mark a 50% win rate and the average pick rate.</p>
+    <div class="card"><div class="chart" id="scatter"></div></div>
+    <p class="note">The number in parentheses after a hero's name is how many games that hero was picked in this week — e.g. <i>Haze (5)</i> = picked in 5 games. With few games, rates swing a lot, so read small numbers with care. Where names would overlap, heroes nearer the top-right keep their label; tap or hover any dot to see the rest.</p>
+  </section>
+
+  <section id="bans">
+    <h2>Bans</h2>
+    <p class="lede">How many games each hero was banned in this week. Heroes with no bans are not shown.</p>
+    <div class="card"><div class="chart" id="bars"></div><p class="note scroll-hint">Swipe sideways to see every hero.</p></div>
+    <details>
+      <summary>Show all numbers as a table</summary>
+      <div class="table-scroll"><table id="table"><thead><tr><th>Hero</th><th>Picks</th><th>Pick %</th><th>Win %</th><th>Bans</th><th>Ban %</th></tr></thead><tbody></tbody></table></div>
+    </details>
+  </section>
+
+  <section class="prose" id="zero">
+    <h2>Why some heroes sit at zero</h2>
+    <p>Every hero is listed every week, even if nobody played them.</p>
+    <ul>
+      <li><b>Bottom-left corner (0% pick, 0% win):</b> the hero was not picked in any game this week. There were no games to win, so the win rate is recorded as 0. These heroes are grouped into one grey dot; tap it to see who they are.</li>
+      <li><b>Bottom edge, but to the right of the corner:</b> the hero <i>was</i> picked, but lost every game it was picked in.</li>
+      <li><b>Missing from the ban chart:</b> the hero was not banned in any game this week.</li>
+    </ul>
+  </section>
+
+  <section class="prose" id="archive">
+    <h2>Past weeks</h2>
+    <p>Each week is saved as a CSV file in the <a href="https://github.com/pmansd/deadlock-lab/tree/main/data">data folder on GitHub</a>, organised as <code>data/year/month/week-N.csv</code>. A week is filed under the month of its first day (Saturday), and <code>week-1</code> is the week that starts on that month's first Saturday.</p>
+    <p>Columns: <code>hero</code>, <code>picks</code>, <code>pick_rate</code> (%), <code>win_rate</code> (%), <code>bans</code>, <code>ban_rate</code> (%), <code>items</code> (every item bought at least once by a player on that hero that week, including items later sold).</p>
+    <p id="this-week-file"></p>
+  </section>
+
+  <section class="prose" id="method">
+    <h2>How it's calculated</h2>
+    <ul>
+      <li><b>Source:</b> match data published by <a href="https://www.deadfrag.com/series" rel="noopener">Deadfrag</a>, covering all events and all tiers (professional and amateur).</li>
+      <li><b>Week:</b> Saturday 00:00 to Friday 24:00, Japan time (JST, UTC+9). A game counts toward the week it started in. The page updates automatically every Saturday at 00:00 JST.</li>
+      <li><b>Games:</b> every finished game with recorded player data. A best-of-3 counts as up to 3 games.</li>
+      <li><b>Pick rate</b> = games the hero was picked in ÷ total games.</li>
+      <li><b>Win rate</b> = games the hero won ÷ games the hero was picked in.</li>
+      <li><b>Bans</b> = games the hero was banned in. Games where no bans were recorded are left out of the ban numbers. Ban rate = bans ÷ games with recorded bans.</li>
+    </ul>
+  </section>
+
+  <section class="prose" id="disclaimer">
+    <h2>Disclaimer</h2>
+    <p>This is an unofficial fan project. It is not affiliated with or endorsed by Valve or Deadfrag. Deadlock is a trademark of Valve Corporation.</p>
+    <p>Each week's numbers are a snapshot taken when the page updates. Games that Deadfrag adds or corrects after that are not reflected, and past weeks are not recalculated. If an update fails, the previous week's page stays up and the "Last updated" date does not change.</p>
+  </section>
+</main>
+
+<footer><div class="wrap">Data: <a href="https://www.deadfrag.com" rel="noopener">Deadfrag</a> · Source code &amp; data: <a href="https://github.com/pmansd/deadlock-lab">GitHub</a></div></footer>
+
+<script>
+(() => {
+  const NS = "http://www.w3.org/2000/svg";
+  const $ = (s) => document.querySelector(s);
+  const el = (tag, attrs = {}, parent) => {
+    const n = document.createElementNS(NS, tag);
+    for (const [k, v] of Object.entries(attrs)) n.setAttribute(k, v);
+    if (parent) parent.appendChild(n);
+    return n;
+  };
+  const fmt = (v) => (Math.round(v * 10) / 10).toFixed(1) + "%";
+  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+  function fmtDate(iso) {
+    const [y, m, d] = iso.split("-").map(Number);
+    return new Date(Date.UTC(y, m - 1, d)).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });
+  }
+  function fmtUpdated(iso) {
+    const d = new Date(iso);
+    return d.toLocaleString("en-GB", { timeZone: "Asia/Tokyo", day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" }) + " JST";
+  }
+
+  // ---------------- tooltip (hover + tap)
+  function makeTip(container) {
+    const tip = document.createElement("div");
+    tip.className = "tip";
+    tip.setAttribute("role", "status");
+    container.appendChild(tip);
+    let pinned = null;
+    return {
+      show(html, x, y, owner) {
+        tip.innerHTML = html;
+        tip.classList.add("on");
+        const cw = container.clientWidth;
+        const tw = tip.offsetWidth, th = tip.offsetHeight;
+        let left = x + 14, top = y - th - 10;
+        if (left + tw > cw) left = Math.max(0, x - tw - 14);
+        if (top < 0) top = y + 14;
+        tip.style.left = left + "px";
+        tip.style.top = top + "px";
+        if (owner) pinned = owner;
+      },
+      hide(force) { if (force || !pinned) { tip.classList.remove("on"); pinned = null; } },
+      get pinned() { return pinned; },
+      unpin() { pinned = null; },
+    };
+  }
+  const heroTipHtml = (list) => list.map((h) =>
+    `<b>${esc(h.hero)}</b>` + (h.picks > 0
+      ? `<div class="row"><span>Picked</span><span>${h.picks} games (${fmt(h.pick_rate)})</span></div>` +
+        `<div class="row"><span>Won</span><span>${h.wins} (${fmt(h.win_rate)})</span></div>`
+      : `<div class="row"><span>Not picked this week</span></div>`) +
+    `<div class="row"><span>Banned</span><span>${h.bans} games</span></div>`
+  ).join('<div style="height:6px"></div>');
+
+  // ---------------- scatter
+  function drawScatter(container, heroes) {
+    container.innerHTML = "";
+    const W = Math.max(320, container.clientWidth);
+    const narrow = W < 560;
+    const H = narrow ? Math.round(W * 1.05) : Math.round(W * 0.62);
+    const m = { t: 16, r: narrow ? 14 : 24, b: 46, l: 46 };
+    const iw = W - m.l - m.r, ih = H - m.t - m.b;
+    const maxPick = Math.max(10, ...heroes.map((h) => h.pick_rate));
+    const xMax = Math.min(100, Math.ceil((maxPick * 1.08) / 10) * 10);
+    const x = (v) => m.l + (v / xMax) * iw;
+    const y = (v) => m.t + ih - (v / 100) * ih;
+    const avgPick = heroes.reduce((s, h) => s + h.pick_rate, 0) / heroes.length;
+
+    const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": "Scatter chart of hero pick rate versus win rate" }, container);
+    // upper-right quadrant tint
+    el("rect", { x: x(avgPick), y: y(100), width: x(xMax) - x(avgPick), height: y(50) - y(100), fill: "var(--q-good)" }, svg);
+    // grid + ticks
+    const xStep = xMax <= 40 ? 5 : 10;
+    for (let v = 0; v <= xMax + 0.001; v += xStep) {
+      el("line", { x1: x(v), x2: x(v), y1: y(0), y2: y(100), stroke: "var(--grid)", "stroke-width": 1 }, svg);
+      if (!narrow || v % (xStep * 2) === 0) el("text", { x: x(v), y: y(0) + 16, "text-anchor": "middle", class: "tick" }, svg).textContent = v + "%";
+    }
+    for (let v = 0; v <= 100; v += 25) {
+      el("line", { x1: x(0), x2: x(xMax), y1: y(v), y2: y(v), stroke: "var(--grid)", "stroke-width": 1 }, svg);
+      el("text", { x: x(0) - 8, y: y(v) + 4, "text-anchor": "end", class: "tick" }, svg).textContent = v + "%";
+    }
+    // crosshair
+    el("line", { x1: x(0), x2: x(xMax), y1: y(50), y2: y(50), stroke: "var(--cross)", "stroke-width": 1.25, "stroke-dasharray": "5 4" }, svg);
+    el("line", { x1: x(avgPick), x2: x(avgPick), y1: y(0), y2: y(100), stroke: "var(--cross)", "stroke-width": 1.25, "stroke-dasharray": "5 4" }, svg);
+    el("text", { x: x(avgPick) + 5, y: y(100) + 12, class: "tick" }, svg).textContent = `avg pick ${fmt(avgPick)}`;
+    el("text", { x: x(xMax) - 4, y: y(50) - 6, "text-anchor": "end", class: "tick" }, svg).textContent = "50% win";
+    // axis titles
+    el("text", { x: m.l + iw / 2, y: H - 8, "text-anchor": "middle", class: "axis-label" }, svg).textContent = "Pick rate →";
+    const yt = el("text", { x: 0, y: 0, "text-anchor": "middle", class: "axis-label", transform: `translate(12 ${m.t + ih / 2}) rotate(-90)` }, svg);
+    yt.textContent = "Win rate →";
+
+    // group heroes that share exact coordinates (e.g. all unpicked heroes at 0,0)
+    const groups = new Map();
+    for (const h of heroes) {
+      const key = h.pick_rate + "|" + h.win_rate;
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push(h);
+    }
+    const pts = [...groups.values()].map((list) => {
+      const h = list[0];
+      const zero = h.picks === 0;
+      return {
+        list, zero,
+        cx: x(h.pick_rate), cy: y(h.win_rate),
+        // priority: closer to top-right first
+        score: h.pick_rate / xMax + h.win_rate / 100,
+        label: zero
+          ? `Not picked (${list.length} heroes)`
+          : list.map((g) => `${g.hero} (${g.picks})`).join(", "),
+      };
+    });
+
+    const tip = makeTip(container);
+    const dotsLayer = el("g", {}, svg);
+    const labelsLayer = el("g", {}, svg);
+    const hitLayer = el("g", {}, svg);
+    const R = 5;
+
+    // label placement: greedy by priority, 4 candidate positions, no overlaps
+    const placed = pts.map((p) => ({ x0: p.cx - R - 2, y0: p.cy - R - 2, x1: p.cx + R + 2, y1: p.cy + R + 2 }));
+    const boxes = [...placed];
+    const measure = el("text", { class: "hero-label", x: -999, y: -999 }, svg);
+    const order = [...pts].sort((a, b) => b.score - a.score);
+    for (const p of order) {
+      if (p.zero) continue;
+      measure.textContent = p.label;
+      const w = measure.getComputedTextLength(), h = 13;
+      const cands = [
+        [p.cx + R + 4, p.cy + 4, "start"],
+        [p.cx - R - 4, p.cy + 4, "end"],
+        [p.cx, p.cy - R - 5, "middle"],
+        [p.cx, p.cy + R + 14, "middle"],
+      ];
+      for (const [lx, ly, anchor] of cands) {
+        const x0 = anchor === "start" ? lx : anchor === "end" ? lx - w : lx - w / 2;
+        const b = { x0, y0: ly - h + 3, x1: x0 + w, y1: ly + 3 };
+        if (b.x0 < m.l - 4 || b.x1 > W - 2 || b.y0 < 0 || b.y1 > m.t + ih + 2) continue;
+        const hit = boxes.some((o) => !(b.x1 < o.x0 || b.x0 > o.x1 || b.y1 < o.y0 || b.y0 > o.y1));
+        if (hit) continue;
+        boxes.push(b);
+        el("text", { x: lx, y: ly, "text-anchor": anchor, class: "hero-label" }, labelsLayer).textContent = p.label;
+        break;
+      }
+    }
+    measure.remove();
+
+    for (const p of [...pts].sort((a, b) => a.score - b.score)) {
+      el("circle", { cx: p.cx, cy: p.cy, r: p.zero || p.list.length > 1 ? R + 1.5 : R, class: "dot" + (p.zero ? " zero" : "") }, dotsLayer);
+      const ring = el("circle", { cx: p.cx, cy: p.cy, r: R + 5, class: "focus-ring" });
+      const hit = el("circle", { cx: p.cx, cy: p.cy, r: 14, class: "hit", tabindex: 0, role: "button", "aria-label": p.zero ? `Not picked: ${p.list.map((h) => h.hero).join(", ")}` : p.label }, hitLayer);
+      hitLayer.appendChild(ring);
+      const html = p.zero
+        ? `<b>Not picked this week</b>${p.list.map((h) => esc(h.hero)).join(", ")}`
+        : heroTipHtml(p.list);
+      const show = (pin) => {
+        const r = svg.getBoundingClientRect(), s = r.width / W;
+        tip.show(html, p.cx * s, p.cy * s, pin ? hit : null);
+        container.querySelectorAll(".focus-ring.on").forEach((n) => n.classList.remove("on"));
+        ring.classList.add("on");
+      };
+      hit.addEventListener("mouseenter", () => { if (!tip.pinned) show(false); });
+      hit.addEventListener("mouseleave", () => { if (!tip.pinned) { tip.hide(); ring.classList.remove("on"); } });
+      hit.addEventListener("focus", () => show(false));
+      hit.addEventListener("blur", () => { tip.hide(true); ring.classList.remove("on"); });
+      hit.addEventListener("click", (e) => { e.stopPropagation(); if (tip.pinned === hit) { tip.hide(true); ring.classList.remove("on"); } else show(true); });
+    }
+    container.addEventListener("click", () => { tip.hide(true); container.querySelectorAll(".focus-ring.on").forEach((n) => n.classList.remove("on")); });
+  }
+
+  // ---------------- bars
+  function drawBars(container, heroes) {
+    container.innerHTML = "";
+    const data = heroes.filter((h) => h.bans > 0).sort((a, b) => b.bans - a.bans || a.hero.localeCompare(b.hero));
+    if (!data.length) { container.innerHTML = '<div class="empty">No bans were recorded this week.</div>'; return; }
+    // keep at least ~24px per bar; on narrow screens the chart scrolls sideways
+    const W = Math.max(320, container.clientWidth, data.length * 24 + 44);
+    const labelSpace = 92;
+    const H = Math.round(Math.min(380, Math.max(240, container.clientWidth * 0.42))) + labelSpace;
+    const m = { t: 18, r: 8, b: labelSpace, l: 36 };
+    const iw = W - m.l - m.r, ih = H - m.t - m.b;
+    const maxV = Math.max(...data.map((d) => d.bans));
+    const step = maxV <= 5 ? 1 : maxV <= 12 ? 2 : maxV <= 30 ? 5 : 10;
+    const yMax = Math.ceil(maxV / step) * step;
+    const y = (v) => m.t + ih - (v / yMax) * ih;
+    const band = iw / data.length;
+    const bw = Math.max(4, Math.min(36, band - 2));
+
+    const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, width: W, height: H, role: "img", "aria-label": "Bar chart of bans per hero" }, container);
+    svg.style.width = W + "px";
+    container.classList.toggle("scroll", W > container.clientWidth);
+    for (let v = 0; v <= yMax; v += step) {
+      el("line", { x1: m.l, x2: W - m.r, y1: y(v), y2: y(v), stroke: "var(--grid)", "stroke-width": 1 }, svg);
+      el("text", { x: m.l - 8, y: y(v) + 4, "text-anchor": "end", class: "tick" }, svg).textContent = v;
+    }
+    const tip = makeTip(container);
+    data.forEach((d, i) => {
+      const cx = m.l + band * i + band / 2;
+      const top = y(d.bans), h = y(0) - top;
+      const r = Math.min(4, bw / 2, h);
+      // rounded top, square baseline
+      el("path", { class: "bar", d: `M${cx - bw / 2},${y(0)} V${top + r} Q${cx - bw / 2},${top} ${cx - bw / 2 + r},${top} H${cx + bw / 2 - r} Q${cx + bw / 2},${top} ${cx + bw / 2},${top + r} V${y(0)} Z` }, svg);
+      if (band >= 16) el("text", { x: cx, y: top - 5, "text-anchor": "middle", class: "bar-val" }, svg).textContent = d.bans;
+      const lab = el("text", { x: 0, y: 0, "text-anchor": "end", class: "tick", transform: `translate(${cx + 3} ${y(0) + 10}) rotate(-50)` }, svg);
+      lab.textContent = d.hero;
+      const hit = el("rect", { x: m.l + band * i, y: m.t, width: band, height: ih + labelSpace, class: "bar-hit", tabindex: 0, role: "button", "aria-label": `${d.hero}: banned in ${d.bans} games` }, svg);
+      const html = `<b>${esc(d.hero)}</b><div class="row"><span>Banned</span><span>${d.bans} games (${fmt(d.ban_rate)})</span></div>`;
+      const show = (pin) => { const s = svg.getBoundingClientRect().width / W; tip.show(html, cx * s, top * s, pin ? hit : null); };
+      hit.addEventListener("mouseenter", () => { if (!tip.pinned) show(false); });
+      hit.addEventListener("mouseleave", () => { if (!tip.pinned) tip.hide(); });
+      hit.addEventListener("focus", () => show(false));
+      hit.addEventListener("blur", () => tip.hide(true));
+      hit.addEventListener("click", (e) => { e.stopPropagation(); tip.pinned === hit ? tip.hide(true) : show(true); });
+    });
+    container.addEventListener("click", () => tip.hide(true));
+  }
+
+  function fillTable(heroes) {
+    const tb = $("#table tbody");
+    tb.innerHTML = [...heroes].sort((a, b) => b.picks - a.picks || b.bans - a.bans || a.hero.localeCompare(b.hero)).map((h) =>
+      `<tr><td>${esc(h.hero)}</td><td>${h.picks}</td><td>${fmt(h.pick_rate)}</td><td>${h.picks ? fmt(h.win_rate) : "—"}</td><td>${h.bans}</td><td>${fmt(h.ban_rate)}</td></tr>`
+    ).join("");
+  }
+
+  async function init() {
+    let data;
+    try {
+      const res = await fetch("data/latest.json", { cache: "no-cache" });
+      if (!res.ok) throw new Error(res.status);
+      data = await res.json();
+    } catch (e) {
+      $("#scatter").innerHTML = '<div class="empty">Data is not available yet. Check back after the next Saturday update.</div>';
+      $("#bars").innerHTML = "";
+      return;
+    }
+    $("#m-week").textContent = `${fmtDate(data.week.start)} – ${fmtDate(data.week.end)} (JST)`;
+    $("#m-games").textContent = data.games;
+    $("#m-updated").textContent = fmtUpdated(data.generatedAt);
+    $("#this-week-file").innerHTML = `This week's file: <a href="https://github.com/pmansd/deadlock-lab/blob/main/${esc(data.csv)}"><code>${esc(data.csv)}</code></a>`;
+
+    if (!data.games) {
+      const msg = '<div class="empty">There were no matches this week.</div>';
+      $("#scatter").innerHTML = msg;
+      $("#bars").innerHTML = msg;
+      fillTable(data.heroes);
+      return;
+    }
+    const render = () => { drawScatter($("#scatter"), data.heroes); drawBars($("#bars"), data.heroes); };
+    render();
+    fillTable(data.heroes);
+    let w = window.innerWidth, t;
+    window.addEventListener("resize", () => {
+      if (window.innerWidth === w) return;
+      w = window.innerWidth; clearTimeout(t); t = setTimeout(render, 150);
+    });
+  }
+  init();
+})();
+</script>
+</body>
+</html>

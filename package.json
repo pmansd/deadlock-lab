@@ -1,0 +1,10 @@
+{
+  "name": "deadlock-lab",
+  "private": true,
+  "type": "module",
+  "description": "Unofficial weekly Deadlock competitive stats (pick, win and ban rates) built from Deadfrag data.",
+  "scripts": {
+    "weekly": "node scripts/weekly.mjs"
+  },
+  "engines": { "node": ">=20" }
+}
