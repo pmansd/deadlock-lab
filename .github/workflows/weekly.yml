@@ -2,8 +2,12 @@ name: Weekly stats
 
 on:
   schedule:
-    # Every Saturday 00:00 JST (= Friday 15:00 UTC).
+    # Every Saturday 00:00 JST (= Friday 15:00 UTC). GitHub sometimes delays
+    # or drops scheduled runs, so retry at 02:00 and 05:00 JST; a retry for a
+    # week that is already saved finds no changes and commits nothing.
     - cron: "0 15 * * 5"
+    - cron: "0 17 * * 5"
+    - cron: "0 20 * * 5"
   workflow_dispatch:
     inputs:
       week_end:
