@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-14T05:53:48.271Z",
+  "generatedAt": "2026-11-14T06:21:17.284Z",
   "week": {
     "start": "2026-11-07",
     "end": "2026-11-13",
@@ -506,41 +506,11 @@
       "has_icon": true
     },
     {
-      "id": 1248737459,
-      "name": "Ammo Scavenger",
-      "name_ja": "アモ・スカベンジャー",
-      "slot": "spirit",
-      "tier": 1,
-      "purchases": 0,
-      "usage_rate": 0,
-      "has_icon": true
-    },
-    {
       "id": 2068250483,
       "name": "Frostbite Charm",
       "name_ja": "凍傷のチャーム",
       "slot": "spirit",
       "tier": 5,
-      "purchases": 0,
-      "usage_rate": 0,
-      "has_icon": true
-    },
-    {
-      "id": 3927044172,
-      "name": "Haunting Scream",
-      "name_ja": "ホーンテッドスクリーム",
-      "slot": "spirit",
-      "tier": 5,
-      "purchases": 0,
-      "usage_rate": 0,
-      "has_icon": true
-    },
-    {
-      "id": 2331566268,
-      "name": "Hex-Sealed Knuckles",
-      "name_ja": "ヘックスシールドナックル",
-      "slot": "spirit",
-      "tier": 3,
       "purchases": 0,
       "usage_rate": 0,
       "has_icon": true
@@ -586,39 +556,9 @@
       "has_icon": true
     },
     {
-      "id": 2329546537,
-      "name": "Rebirth",
-      "name_ja": "リザレクション",
-      "slot": "spirit",
-      "tier": 3,
-      "purchases": 0,
-      "usage_rate": 0,
-      "has_icon": true
-    },
-    {
       "id": 4121584236,
       "name": "Shrink Ray",
       "name_ja": "シュリンクレイ",
-      "slot": "spirit",
-      "tier": 5,
-      "purchases": 0,
-      "usage_rate": 0,
-      "has_icon": true
-    },
-    {
-      "id": 3913864662,
-      "name": "Soul Explosion",
-      "name_ja": "ソウルエクスプロージョン",
-      "slot": "spirit",
-      "tier": 3,
-      "purchases": 0,
-      "usage_rate": 0,
-      "has_icon": true
-    },
-    {
-      "id": 3893702034,
-      "name": "Timeless Emblem",
-      "name_ja": "不朽の紋章",
       "slot": "spirit",
       "tier": 5,
       "purchases": 0,
@@ -1176,36 +1116,6 @@
       "has_icon": true
     },
     {
-      "id": 564937160,
-      "name": "Aerial Supremacy",
-      "name_ja": "エアリアルマスタリー",
-      "slot": "vitality",
-      "tier": 5,
-      "purchases": 0,
-      "usage_rate": 0,
-      "has_icon": true
-    },
-    {
-      "id": 4238249888,
-      "name": "Ancient Shield",
-      "name_ja": "エンシェントシールド",
-      "slot": "vitality",
-      "tier": 5,
-      "purchases": 0,
-      "usage_rate": 0,
-      "has_icon": true
-    },
-    {
-      "id": 3713423303,
-      "name": "Bullet Armor",
-      "name_ja": "バレットアーマー",
-      "slot": "vitality",
-      "tier": 2,
-      "purchases": 0,
-      "usage_rate": 0,
-      "has_icon": true
-    },
-    {
       "id": 3729138568,
       "name": "Celestial Blessing",
       "name_ja": "天の祝福",
@@ -1236,41 +1146,11 @@
       "has_icon": true
     },
     {
-      "id": 558396679,
-      "name": "Enduring Spirit",
-      "name_ja": "スピリットサステイン",
-      "slot": "vitality",
-      "tier": 1,
-      "purchases": 0,
-      "usage_rate": 0,
-      "has_icon": true
-    },
-    {
       "id": 230297145,
       "name": "Eternal Gift",
       "name_ja": "エターナルギフト",
       "slot": "vitality",
       "tier": 5,
-      "purchases": 0,
-      "usage_rate": 0,
-      "has_icon": true
-    },
-    {
-      "id": 1200177229,
-      "name": "Hexafoil Ward",
-      "name_ja": "ヘクサフォイルワード",
-      "slot": "vitality",
-      "tier": 3,
-      "purchases": 0,
-      "usage_rate": 0,
-      "has_icon": true
-    },
-    {
-      "id": 3830846077,
-      "name": "Majestic Leap - Disabled",
-      "name_ja": "マジェスティックリープ - 無効",
-      "slot": "vitality",
-      "tier": 3,
       "purchases": 0,
       "usage_rate": 0,
       "has_icon": true
@@ -1286,29 +1166,9 @@
       "has_icon": true
     },
     {
-      "id": 138320648,
-      "name": "Patron's Healing",
-      "name_ja": "パトロンヒーリング",
-      "slot": "vitality",
-      "tier": 1,
-      "purchases": 0,
-      "usage_rate": 0,
-      "has_icon": true
-    },
-    {
       "id": 1736094134,
       "name": "Seraphim Wings",
       "name_ja": "セラフィムウィング",
-      "slot": "vitality",
-      "tier": 5,
-      "purchases": 0,
-      "usage_rate": 0,
-      "has_icon": true
-    },
-    {
-      "id": 3456645009,
-      "name": "Shadow Step",
-      "name_ja": "シャドウステップ",
       "slot": "vitality",
       "tier": 5,
       "purchases": 0,
@@ -1324,36 +1184,6 @@
       "purchases": 0,
       "usage_rate": 0,
       "has_icon": true
-    },
-    {
-      "id": 4003032160,
-      "name": "Soul Rebirth",
-      "name_ja": "ソウルリザレクション",
-      "slot": "vitality",
-      "tier": 4,
-      "purchases": 0,
-      "usage_rate": 0,
-      "has_icon": true
-    },
-    {
-      "id": 223594321,
-      "name": "Spirit Armor",
-      "name_ja": "スピリットアーマー",
-      "slot": "vitality",
-      "tier": 2,
-      "purchases": 0,
-      "usage_rate": 0,
-      "has_icon": true
-    },
-    {
-      "id": 2858617477,
-      "name": "Toughness",
-      "name_ja": "タフネス",
-      "slot": "vitality",
-      "tier": 2,
-      "purchases": 0,
-      "usage_rate": 0,
-      "has_icon": false
     },
     {
       "id": 4104549924,
@@ -1886,46 +1716,6 @@
       "has_icon": true
     },
     {
-      "id": 4149380528,
-      "name": "Apex Combat",
-      "name_ja": "エーペックスコンバット",
-      "slot": "weapon",
-      "tier": 5,
-      "purchases": 0,
-      "usage_rate": 0,
-      "has_icon": true
-    },
-    {
-      "id": 194116661,
-      "name": "Conjure Missiles",
-      "name_ja": "サモンミサイル",
-      "slot": "weapon",
-      "tier": 4,
-      "purchases": 0,
-      "usage_rate": 0,
-      "has_icon": true
-    },
-    {
-      "id": 3346798998,
-      "name": "Endless Magazine",
-      "name_ja": "エンドレスマガジン",
-      "slot": "weapon",
-      "tier": 4,
-      "purchases": 0,
-      "usage_rate": 0,
-      "has_icon": false
-    },
-    {
-      "id": 1497973293,
-      "name": "Glass Cannon v2",
-      "name_ja": "グラスキャノン v2",
-      "slot": "weapon",
-      "tier": 4,
-      "purchases": 0,
-      "usage_rate": 0,
-      "has_icon": true
-    },
-    {
       "id": 3568217437,
       "name": "Haunting Shot",
       "name_ja": "ホーンテッドショット",
@@ -1951,16 +1741,6 @@
       "name_ja": "ルーンガントレット",
       "slot": "weapon",
       "tier": 5,
-      "purchases": 0,
-      "usage_rate": 0,
-      "has_icon": true
-    },
-    {
-      "id": 3133167885,
-      "name": "Silencer",
-      "name_ja": "サイレンサー",
-      "slot": "weapon",
-      "tier": 4,
       "purchases": 0,
       "usage_rate": 0,
       "has_icon": true
