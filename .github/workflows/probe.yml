@@ -1,0 +1,23 @@
+name: probe
+on:
+  push:
+    branches: [probe-api]
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          curl -sS https://api.deadlock-api.com/openapi.json -o o.json
+          python3 - <<'PY'
+          import json
+          o=json.load(open('o.json'))
+          for p in o['paths']:
+            if any(k in p for k in ['item-stats','badge','rank','distribution']):
+              g=o['paths'][p].get('get',{})
+              print('==',p,'|',g.get('summary'))
+              for x in g.get('parameters',[]): print('  ',x['name'],'|',json.dumps(x.get('schema'))[:120],'|',(x.get('description') or '')[:200].replace('\n',' '))
+          PY
+          echo; echo "== badge distribution sample"
+          curl -sS "https://api.deadlock-api.com/v1/analytics/badge-distribution?min_unix_timestamp=$(( $(date +%s) - 7*86400 ))" | head -c 3000
+          echo; echo "== item-stats sample"
+          curl -sS "https://api.deadlock-api.com/v1/analytics/item-stats?min_unix_timestamp=$(( $(date +%s) - 7*86400 ))&min_average_badge=100" | head -c 1500
