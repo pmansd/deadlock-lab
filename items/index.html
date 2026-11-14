@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Deadlock アイテム使用率</title>
+<meta name="description" content="Deadlock の高ランク帯（上位約10%）のランクマッチにおける、アイテムの週間使用率です。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23161a20'/%3E%3Cpath d='M9 24V14M16 24V8M23 24V18' stroke='%23e8b04a' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+:root {
+  --bg: #f6f4ef; --surface: #ffffff; --ink: #1b1d21; --ink-2: #4a4f58; --ink-3: #7a808a;
+  --rule: #e2ded5; --grid: #ece8e0; --accent: #b0700f; --accent-soft: #f3e3c4;
+  --weapon: #c46f12; --vitality: #3f8a3a; --spirit: #7b55c4;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111317; --surface: #181b21; --ink: #eceae5; --ink-2: #b4b8bf; --ink-3: #848a94;
+    --rule: #2a2f37; --grid: #232830; --accent: #e8b04a; --accent-soft: #3a2e17;
+    --weapon: #e8963a; --vitality: #6cbb5f; --spirit: #a585e6;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111317; --surface: #181b21; --ink: #eceae5; --ink-2: #b4b8bf; --ink-3: #848a94;
+  --rule: #2a2f37; --grid: #232830; --accent: #e8b04a; --accent-soft: #3a2e17;
+  --weapon: #e8963a; --vitality: #6cbb5f; --spirit: #a585e6;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.7 system-ui, -apple-system, "Segoe UI", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", Meiryo, sans-serif; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+header.top { padding: 28px 0 28px; border-bottom: 1px solid var(--rule); }
+.top-bar { display: flex; justify-content: flex-end; margin: 0 0 18px; }
+.lang-switch { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--ink-2); }
+.lang-switch .seg { display: inline-flex; border: 1px solid var(--rule); border-radius: 999px; padding: 2px; background: var(--surface); }
+.lang-switch button { font: inherit; font-size: 13px; border: 0; background: transparent; color: var(--ink-2); padding: 5px 12px; border-radius: 999px; cursor: pointer; }
+.lang-switch button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+.eyebrow { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin: 0 0 10px; }
+h1 { font-size: clamp(28px, 5vw, 44px); line-height: 1.2; margin: 0 0 10px; letter-spacing: -.01em; word-break: auto-phrase; }
+.sub { margin: 0; color: var(--ink-2); font-size: 17px; word-break: auto-phrase; }
+.meta { display: flex; flex-wrap: wrap; gap: 8px 28px; margin: 22px 0 0; padding: 0; list-style: none; font-size: 14px; color: var(--ink-2); }
+.meta b { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
+section { padding: 36px 0; border-bottom: 1px solid var(--rule); }
+section:last-of-type { border-bottom: 0; }
+h2 { font-size: 22px; margin: 0 0 6px; display: flex; align-items: center; gap: 10px; }
+h2 .sw { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+.lede { color: var(--ink-2); margin: 0 0 18px; max-width: 72ch; word-break: auto-phrase; }
+.card { background: var(--surface); border: 1px solid var(--rule); border-radius: 12px; padding: 12px; }
+.chart { position: relative; width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.chart svg { display: block; max-width: none; overflow: visible; }
+.note { font-size: 14px; color: var(--ink-3); margin: 12px 2px 0; }
+.scroll-hint { display: none; }
+.chart.scroll + .scroll-hint { display: block; }
+.empty { padding: 48px 16px; text-align: center; color: var(--ink-2); font-size: 18px; }
+.tip { position: absolute; pointer-events: none; z-index: 5; min-width: 170px; max-width: 260px; background: var(--ink); color: var(--bg); border-radius: 8px; padding: 8px 10px; font-size: 13px; line-height: 1.45; box-shadow: 0 6px 24px rgba(0,0,0,.25); opacity: 0; transform: translateY(4px); transition: opacity .12s, transform .12s; }
+.tip.on { opacity: 1; transform: none; }
+.tip b { display: block; font-size: 14px; }
+.tip .alt { opacity: .7; font-size: 12px; margin-bottom: 4px; }
+.tip .row { display: flex; justify-content: space-between; gap: 12px; font-variant-numeric: tabular-nums; }
+.prose p, .prose li { color: var(--ink-2); max-width: 74ch; }
+.prose ul { padding-left: 20px; margin: 8px 0; }
+.prose code { font-size: 14px; background: var(--accent-soft); padding: 1px 5px; border-radius: 4px; color: var(--ink); }
+a { color: var(--accent); text-underline-offset: 2px; }
+footer { padding: 28px 0 48px; color: var(--ink-3); font-size: 13px; }
+svg text { font-family: inherit; }
+.tick { fill: var(--ink-3); font-size: 11px; font-variant-numeric: tabular-nums; }
+.name { fill: var(--ink-2); font-size: 12px; }
+.val { fill: var(--ink-2); font-size: 11px; font-variant-numeric: tabular-nums; }
+.hit { fill: transparent; cursor: pointer; }
+.hit:focus { outline: none; }
+.hit:focus-visible { stroke: var(--ink); stroke-width: 1.5; }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="top-bar">
+      <div class="lang-switch" role="group" aria-label="アイテム名の表記">
+        <span>名前の表記</span>
+        <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">English</button></span>
+      </div>
+    </div>
+    <p class="eyebrow">Deadlock · 高ランク帯 · 毎週更新</p>
+    <h1>Deadlock アイテム使用率</h1>
+    <p class="sub">高ランク帯（上位約10%）のランクマッチで、各アイテムがどれだけ買われたかの週間統計です。</p>
+    <ul class="meta">
+      <li>集計期間：<b id="m-week">—</b></li>
+      <li>対象：<b id="m-badge">—</b></li>
+      <li>試合数：<b id="m-games">—</b></li>
+      <li>最終更新：<b id="m-updated">—</b></li>
+    </ul>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="weapon">
+    <h2><span class="sw" style="background:var(--weapon)"></span>武器</h2>
+    <p class="lede">武器カテゴリで使用率の高い上位20アイテムです。</p>
+    <div class="card"><div class="chart" data-slot="weapon"></div><p class="note scroll-hint">横にスワイプするとすべてのアイテムを確認できます。</p></div>
+  </section>
+  <section id="vitality">
+    <h2><span class="sw" style="background:var(--vitality)"></span>バイタリティ</h2>
+    <p class="lede">バイタリティカテゴリで使用率の高い上位20アイテムです。</p>
+    <div class="card"><div class="chart" data-slot="vitality"></div><p class="note scroll-hint">横にスワイプするとすべてのアイテムを確認できます。</p></div>
+  </section>
+  <section id="spirit">
+    <h2><span class="sw" style="background:var(--spirit)"></span>スピリット</h2>
+    <p class="lede">スピリットカテゴリで使用率の高い上位20アイテムです。</p>
+    <div class="card"><div class="chart" data-slot="spirit"></div><p class="note scroll-hint">横にスワイプするとすべてのアイテムを確認できます。</p></div>
+  </section>
+
+  <section class="prose" id="method">
+    <h2>集計方法</h2>
+    <ul>
+      <li><b>データ元：</b><a href="https://deadlock-api.com/" rel="noopener">Deadlock API</a> が公開しているランクマッチのデータ。</li>
+      <li><b>対象の試合：</b>その週のランクマッチを両チームの平均ランクの高い順に並べ、上位約10%に入る試合。リージョンは問いません。境目のランクは毎週の分布から決めるため、週によって少し変わります。</li>
+      <li><b>集計期間：</b>日本時間の土曜 0:00〜金曜 24:00。毎週土曜に自動で更新します。</li>
+      <li><b>使用率</b> ＝ そのアイテムを1回以上買ったプレイヤー数 ÷ 対象の試合の全プレイヤー数（1試合12人）。後で売却した場合も「買った」に数えます。</li>
+      <li>グラフはカテゴリごとに使用率の上位20アイテムです。全アイテムの数値は <a href="https://github.com/pmansd/deadlock-lab/tree/main/data/items">GitHub の data/items フォルダ</a>に週ごとの CSV で保存しています（<span id="this-week-file"></span>）。</li>
+      <li>グラフの棒にカーソルを合わせるかタップすると、購入人数と前週の使用率を確認できます。</li>
+    </ul>
+  </section>
+
+  <section class="prose" id="disclaimer">
+    <h2>注意事項</h2>
+    <p>このサイトは非公式のファンプロジェクトです。Valve および Deadlock API とは関係がなく、承認も受けていません。Deadlock とアイテムのアイコンは Valve Corporation の著作物・商標です。</p>
+    <p>使用率は「どれだけ買われたか」であり、アイテムの強さそのものではありません。使うヒーローがピックされていない、相手の構成によって買う、といった事情でも数値は動きます。各週の数値は更新時点のデータで、後から追加された試合は反映していません。</p>
+  </section>
+</main>
+
+<footer><div class="wrap">データ元：<a href="https://deadlock-api.com/" rel="noopener">Deadlock API</a> · ソースコードとデータ：<a href="https://github.com/pmansd/deadlock-lab">GitHub</a></div></footer>
+
+<script>
+(() => {
+  const NS = "http://www.w3.org/2000/svg";
+  const $ = (s) => document.querySelector(s);
+  const el = (tag, attrs = {}, parent) => {
+    const n = document.createElementNS(NS, tag);
+    for (const [k, v] of Object.entries(attrs)) n.setAttribute(k, v);
+    if (parent) parent.appendChild(n);
+    return n;
+  };
+  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const pct = (v) => (Math.round(v * 10) / 10).toFixed(1) + "%";
+  const fmtDate = (iso) => { const [y, m, d] = iso.split("-").map(Number); return `${y}年${m}月${d}日`; };
+  const fmtUpdated = (iso) => {
+    const p = Object.fromEntries(new Intl.DateTimeFormat("en-US", { timeZone: "Asia/Tokyo", year: "numeric", month: "numeric", day: "numeric", hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).formatToParts(new Date(iso)).map((x) => [x.type, x.value]));
+    return `${p.year}年${p.month}月${p.day}日 ${p.hour}:${p.minute}（日本時間）`;
+  };
+
+  let LANG = "ja";
+  try { if (localStorage.getItem("nameLang") === "en") LANG = "en"; } catch (e) {}
+  const IN = (i) => (LANG === "ja" && i.name_ja) || i.name;
+  const ALT = (i) => (LANG === "ja" ? (i.name !== i.name_ja ? i.name : "") : (i.name_ja && i.name_ja !== i.name ? i.name_ja : ""));
+
+  let data = null;
+
+  function makeTip(container) {
+    const tip = document.createElement("div");
+    tip.className = "tip";
+    tip.setAttribute("role", "status");
+    container.appendChild(tip);
+    let pinned = null;
+    return {
+      show(html, x, y, owner) {
+        tip.innerHTML = html; tip.classList.add("on");
+        const left0 = container.scrollLeft, cw = container.clientWidth;
+        const tw = tip.offsetWidth, th = tip.offsetHeight;
+        let left = x + 12, top = y - th - 8;
+        if (left + tw > left0 + cw) left = Math.max(left0, x - tw - 12);
+        if (top < 0) top = y + 12;
+        tip.style.left = left + "px"; tip.style.top = top + "px";
+        pinned = owner || null;
+      },
+      hide(force) { if (force || !pinned) { tip.classList.remove("on"); pinned = null; } },
+      get pinned() { return pinned; },
+    };
+  }
+
+  function drawSlot(container, slot) {
+    container.innerHTML = "";
+    const items = data.items.filter((i) => i.slot === slot).sort((a, b) => b.usage_rate - a.usage_rate || IN(a).localeCompare(IN(b), LANG)).slice(0, 20);
+    if (!items.length || !items[0].purchases) { container.innerHTML = '<div class="empty">今週のデータはありません。</div>'; return; }
+    const prev = (data.previous && data.previous.rates) || null;
+
+    const band = 48, labelSpace = 150, icon = 30;
+    const avail = container.clientWidth;
+    const W = Math.max(avail, items.length * band + 50);
+    const H = 300 + labelSpace;
+    const m = { t: 20, r: 8, b: labelSpace, l: 84 }; // wide left margin: the first rotated name extends left
+    const iw = W - m.l - m.r, ih = H - m.t - m.b;
+    const step0 = iw / items.length;
+    const maxV = Math.max(...items.map((i) => i.usage_rate));
+    const step = maxV <= 10 ? 2 : maxV <= 25 ? 5 : maxV <= 60 ? 10 : 20;
+    const yMax = Math.ceil(maxV / step) * step || step;
+    const y = (v) => m.t + ih - (v / yMax) * ih;
+    const bw = Math.min(34, step0 - 6);
+
+    const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, width: W, height: H, role: "img", "aria-label": `${slot} の使用率上位20アイテムの棒グラフ` }, container);
+    container.classList.toggle("scroll", W > avail + 1);
+    for (let v = 0; v <= yMax + 1e-9; v += step) {
+      el("line", { x1: m.l, x2: W - m.r, y1: y(v), y2: y(v), stroke: "var(--grid)", "stroke-width": 1 }, svg);
+      el("text", { x: m.l - 8, y: y(v) + 4, "text-anchor": "end", class: "tick" }, svg).textContent = v + "%";
+    }
+    const tip = makeTip(container);
+    items.forEach((it, i) => {
+      const cx = m.l + step0 * i + step0 / 2;
+      const top = y(it.usage_rate), h = Math.max(0, y(0) - top);
+      const r = Math.min(4, bw / 2, h);
+      el("path", { fill: `var(--${slot})`, d: `M${cx - bw / 2},${y(0)} V${top + r} Q${cx - bw / 2},${top} ${cx - bw / 2 + r},${top} H${cx + bw / 2 - r} Q${cx + bw / 2},${top} ${cx + bw / 2},${top + r} V${y(0)} Z` }, svg);
+      el("text", { x: cx, y: top - 5, "text-anchor": "middle", class: "val" }, svg).textContent = (Math.round(it.usage_rate * 10) / 10).toFixed(1);
+      if (it.has_icon) {
+        el("image", { href: `icons/${it.id}.webp`, x: cx - icon / 2, y: y(0) + 6, width: icon, height: icon }, svg);
+      }
+      const lab = el("text", { x: 0, y: 0, "text-anchor": "end", class: "name", transform: `translate(${cx + 4} ${y(0) + icon + 14}) rotate(-50)` }, svg);
+      lab.textContent = IN(it);
+      const hit = el("rect", { x: m.l + step0 * i, y: m.t, width: step0, height: ih + labelSpace, class: "hit", tabindex: 0, role: "button", "aria-label": `${IN(it)}：使用率 ${pct(it.usage_rate)}` }, svg);
+      const p = prev && prev[it.id];
+      const diff = p != null ? it.usage_rate - p : null;
+      const html = `<b>${esc(IN(it))}</b>${ALT(it) ? `<div class="alt">${esc(ALT(it))}</div>` : ""}` +
+        `<div class="row"><span>Tier</span><span>T${it.tier}</span></div>` +
+        `<div class="row"><span>使用率</span><span>${pct(it.usage_rate)}</span></div>` +
+        `<div class="row"><span>購入人数</span><span>${it.purchases.toLocaleString("ja-JP")}人</span></div>` +
+        (p != null ? `<div class="row"><span>前週</span><span>${pct(p)}（${diff >= 0 ? "+" : "−"}${Math.abs(Math.round(diff * 10) / 10).toFixed(1)}pt）</span></div>` : "");
+      const show = (pin) => tip.show(html, cx, top, pin ? hit : null);
+      hit.addEventListener("mouseenter", () => { if (!tip.pinned) show(false); });
+      hit.addEventListener("mouseleave", () => { if (!tip.pinned) tip.hide(); });
+      hit.addEventListener("focus", () => show(false));
+      hit.addEventListener("blur", () => { if (!tip.pinned) tip.hide(true); });
+      hit.addEventListener("click", (e) => { e.stopPropagation(); tip.pinned === hit ? tip.hide(true) : show(true); });
+    });
+    container.addEventListener("click", () => tip.hide(true));
+  }
+
+  const render = () => document.querySelectorAll(".chart[data-slot]").forEach((c) => drawSlot(c, c.dataset.slot));
+
+  function setLang(lang) {
+    LANG = lang;
+    try { localStorage.setItem("nameLang", lang); } catch (e) {}
+    document.querySelectorAll(".lang-switch [data-lang]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
+    if (data) { render(); setBadge(); }
+  }
+  document.querySelectorAll(".lang-switch [data-lang]").forEach((b) => {
+    b.setAttribute("aria-pressed", String(b.dataset.lang === LANG));
+    b.addEventListener("click", () => setLang(b.dataset.lang));
+  });
+  const setBadge = () => { $("#m-badge").textContent = `平均ランク ${LANG === "ja" ? data.badge.ja : data.badge.en} 以上（上位${data.badge.share}%）`; };
+
+  async function init() {
+    try {
+      const res = await fetch("../data/items/latest.json", { cache: "no-cache" });
+      if (!res.ok) throw new Error(res.status);
+      data = await res.json();
+    } catch (e) {
+      document.querySelectorAll(".chart[data-slot]").forEach((c) => (c.innerHTML = '<div class="empty">データはまだありません。次の土曜日の更新後にご覧ください。</div>'));
+      return;
+    }
+    $("#m-week").textContent = `${fmtDate(data.week.start)}〜${fmtDate(data.week.end)}`;
+    $("#m-games").textContent = data.matches.toLocaleString("ja-JP");
+    $("#m-updated").textContent = fmtUpdated(data.generatedAt);
+    $("#this-week-file").innerHTML = `今週のファイル：<a href="https://github.com/pmansd/deadlock-lab/blob/main/${esc(data.csv)}"><code>${esc(data.csv)}</code></a>`;
+    setBadge();
+    render();
+    let w = window.innerWidth, t;
+    window.addEventListener("resize", () => { if (window.innerWidth === w) return; w = window.innerWidth; clearTimeout(t); t = setTimeout(render, 150); });
+  }
+  init();
+})();
+</script>
+</body>
+</html>

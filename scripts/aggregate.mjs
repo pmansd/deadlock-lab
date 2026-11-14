@@ -60,7 +60,7 @@ function jstMidnight(y, m, d) {
 const pad = (n) => String(n).padStart(2, "0");
 const ymd = ({ y, m, d }) => `${y}-${pad(m)}-${pad(d)}`;
 
-function resolveWeek(weekEnd) {
+export function resolveWeek(weekEnd) {
   let endMs;
   if (weekEnd) {
     const [y, m, d] = weekEnd.split("-").map(Number);
