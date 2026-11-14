@@ -81,7 +81,8 @@ async function main() {
     fetchRetry(`${API}/v1/assets/ranks?language=japanese`).catch(() => []),
   ]);
   const jaName = new Map(itemsJa.map((i) => [i.id, i.name]));
-  const shop = itemsEn.filter(isShopItem);
+  // Only items currently sold in the shop (drops removed/disabled/test entries).
+  const shop = itemsEn.filter((i) => isShopItem(i) && i.shopable !== false);
 
   const tier = Math.floor(minBadge / 10), sub = minBadge % 10;
   const rankName = (list) => (list.find((r) => r.tier === tier) || {}).name;

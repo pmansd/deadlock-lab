@@ -206,7 +206,7 @@ svg text { font-family: inherit; }
   function drawSlot(container, slot) {
     container.innerHTML = "";
     const tier = tierSel[slot];
-    const items = data.items.filter((i) => i.slot === slot && (tier === "all" || String(i.tier) === tier))
+    const items = data.items.filter((i) => i.slot === slot && i.purchases > 0 && (tier === "all" || String(i.tier) === tier))
       .sort((a, b) => b.usage_rate - a.usage_rate || IN(a).localeCompare(IN(b), LANG)).slice(0, TOP);
     if (!items.length || !items[0].purchases) { container.innerHTML = `<div class="empty">${tier === "all" ? "今週のデータはありません。" : "このティアのアイテムは今週購入されていません。"}</div>`; container.classList.remove("scroll"); return; }
     const prev = (data.previous && data.previous.rates) || null;
