@@ -7,17 +7,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          curl -sS https://api.deadlock-api.com/openapi.json -o o.json
-          python3 - <<'PY'
-          import json
-          o=json.load(open('o.json'))
-          for p in o['paths']:
-            if any(k in p for k in ['item-stats','badge','rank','distribution']):
-              g=o['paths'][p].get('get',{})
-              print('==',p,'|',g.get('summary'))
-              for x in g.get('parameters',[]): print('  ',x['name'],'|',json.dumps(x.get('schema'))[:120],'|',(x.get('description') or '')[:200].replace('\n',' '))
-          PY
-          echo; echo "== badge distribution sample"
-          curl -sS "https://api.deadlock-api.com/v1/analytics/badge-distribution?min_unix_timestamp=$(( $(date +%s) - 7*86400 ))" | head -c 3000
-          echo; echo "== item-stats sample"
-          curl -sS "https://api.deadlock-api.com/v1/analytics/item-stats?min_unix_timestamp=$(( $(date +%s) - 7*86400 ))&min_average_badge=100" | head -c 1500
+          A=https://api.deadlock-api.com
+          NOW=$(date +%s); FROM=$(( NOW - 7*86400 ))
+          curl -sS $A/openapi.json -o o.json
+          python3 -c "
+          import json; o=json.load(open('o.json'))
+          g=o['paths']['/v1/analytics/hero-stats']['get']
+          print('hero-stats params:', [x['name'] for x in g.get('parameters',[])])
+          "
+          echo "== badge dist ranked"; curl -sS "$A/v1/analytics/badge-distribution?match_mode=ranked&min_unix_timestamp=$FROM&max_unix_timestamp=$NOW" > bd.json
+          python3 -c "
+          import json; b=json.load(open('bd.json')); tot=sum(x['total_matches'] for x in b); print('total',tot, 'max badge', max(x['badge_level'] for x in b))
+          acc=0
+          for x in sorted(b,key=lambda x:-x['badge_level']):
+            acc+=x['total_matches']; print(x['badge_level'], x['total_matches'], round(acc/tot*100,1))
+            if acc/tot>0.2: break
+          "
+          echo "== hero-stats sum (badge>=81)"; curl -sS "$A/v1/analytics/hero-stats?match_mode=ranked&min_unix_timestamp=$FROM&max_unix_timestamp=$NOW&min_average_badge=81" > hs.json; python3 -c "
+          import json; h=json.load(open('hs.json')); print(type(h).__name__, len(h)); print(json.dumps(h[0])[:400]); print('sum matches', sum(x.get('matches',0) for x in h))"
+          echo "== item-stats (badge>=81)"; curl -sS "$A/v1/analytics/item-stats?match_mode=ranked&min_unix_timestamp=$FROM&max_unix_timestamp=$NOW&min_average_badge=81&min_matches=1" > is.json; python3 -c "
+          import json; i=json.load(open('is.json')); print(len(i)); print('max matches', max(x['matches'] for x in i))"
+          echo "== ranks"; curl -sS "$A/v1/assets/ranks?language=japanese" | head -c 1200; echo
+          echo "== item image fields"; curl -sS "$A/v1/assets/items/by-type/upgrade?language=english" | python3 -c "
+          import json,sys; it=[x for x in json.load(sys.stdin) if x.get('shopable')]; print(len(it)); x=it[0]; print({k:x.get(k) for k in ['id','name','image','image_webp','shop_image','shop_image_webp','item_slot_type','item_tier']})"
