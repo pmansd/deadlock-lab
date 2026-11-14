@@ -67,6 +67,11 @@ svg text { font-family: inherit; }
 .name { fill: var(--ink-2); font-size: 12px; }
 .val { fill: var(--ink-2); font-size: 11px; font-variant-numeric: tabular-nums; }
 .hit { fill: transparent; cursor: pointer; }
+.tier-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 12px; }
+.tier-tab { font: inherit; font-size: 13px; line-height: 1.2; padding: 7px 14px; border-radius: 999px; cursor: pointer; border: 1px solid var(--rule); background: var(--surface); color: var(--ink); font-variant-numeric: tabular-nums; }
+.tier-tab:hover { border-color: var(--ink-3); }
+.tier-tab[aria-selected="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.tier-tab:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .hit:focus { outline: none; }
 .hit:focus-visible { stroke: var(--ink); stroke-width: 1.5; }
 </style>
@@ -95,17 +100,20 @@ svg text { font-family: inherit; }
 <main class="wrap">
   <section id="weapon">
     <h2><span class="sw" style="background:var(--weapon)"></span>武器</h2>
-    <p class="lede">武器カテゴリで使用率の高い上位20アイテムです。</p>
+    <p class="lede">武器カテゴリで使用率の高い上位10アイテムです。タブでティアを切り替えられます。</p>
+    <div class="tier-tabs" role="tablist" aria-label="武器のティア" data-tabs="weapon"></div>
     <div class="card"><div class="chart" data-slot="weapon"></div><p class="note scroll-hint">横にスワイプするとすべてのアイテムを確認できます。</p></div>
   </section>
   <section id="vitality">
     <h2><span class="sw" style="background:var(--vitality)"></span>バイタリティ</h2>
-    <p class="lede">バイタリティカテゴリで使用率の高い上位20アイテムです。</p>
+    <p class="lede">バイタリティカテゴリで使用率の高い上位10アイテムです。タブでティアを切り替えられます。</p>
+    <div class="tier-tabs" role="tablist" aria-label="バイタリティのティア" data-tabs="vitality"></div>
     <div class="card"><div class="chart" data-slot="vitality"></div><p class="note scroll-hint">横にスワイプするとすべてのアイテムを確認できます。</p></div>
   </section>
   <section id="spirit">
     <h2><span class="sw" style="background:var(--spirit)"></span>スピリット</h2>
-    <p class="lede">スピリットカテゴリで使用率の高い上位20アイテムです。</p>
+    <p class="lede">スピリットカテゴリで使用率の高い上位10アイテムです。タブでティアを切り替えられます。</p>
+    <div class="tier-tabs" role="tablist" aria-label="スピリットのティア" data-tabs="spirit"></div>
     <div class="card"><div class="chart" data-slot="spirit"></div><p class="note scroll-hint">横にスワイプするとすべてのアイテムを確認できます。</p></div>
   </section>
 
@@ -116,7 +124,7 @@ svg text { font-family: inherit; }
       <li><b>対象の試合：</b>その週のランクマッチを両チームの平均ランクの高い順に並べ、上位約10%に入る試合。リージョンは問いません。境目のランクは毎週の分布から決めるため、週によって少し変わります。</li>
       <li><b>集計期間：</b>日本時間の土曜 0:00〜金曜 24:00。毎週土曜に自動で更新します。</li>
       <li><b>使用率</b> ＝ そのアイテムを1回以上買ったプレイヤー数 ÷ 対象の試合の全プレイヤー数（1試合12人）。後で売却した場合も「買った」に数えます。</li>
-      <li>グラフはカテゴリごとに使用率の上位20アイテムです。全アイテムの数値は <a href="https://github.com/pmansd/deadlock-lab/tree/main/data/items">GitHub の data/items フォルダ</a>に週ごとの CSV で保存しています（<span id="this-week-file"></span>）。</li>
+      <li>グラフはカテゴリごと・ティアごとに使用率の上位10アイテムです（「すべて」はティアを問わない上位10）。全アイテムの数値は <a href="https://github.com/pmansd/deadlock-lab/tree/main/data/items">GitHub の data/items フォルダ</a>に週ごとの CSV で保存しています（<span id="this-week-file"></span>）。</li>
       <li>グラフの棒にカーソルを合わせるかタップすると、購入人数と前週の使用率を確認できます。</li>
     </ul>
   </section>
@@ -177,10 +185,30 @@ svg text { font-family: inherit; }
     };
   }
 
+  const TOP = 10;
+  const tierSel = { weapon: "all", vitality: "all", spirit: "all" };
+
+  function buildTierTabs(box) {
+    const slot = box.dataset.tabs;
+    // Only tiers with at least one purchase this week (T5 items never show up in purchase data).
+    const tiers = [...new Set(data.items.filter((i) => i.slot === slot && i.purchases > 0).map((i) => i.tier))].filter(Boolean).sort((a, b) => a - b);
+    box.innerHTML = [["all", "すべて"], ...tiers.map((t) => [String(t), "T" + t])].map(([v, label]) =>
+      `<button type="button" role="tab" class="tier-tab" data-tier="${v}" aria-selected="${tierSel[slot] === v}">${label}</button>`).join("");
+    box.addEventListener("click", (e) => {
+      const b = e.target.closest("[data-tier]");
+      if (!b) return;
+      tierSel[slot] = b.dataset.tier;
+      box.querySelectorAll("[data-tier]").forEach((x) => x.setAttribute("aria-selected", String(x === b)));
+      drawSlot(document.querySelector(`.chart[data-slot="${slot}"]`), slot);
+    });
+  }
+
   function drawSlot(container, slot) {
     container.innerHTML = "";
-    const items = data.items.filter((i) => i.slot === slot).sort((a, b) => b.usage_rate - a.usage_rate || IN(a).localeCompare(IN(b), LANG)).slice(0, 20);
-    if (!items.length || !items[0].purchases) { container.innerHTML = '<div class="empty">今週のデータはありません。</div>'; return; }
+    const tier = tierSel[slot];
+    const items = data.items.filter((i) => i.slot === slot && (tier === "all" || String(i.tier) === tier))
+      .sort((a, b) => b.usage_rate - a.usage_rate || IN(a).localeCompare(IN(b), LANG)).slice(0, TOP);
+    if (!items.length || !items[0].purchases) { container.innerHTML = `<div class="empty">${tier === "all" ? "今週のデータはありません。" : "このティアのアイテムは今週購入されていません。"}</div>`; container.classList.remove("scroll"); return; }
     const prev = (data.previous && data.previous.rates) || null;
 
     const band = 48, labelSpace = 200, icon = 30;
@@ -196,7 +224,7 @@ svg text { font-family: inherit; }
     const y = (v) => m.t + ih - (v / yMax) * ih;
     const bw = Math.min(34, step0 - 6);
 
-    const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, width: W, height: H, role: "img", "aria-label": `${slot} の使用率上位20アイテムの棒グラフ` }, container);
+    const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, width: W, height: H, role: "img", "aria-label": `${slot}${tier === "all" ? "" : " T" + tier} の使用率上位${TOP}アイテムの棒グラフ` }, container);
     container.classList.toggle("scroll", W > avail + 1);
     for (let v = 0; v <= yMax + 1e-9; v += step) {
       el("line", { x1: m.l, x2: W - m.r, y1: y(v), y2: y(v), stroke: "var(--grid)", "stroke-width": 1 }, svg);
@@ -260,6 +288,7 @@ svg text { font-family: inherit; }
     $("#m-updated").textContent = fmtUpdated(data.generatedAt);
     $("#this-week-file").innerHTML = `今週のファイル：<a href="https://github.com/pmansd/deadlock-lab/blob/main/${esc(data.csv)}"><code>${esc(data.csv)}</code></a>`;
     setBadge();
+    document.querySelectorAll(".tier-tabs[data-tabs]").forEach(buildTierTabs);
     render();
     let w = window.innerWidth, t;
     window.addEventListener("resize", () => { if (window.innerWidth === w) return; w = window.innerWidth; clearTimeout(t); t = setTimeout(render, 150); });
