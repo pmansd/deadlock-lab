@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-14T06:21:17.284Z",
+  "generatedAt": "2026-11-14T06:25:06.818Z",
   "week": {
     "start": "2026-11-07",
     "end": "2026-11-13",
@@ -503,76 +503,6 @@
       "tier": 4,
       "purchases": 1643,
       "usage_rate": 0.54,
-      "has_icon": true
-    },
-    {
-      "id": 2068250483,
-      "name": "Frostbite Charm",
-      "name_ja": "凍傷のチャーム",
-      "slot": "spirit",
-      "tier": 5,
-      "purchases": 0,
-      "usage_rate": 0,
-      "has_icon": true
-    },
-    {
-      "id": 4050602737,
-      "name": "Mystic Conduit",
-      "name_ja": "ミスティックコンジット",
-      "slot": "spirit",
-      "tier": 5,
-      "purchases": 0,
-      "usage_rate": 0,
-      "has_icon": true
-    },
-    {
-      "id": 2054088113,
-      "name": "Mystical Piano",
-      "name_ja": "ミスティカルピアノ",
-      "slot": "spirit",
-      "tier": 5,
-      "purchases": 0,
-      "usage_rate": 0,
-      "has_icon": true
-    },
-    {
-      "id": 424779525,
-      "name": "Omnicharge Signet",
-      "name_ja": "オムニチャージ",
-      "slot": "spirit",
-      "tier": 5,
-      "purchases": 0,
-      "usage_rate": 0,
-      "has_icon": true
-    },
-    {
-      "id": 1132564516,
-      "name": "Prism Blast",
-      "name_ja": "プリズムブラスト",
-      "slot": "spirit",
-      "tier": 5,
-      "purchases": 0,
-      "usage_rate": 0,
-      "has_icon": true
-    },
-    {
-      "id": 4121584236,
-      "name": "Shrink Ray",
-      "name_ja": "シュリンクレイ",
-      "slot": "spirit",
-      "tier": 5,
-      "purchases": 0,
-      "usage_rate": 0,
-      "has_icon": true
-    },
-    {
-      "id": 1558545403,
-      "name": "Unstable Concoction",
-      "name_ja": "不安定な調合薬",
-      "slot": "spirit",
-      "tier": 5,
-      "purchases": 0,
-      "usage_rate": 0,
       "has_icon": true
     },
     {
@@ -1116,76 +1046,6 @@
       "has_icon": true
     },
     {
-      "id": 3729138568,
-      "name": "Celestial Blessing",
-      "name_ja": "天の祝福",
-      "slot": "vitality",
-      "tier": 5,
-      "purchases": 0,
-      "usage_rate": 0,
-      "has_icon": true
-    },
-    {
-      "id": 3523480953,
-      "name": "Cloak of Opportunity",
-      "name_ja": "加護のマント",
-      "slot": "vitality",
-      "tier": 5,
-      "purchases": 0,
-      "usage_rate": 0,
-      "has_icon": true
-    },
-    {
-      "id": 1825399334,
-      "name": "Electric Slippers",
-      "name_ja": "エレクトリックブーツ",
-      "slot": "vitality",
-      "tier": 5,
-      "purchases": 0,
-      "usage_rate": 0,
-      "has_icon": true
-    },
-    {
-      "id": 230297145,
-      "name": "Eternal Gift",
-      "name_ja": "エターナルギフト",
-      "slot": "vitality",
-      "tier": 5,
-      "purchases": 0,
-      "usage_rate": 0,
-      "has_icon": true
-    },
-    {
-      "id": 3949773228,
-      "name": "Nullification Burst",
-      "name_ja": "虚無の波動",
-      "slot": "vitality",
-      "tier": 5,
-      "purchases": 0,
-      "usage_rate": 0,
-      "has_icon": true
-    },
-    {
-      "id": 1736094134,
-      "name": "Seraphim Wings",
-      "name_ja": "セラフィムウィング",
-      "slot": "vitality",
-      "tier": 5,
-      "purchases": 0,
-      "usage_rate": 0,
-      "has_icon": true
-    },
-    {
-      "id": 2319629810,
-      "name": "Shadow Strike",
-      "name_ja": "シャドウストライク",
-      "slot": "vitality",
-      "tier": 5,
-      "purchases": 0,
-      "usage_rate": 0,
-      "has_icon": true
-    },
-    {
       "id": 4104549924,
       "name": "Swift Striker",
       "name_ja": "スイフトストライカー",
@@ -1713,36 +1573,6 @@
       "tier": 4,
       "purchases": 2631,
       "usage_rate": 0.87,
-      "has_icon": true
-    },
-    {
-      "id": 3568217437,
-      "name": "Haunting Shot",
-      "name_ja": "ホーンテッドショット",
-      "slot": "weapon",
-      "tier": 5,
-      "purchases": 0,
-      "usage_rate": 0,
-      "has_icon": true
-    },
-    {
-      "id": 3269957497,
-      "name": "Infinite Rounds",
-      "name_ja": "インフィニットラウンド",
-      "slot": "weapon",
-      "tier": 5,
-      "purchases": 0,
-      "usage_rate": 0,
-      "has_icon": true
-    },
-    {
-      "id": 64550694,
-      "name": "Runed Gauntlets",
-      "name_ja": "ルーンガントレット",
-      "slot": "weapon",
-      "tier": 5,
-      "purchases": 0,
-      "usage_rate": 0,
       "has_icon": true
     }
   ],
