@@ -109,7 +109,9 @@ h2 { font-size: 22px; margin: 0 0 6px; letter-spacing: -.01em; }
 .item-groups { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
 .item-group h4 { margin: 0 0 8px; font-size: 13px; color: var(--ink-2); font-weight: 600; }
 .item-group ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
-.item-group li { font-size: 14px; display: flex; gap: 8px; align-items: baseline; }
+.item-group li { font-size: 14px; display: flex; gap: 8px; align-items: center; min-height: 28px; }
+.item-group .icon { width: 26px; height: 26px; border-radius: 4px; flex: none; object-fit: cover; }
+.item-group .icon.none { background: var(--grid); }
 .item-group .tier { font-size: 11px; color: var(--ink-3); font-variant-numeric: tabular-nums; min-width: 22px; }
 .item-group .none { color: var(--ink-3); font-size: 13px; }
 .not-picked { padding: 14px; border-radius: 10px; background: var(--accent-soft); color: var(--ink); }
@@ -504,7 +506,7 @@ svg text { font-family: inherit; }
         <div class="item-group"><h4>${label}（${arr.length}）</h4>
           ${arr.length
             ? `<ul>${[...arr].sort((a, b) => a.tier - b.tier || IN(a).localeCompare(IN(b), LANG)).map((i) =>
-                `<li><span class="tier">${i.tier ? "T" + i.tier : ""}</span><span>${esc(IN(i))}</span></li>`).join("")}</ul>`
+                `<li><span class="tier">${i.tier ? "T" + i.tier : ""}</span>${i.id ? `<img class="icon" src="items/icons/${i.id}.webp" alt="" width="26" height="26" loading="lazy" onerror="this.className='icon none';this.removeAttribute('src')">` : '<span class="icon none"></span>'}<span>${esc(IN(i))}</span></li>`).join("")}</ul>`
             : '<div class="none">なし</div>'}
         </div>`;
       items = `

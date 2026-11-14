@@ -290,7 +290,7 @@ export async function aggregate({ weekEnd, fetch: customFetch, log = console.log
       ...r,
       items: r.items.map((name) => {
         const meta = itemMeta.get(name) || { slot: "other", tier: 0 };
-        return { name, name_ja: itemJa.get(meta.id) || name, slot: meta.slot, tier: meta.tier };
+        return { id: meta.id, name, name_ja: itemJa.get(meta.id) || name, slot: meta.slot, tier: meta.tier };
       }),
     })),
   };
