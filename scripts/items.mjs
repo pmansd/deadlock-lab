@@ -7,7 +7,7 @@
 //
 // Usage rate = players who bought the item at least once ÷ all players in
 // those matches (each match has 12 players). Writes, only on full success:
-//   data/items/YYYY/MM/week-N.csv   every shop item, every week
+//   data/items/YYYY/MM/week-N.csv   every shop item bought that week
 //   data/items/latest.json          what items/index.html renders
 //   items/icons/<id>.webp           item icons (downloaded once)
 
@@ -93,7 +93,9 @@ async function main() {
     share: Math.round(share * 1000) / 10,
   };
 
+  // Only items that appear in this week's purchase stats.
   const rows = shop
+    .filter((i) => (bought.get(i.id) || 0) > 0)
     .map((i) => {
       const n = bought.get(i.id) || 0;
       const ja = jaName.get(i.id);
