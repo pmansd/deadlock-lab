@@ -183,7 +183,7 @@ svg text { font-family: inherit; }
     if (!items.length || !items[0].purchases) { container.innerHTML = '<div class="empty">今週のデータはありません。</div>'; return; }
     const prev = (data.previous && data.previous.rates) || null;
 
-    const band = 48, labelSpace = 150, icon = 30;
+    const band = 48, labelSpace = 200, icon = 30;
     const avail = container.clientWidth;
     const W = Math.max(avail, items.length * band + 50);
     const H = 300 + labelSpace;
