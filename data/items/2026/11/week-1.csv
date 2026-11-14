@@ -1,0 +1,196 @@
+item_id,item,item_ja,slot,tier,purchases,usage_rate
+968099481,Extra Spirit,エクストラスピリット,spirit,1,135516,44.74
+7409189,Improved Spirit,グレータースピリット,spirit,2,120096,39.65
+1998374645,Mystic Burst,ミスティックバースト,spirit,1,108602,35.86
+2121044373,Tankbuster,タンクバスター,spirit,3,99575,32.88
+754480263,Mystic Expansion,ミスティックエクスパンダー,spirit,1,94920,31.34
+3776945997,Extra Charge,エクストラチャージ,spirit,1,92199,30.44
+3261353684,Superior Cooldown,クールダウンブースト,spirit,3,90708,29.95
+380806748,Compress Cooldown,コンプレッサー,spirit,2,87365,28.85
+2519598785,Boundless Spirit,バウンドレススピリット,spirit,4,75487,24.92
+1193964439,Greater Expansion,グレーターエクスパンダー,spirit,3,71915,23.74
+787198704,Rapid Recharge,ラピッドリチャージ,spirit,3,67504,22.29
+2081037738,Mystic Vulnerability,ヴァルネラビリティ,spirit,2,61701,20.37
+2717651715,Superior Duration,スーパーエクステンダー,spirit,3,61234,20.22
+84321454,Quicksilver Reload,クイックシルバーリロード,spirit,2,58479,19.31
+3190916303,Spirit Snatch,スピリットスナッチ,spirit,3,57567,19.01
+465043967,Spirit Strike,スピリットストライク,spirit,1,57206,18.89
+2971868509,Bullet Resist Shredder,レジストシュレッダー,spirit,2,52117,17.21
+2951612397,Duration Extender,エクステンダー,spirit,2,51421,16.98
+343572757,Spirit Burn,スピリットバーン,spirit,4,51036,16.85
+3005970438,Escalating Exposure,エクスポージャー,spirit,4,47719,15.76
+1813726886,Slowing Hex,スロウヘックス,spirit,2,45375,14.98
+395944548,Torment Pulse,トーメントパルス,spirit,3,35463,11.71
+915014646,Transcendent Cooldown,トランセンデント,spirit,4,29421,9.71
+1292979587,Surge of Power,パワーサージ,spirit,3,29277,9.67
+3577481646,Mystic Reverb,ミスティックリバーブ,spirit,4,28370,9.37
+1150006784,Arcane Surge,アーケインサージ,spirit,2,26759,8.84
+1925087134,Suppressor,サプレッサー,spirit,2,23039,7.61
+1976391348,Cold Front,コールドフロント,spirit,2,21406,7.07
+3919289022,Mercurial Magnum,マーキュリーマグナム,spirit,4,20812,6.87
+2617435668,Cursed Relic,呪いの遺物,spirit,4,16303,5.38
+677738769,Refresher,リフレッシャー,spirit,4,16302,5.38
+1439347412,Mystic Regeneration,ミスティックリジェネ,spirit,1,14003,4.62
+1254091416,Knockdown,ノックダウン,spirit,3,12483,4.12
+2947183272,Radiant Regeneration,レディアントリジェネ,spirit,3,10391,3.43
+3812615317,Arctic Blast,アークティックブラスト,spirit,4,9857,3.25
+2533252781,Ethereal Shift,エーテリアルシフト,spirit,4,9602,3.17
+2922054143,Rusted Barrel,コロッシブバレル,spirit,1,9106,3.01
+1102081447,Mystic Slow,ミスティックスロウ,spirit,2,7748,2.56
+3144988365,Decay,ディケイ,spirit,3,7413,2.45
+2417568017,Scourge,スカージ,spirit,4,7285,2.41
+2061878743,Disarming Hex,ディスアームヘックス,spirit,3,6957,2.3
+1152158042,Vortex Web,ボルテックスウェブ,spirit,4,6886,2.27
+2462046703,Golden Goose Egg,ガチョウの黄金の卵,spirit,1,5036,1.66
+1219329868,Spirit Sap,スピリットドレイン,spirit,2,4821,1.59
+630839635,Echo Shard,エコーシャード,spirit,4,4770,1.57
+493591231,Lightning Scroll,ライトニングスクロール,spirit,4,4304,1.42
+619484391,Silence Wave,サイレンスウェーブ,spirit,3,2984,0.99
+2142980412,Focus Lens,フォーカスレンズ,spirit,4,2556,0.84
+2800629741,Magic Carpet,マジックカーペット,spirit,4,1643,0.54
+1248737459,Ammo Scavenger,アモ・スカベンジャー,spirit,1,0,0
+2068250483,Frostbite Charm,凍傷のチャーム,spirit,5,0,0
+3927044172,Haunting Scream,ホーンテッドスクリーム,spirit,5,0,0
+2331566268,Hex-Sealed Knuckles,ヘックスシールドナックル,spirit,3,0,0
+4050602737,Mystic Conduit,ミスティックコンジット,spirit,5,0,0
+2054088113,Mystical Piano,ミスティカルピアノ,spirit,5,0,0
+424779525,Omnicharge Signet,オムニチャージ,spirit,5,0,0
+1132564516,Prism Blast,プリズムブラスト,spirit,5,0,0
+2329546537,Rebirth,リザレクション,spirit,3,0,0
+4121584236,Shrink Ray,シュリンクレイ,spirit,5,0,0
+3913864662,Soul Explosion,ソウルエクスプロージョン,spirit,3,0,0
+3893702034,Timeless Emblem,不朽の紋章,spirit,5,0,0
+1558545403,Unstable Concoction,不安定な調合薬,spirit,5,0,0
+2603935618,Healbane,ヒールベイン,vitality,2,109175,36.05
+3399065363,Sprint Boots,スプリントブーツ,vitality,1,86753,28.64
+2163598980,Spirit Resilience,スピリットレジリエンス,vitality,3,78630,25.96
+4139877411,Extra Stamina,エクストラスタミナ,vitality,1,78205,25.82
+3731635960,Dispel Magic,ディスペルマジック,vitality,3,75386,24.89
+1235347618,Battle Vest,バトルベスト,vitality,2,71230,23.52
+2447176615,Enduring Speed,ウィングブーツ,vitality,2,65480,21.62
+1672893796,Grit,不屈の心,vitality,1,65228,21.54
+3970837787,Enchanter's Emblem,妖術師の紋章,vitality,2,58988,19.48
+876563814,Spirit Lifesteal,スピリットライフスティール,vitality,2,58241,19.23
+3633614685,Extra Health,エクストラヘルス,vitality,1,58071,19.17
+2829638276,Extra Regen,エクストラリジェネ,vitality,1,55859,18.44
+334300056,Stamina Mastery,スタミナマスタリー,vitality,3,52752,17.42
+1437614329,Melee Lifesteal,メレーライフスティール,vitality,1,49567,16.37
+3585132399,Fortitude,フォルティチュード,vitality,3,44288,14.62
+3074274290,Trophy Collector,トロフィーコレクター,vitality,2,44000,14.53
+1047818222,Debuff Reducer,デバフリデューサー,vitality,2,43165,14.25
+3270001687,Warp Stone,ワープストーン,vitality,3,41171,13.59
+1644605047,Reactive Barrier,リアクティブバリア,vitality,2,37645,12.43
+2566692615,Healing Booster,ヒーリングブースター,vitality,2,36515,12.06
+112198670,Spirit Shielding,スピリットシールド,vitality,2,36079,11.91
+1414025773,Counterspell,カウンタースペル,vitality,3,32551,10.75
+499683006,Bullet Lifesteal,バレットライフスティール,vitality,2,28677,9.47
+3357231760,Unstoppable,アンストッパブル,vitality,4,28581,9.44
+1252627263,Lifestrike,ライフストライク,vitality,3,27697,9.14
+3491236900,Plated Armor,プレートアーマー,vitality,4,21684,7.16
+951866250,Indomitable,インドミタブル,vitality,4,18902,6.24
+1955841979,Spellbreaker,スペルブレイカー,vitality,4,18248,6.03
+1282141666,Siphon Bullets,サイフォンバレット,vitality,4,17445,5.76
+857669956,Guardian Ward,ガーディアンワード,vitality,2,15379,5.08
+4204808176,Rebuttal,プロテスト,vitality,1,13973,4.61
+1250307611,Juggernaut,ジャガーノート,vitality,4,13559,4.48
+805079544,Weapon Shielding,ウェポンシールド,vitality,2,12549,4.14
+1378931225,Metal Skin,メタルスキン,vitality,3,12153,4.01
+1055679805,Vampiric Burst,ヴァンパイアバースト,vitality,4,12021,3.97
+3028234315,Witchmail,ウィッチメイル,vitality,4,11937,3.94
+1371725689,Phantom Strike,ファントムストライク,vitality,4,11375,3.76
+1710079648,Healing Rite,ヒーリングリチュアル,vitality,1,11193,3.7
+3361811174,Cheat Death,デスチーター,vitality,4,10683,3.53
+1662311306,Divine Barrier,ディバインバリア,vitality,4,10498,3.47
+865846625,Leech,ライフドレイン,vitality,4,9653,3.19
+3140772621,Bullet Resilience,バレットレジリエンス,vitality,3,9251,3.05
+1797283378,Infuser,インフューザー,vitality,4,9087,3
+865958998,Veil Walker,ベールウォーカー,vitality,3,8996,2.97
+2820116164,Diviner's Kevlar,ディバイナーズケブラー,vitality,4,8231,2.72
+2037039379,Inhibitor,インヒビター,vitality,4,8104,2.68
+600033864,Majestic Leap,マジェスティックリープ,vitality,3,8064,2.66
+1427630806,Healing Tempo,ヒーリングテンポ,vitality,4,7389,2.44
+2059712766,Restorative Locket,ヒーリングロケット,vitality,2,5213,1.72
+1804594021,Rescue Beam,レスキュービーム,vitality,3,5121,1.69
+3361075077,Return Fire,リターンファイア,vitality,2,4588,1.51
+2407781327,Colossus,コロッサス,vitality,4,4405,1.45
+2956256701,Healing Nova,ヒーリングノヴァ,vitality,3,3339,1.1
+1409190604,Fury Trance,フューリートランス,vitality,3,1958,0.65
+564937160,Aerial Supremacy,エアリアルマスタリー,vitality,5,0,0
+4238249888,Ancient Shield,エンシェントシールド,vitality,5,0,0
+3713423303,Bullet Armor,バレットアーマー,vitality,2,0,0
+3729138568,Celestial Blessing,天の祝福,vitality,5,0,0
+3523480953,Cloak of Opportunity,加護のマント,vitality,5,0,0
+1825399334,Electric Slippers,エレクトリックブーツ,vitality,5,0,0
+558396679,Enduring Spirit,スピリットサステイン,vitality,1,0,0
+230297145,Eternal Gift,エターナルギフト,vitality,5,0,0
+1200177229,Hexafoil Ward,ヘクサフォイルワード,vitality,3,0,0
+3830846077,Majestic Leap - Disabled,マジェスティックリープ - 無効,vitality,3,0,0
+3949773228,Nullification Burst,虚無の波動,vitality,5,0,0
+138320648,Patron's Healing,パトロンヒーリング,vitality,1,0,0
+1736094134,Seraphim Wings,セラフィムウィング,vitality,5,0,0
+3456645009,Shadow Step,シャドウステップ,vitality,5,0,0
+2319629810,Shadow Strike,シャドウストライク,vitality,5,0,0
+4003032160,Soul Rebirth,ソウルリザレクション,vitality,4,0,0
+223594321,Spirit Armor,スピリットアーマー,vitality,2,0,0
+2858617477,Toughness,タフネス,vitality,2,0,0
+4104549924,Swift Striker,スイフトストライカー,weapon,2,79128,26.13
+668299740,Rapid Rounds,ラピッドラウンド,weapon,1,73223,24.18
+1009965641,Monster Rounds,モンスターラウンド,weapon,1,70870,23.4
+3077079169,High-Velocity Rounds,ハイスピードラウンド,weapon,1,69286,22.88
+3862866912,Restorative Shot,ヒーリングショット,weapon,1,62492,20.63
+1342610602,Close Quarters,クローズクォーター,weapon,1,54320,17.94
+98582110,Stalker,ストーカー,weapon,2,50516,16.68
+2064029594,Opening Rounds,オープニングラウンド,weapon,2,48759,16.1
+2356412290,Titanic Magazine,巨大拡張マガジン,weapon,2,44762,14.78
+1548066885,Extended Magazine,基礎拡張マガジン,weapon,1,43466,14.35
+3696726732,Toxic Bullets,トキシックバレット,weapon,3,39241,12.96
+2481177645,Hunter's Aura,ハンターオーラ,weapon,3,39001,12.88
+811521119,Tesla Bullets,テスラバレット,weapon,3,36244,11.97
+709540378,Cultist Sacrifice,サクリファイス,weapon,3,31838,10.51
+3403085434,Fleetfoot,フリートフット,weapon,2,31555,10.42
+2739107182,Burst Fire,バーストファイア,weapon,3,30483,10.06
+2010028405,Headshot Booster,ヘッドショットブースター,weapon,1,30400,10.04
+26002154,Melee Charge,メレーチャージ,weapon,2,30114,9.94
+395867183,Mystic Shot,ミスティックショット,weapon,2,29241,9.65
+710436191,Capacitor,コンデンサー,weapon,4,28154,9.3
+2152872419,Sharpshooter,シャープシューター,weapon,3,26941,8.9
+2480592370,Ricochet,リコシェ,weapon,4,25976,8.58
+1763073141,Recharging Rush,リチャージラッシュ,weapon,2,25034,8.27
+3331811235,Long Range,ロングレンジ,weapon,2,25027,8.26
+4053935515,Headhunter,ヘッドハンター,weapon,3,23685,7.82
+2226497419,Spiritual Overflow,スピリットオーバーフロー,weapon,4,22027,7.27
+690458959,Express Shot,エクスプレスショット,weapon,3,21919,7.24
+1414319208,Berserker,バーサーカー,weapon,3,21724,7.17
+1113837674,Silencer,サイレンサー,weapon,4,20633,6.81
+2095565695,Point Blank,ポイントブランク,weapon,3,19396,6.4
+381961617,Active Reload,アクティブリロード,weapon,2,18086,5.97
+1770441818,Weakening Headshot,イグゾーストヘッドショット,weapon,2,16980,5.61
+1144549437,Spirit Shredder,スピリットシュレッダー,weapon,2,16693,5.51
+800008313,Crushing Fists,クラッシュフィスト,weapon,4,12989,4.29
+3791587546,Weighted Shots,ヘヴィショット,weapon,3,12905,4.26
+3977876567,Kinetic Dash,キネティックダッシュ,weapon,2,12829,4.24
+2678489038,Hollow Point,ホロウポイント,weapon,3,12555,4.15
+1396247347,Lucky Shot,ラッキーショット,weapon,4,12476,4.12
+3884003354,Crippling Headshot,クリップリングショット,weapon,4,11296,3.73
+1798666702,Shadow Weave,シャドウウィーブ,weapon,3,11118,3.67
+393974127,Slowing Bullets,スロウバレット,weapon,2,10025,3.31
+4075861416,Spirit Rend,スピリットキラー,weapon,3,9483,3.13
+2108215830,Heroic Aura,ヒロイックオーラ,weapon,3,8430,2.78
+2221211450,Spellslinger,スペルスリンガー,weapon,4,7694,2.54
+3647584222,Split Shot,スプリットショット,weapon,2,7259,2.4
+2463960640,Escalating Resilience,エスカレートレジリエンス,weapon,3,7002,2.31
+1932939246,Alchemical Fire,アルケミカルファイア,weapon,3,6120,2.02
+2407033488,Intensifying Magazine,連射強化マガジン,weapon,2,5942,1.96
+673001892,Armor Piercer,アーマーピアサー,weapon,4,5726,1.89
+3294954488,Ballistic Enchantment,バリスティックエンチャント,weapon,3,4980,1.64
+365620721,Glass Cannon,グラスキャノン,weapon,4,4867,1.61
+989206714,Blood Tribute,ブラッドトリビュート,weapon,3,3255,1.07
+339443430,Frenzy,フレンジー,weapon,4,2631,0.87
+4149380528,Apex Combat,エーペックスコンバット,weapon,5,0,0
+194116661,Conjure Missiles,サモンミサイル,weapon,4,0,0
+3346798998,Endless Magazine,エンドレスマガジン,weapon,4,0,0
+1497973293,Glass Cannon v2,グラスキャノン v2,weapon,4,0,0
+3568217437,Haunting Shot,ホーンテッドショット,weapon,5,0,0
+3269957497,Infinite Rounds,インフィニットラウンド,weapon,5,0,0
+64550694,Runed Gauntlets,ルーンガントレット,weapon,5,0,0
+3133167885,Silencer,サイレンサー,weapon,4,0,0

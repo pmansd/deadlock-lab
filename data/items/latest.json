@@ -1,0 +1,1970 @@
+{
+  "generatedAt": "2026-11-14T05:53:48.271Z",
+  "week": {
+    "start": "2026-11-07",
+    "end": "2026-11-13",
+    "timezone": "Asia/Tokyo"
+  },
+  "badge": {
+    "min": 86,
+    "en": "Oracle 6",
+    "ja": "オラクル 6",
+    "share": 10.6
+  },
+  "matches": 25239,
+  "players": 302868,
+  "csv": "data/items/2026/11/week-1.csv",
+  "items": [
+    {
+      "id": 968099481,
+      "name": "Extra Spirit",
+      "name_ja": "エクストラスピリット",
+      "slot": "spirit",
+      "tier": 1,
+      "purchases": 135516,
+      "usage_rate": 44.74,
+      "has_icon": true
+    },
+    {
+      "id": 7409189,
+      "name": "Improved Spirit",
+      "name_ja": "グレータースピリット",
+      "slot": "spirit",
+      "tier": 2,
+      "purchases": 120096,
+      "usage_rate": 39.65,
+      "has_icon": true
+    },
+    {
+      "id": 1998374645,
+      "name": "Mystic Burst",
+      "name_ja": "ミスティックバースト",
+      "slot": "spirit",
+      "tier": 1,
+      "purchases": 108602,
+      "usage_rate": 35.86,
+      "has_icon": true
+    },
+    {
+      "id": 2121044373,
+      "name": "Tankbuster",
+      "name_ja": "タンクバスター",
+      "slot": "spirit",
+      "tier": 3,
+      "purchases": 99575,
+      "usage_rate": 32.88,
+      "has_icon": true
+    },
+    {
+      "id": 754480263,
+      "name": "Mystic Expansion",
+      "name_ja": "ミスティックエクスパンダー",
+      "slot": "spirit",
+      "tier": 1,
+      "purchases": 94920,
+      "usage_rate": 31.34,
+      "has_icon": true
+    },
+    {
+      "id": 3776945997,
+      "name": "Extra Charge",
+      "name_ja": "エクストラチャージ",
+      "slot": "spirit",
+      "tier": 1,
+      "purchases": 92199,
+      "usage_rate": 30.44,
+      "has_icon": true
+    },
+    {
+      "id": 3261353684,
+      "name": "Superior Cooldown",
+      "name_ja": "クールダウンブースト",
+      "slot": "spirit",
+      "tier": 3,
+      "purchases": 90708,
+      "usage_rate": 29.95,
+      "has_icon": true
+    },
+    {
+      "id": 380806748,
+      "name": "Compress Cooldown",
+      "name_ja": "コンプレッサー",
+      "slot": "spirit",
+      "tier": 2,
+      "purchases": 87365,
+      "usage_rate": 28.85,
+      "has_icon": true
+    },
+    {
+      "id": 2519598785,
+      "name": "Boundless Spirit",
+      "name_ja": "バウンドレススピリット",
+      "slot": "spirit",
+      "tier": 4,
+      "purchases": 75487,
+      "usage_rate": 24.92,
+      "has_icon": true
+    },
+    {
+      "id": 1193964439,
+      "name": "Greater Expansion",
+      "name_ja": "グレーターエクスパンダー",
+      "slot": "spirit",
+      "tier": 3,
+      "purchases": 71915,
+      "usage_rate": 23.74,
+      "has_icon": true
+    },
+    {
+      "id": 787198704,
+      "name": "Rapid Recharge",
+      "name_ja": "ラピッドリチャージ",
+      "slot": "spirit",
+      "tier": 3,
+      "purchases": 67504,
+      "usage_rate": 22.29,
+      "has_icon": true
+    },
+    {
+      "id": 2081037738,
+      "name": "Mystic Vulnerability",
+      "name_ja": "ヴァルネラビリティ",
+      "slot": "spirit",
+      "tier": 2,
+      "purchases": 61701,
+      "usage_rate": 20.37,
+      "has_icon": true
+    },
+    {
+      "id": 2717651715,
+      "name": "Superior Duration",
+      "name_ja": "スーパーエクステンダー",
+      "slot": "spirit",
+      "tier": 3,
+      "purchases": 61234,
+      "usage_rate": 20.22,
+      "has_icon": true
+    },
+    {
+      "id": 84321454,
+      "name": "Quicksilver Reload",
+      "name_ja": "クイックシルバーリロード",
+      "slot": "spirit",
+      "tier": 2,
+      "purchases": 58479,
+      "usage_rate": 19.31,
+      "has_icon": true
+    },
+    {
+      "id": 3190916303,
+      "name": "Spirit Snatch",
+      "name_ja": "スピリットスナッチ",
+      "slot": "spirit",
+      "tier": 3,
+      "purchases": 57567,
+      "usage_rate": 19.01,
+      "has_icon": true
+    },
+    {
+      "id": 465043967,
+      "name": "Spirit Strike",
+      "name_ja": "スピリットストライク",
+      "slot": "spirit",
+      "tier": 1,
+      "purchases": 57206,
+      "usage_rate": 18.89,
+      "has_icon": true
+    },
+    {
+      "id": 2971868509,
+      "name": "Bullet Resist Shredder",
+      "name_ja": "レジストシュレッダー",
+      "slot": "spirit",
+      "tier": 2,
+      "purchases": 52117,
+      "usage_rate": 17.21,
+      "has_icon": true
+    },
+    {
+      "id": 2951612397,
+      "name": "Duration Extender",
+      "name_ja": "エクステンダー",
+      "slot": "spirit",
+      "tier": 2,
+      "purchases": 51421,
+      "usage_rate": 16.98,
+      "has_icon": true
+    },
+    {
+      "id": 343572757,
+      "name": "Spirit Burn",
+      "name_ja": "スピリットバーン",
+      "slot": "spirit",
+      "tier": 4,
+      "purchases": 51036,
+      "usage_rate": 16.85,
+      "has_icon": true
+    },
+    {
+      "id": 3005970438,
+      "name": "Escalating Exposure",
+      "name_ja": "エクスポージャー",
+      "slot": "spirit",
+      "tier": 4,
+      "purchases": 47719,
+      "usage_rate": 15.76,
+      "has_icon": true
+    },
+    {
+      "id": 1813726886,
+      "name": "Slowing Hex",
+      "name_ja": "スロウヘックス",
+      "slot": "spirit",
+      "tier": 2,
+      "purchases": 45375,
+      "usage_rate": 14.98,
+      "has_icon": true
+    },
+    {
+      "id": 395944548,
+      "name": "Torment Pulse",
+      "name_ja": "トーメントパルス",
+      "slot": "spirit",
+      "tier": 3,
+      "purchases": 35463,
+      "usage_rate": 11.71,
+      "has_icon": true
+    },
+    {
+      "id": 915014646,
+      "name": "Transcendent Cooldown",
+      "name_ja": "トランセンデント",
+      "slot": "spirit",
+      "tier": 4,
+      "purchases": 29421,
+      "usage_rate": 9.71,
+      "has_icon": true
+    },
+    {
+      "id": 1292979587,
+      "name": "Surge of Power",
+      "name_ja": "パワーサージ",
+      "slot": "spirit",
+      "tier": 3,
+      "purchases": 29277,
+      "usage_rate": 9.67,
+      "has_icon": true
+    },
+    {
+      "id": 3577481646,
+      "name": "Mystic Reverb",
+      "name_ja": "ミスティックリバーブ",
+      "slot": "spirit",
+      "tier": 4,
+      "purchases": 28370,
+      "usage_rate": 9.37,
+      "has_icon": true
+    },
+    {
+      "id": 1150006784,
+      "name": "Arcane Surge",
+      "name_ja": "アーケインサージ",
+      "slot": "spirit",
+      "tier": 2,
+      "purchases": 26759,
+      "usage_rate": 8.84,
+      "has_icon": true
+    },
+    {
+      "id": 1925087134,
+      "name": "Suppressor",
+      "name_ja": "サプレッサー",
+      "slot": "spirit",
+      "tier": 2,
+      "purchases": 23039,
+      "usage_rate": 7.61,
+      "has_icon": true
+    },
+    {
+      "id": 1976391348,
+      "name": "Cold Front",
+      "name_ja": "コールドフロント",
+      "slot": "spirit",
+      "tier": 2,
+      "purchases": 21406,
+      "usage_rate": 7.07,
+      "has_icon": true
+    },
+    {
+      "id": 3919289022,
+      "name": "Mercurial Magnum",
+      "name_ja": "マーキュリーマグナム",
+      "slot": "spirit",
+      "tier": 4,
+      "purchases": 20812,
+      "usage_rate": 6.87,
+      "has_icon": true
+    },
+    {
+      "id": 2617435668,
+      "name": "Cursed Relic",
+      "name_ja": "呪いの遺物",
+      "slot": "spirit",
+      "tier": 4,
+      "purchases": 16303,
+      "usage_rate": 5.38,
+      "has_icon": true
+    },
+    {
+      "id": 677738769,
+      "name": "Refresher",
+      "name_ja": "リフレッシャー",
+      "slot": "spirit",
+      "tier": 4,
+      "purchases": 16302,
+      "usage_rate": 5.38,
+      "has_icon": true
+    },
+    {
+      "id": 1439347412,
+      "name": "Mystic Regeneration",
+      "name_ja": "ミスティックリジェネ",
+      "slot": "spirit",
+      "tier": 1,
+      "purchases": 14003,
+      "usage_rate": 4.62,
+      "has_icon": true
+    },
+    {
+      "id": 1254091416,
+      "name": "Knockdown",
+      "name_ja": "ノックダウン",
+      "slot": "spirit",
+      "tier": 3,
+      "purchases": 12483,
+      "usage_rate": 4.12,
+      "has_icon": true
+    },
+    {
+      "id": 2947183272,
+      "name": "Radiant Regeneration",
+      "name_ja": "レディアントリジェネ",
+      "slot": "spirit",
+      "tier": 3,
+      "purchases": 10391,
+      "usage_rate": 3.43,
+      "has_icon": true
+    },
+    {
+      "id": 3812615317,
+      "name": "Arctic Blast",
+      "name_ja": "アークティックブラスト",
+      "slot": "spirit",
+      "tier": 4,
+      "purchases": 9857,
+      "usage_rate": 3.25,
+      "has_icon": true
+    },
+    {
+      "id": 2533252781,
+      "name": "Ethereal Shift",
+      "name_ja": "エーテリアルシフト",
+      "slot": "spirit",
+      "tier": 4,
+      "purchases": 9602,
+      "usage_rate": 3.17,
+      "has_icon": true
+    },
+    {
+      "id": 2922054143,
+      "name": "Rusted Barrel",
+      "name_ja": "コロッシブバレル",
+      "slot": "spirit",
+      "tier": 1,
+      "purchases": 9106,
+      "usage_rate": 3.01,
+      "has_icon": true
+    },
+    {
+      "id": 1102081447,
+      "name": "Mystic Slow",
+      "name_ja": "ミスティックスロウ",
+      "slot": "spirit",
+      "tier": 2,
+      "purchases": 7748,
+      "usage_rate": 2.56,
+      "has_icon": true
+    },
+    {
+      "id": 3144988365,
+      "name": "Decay",
+      "name_ja": "ディケイ",
+      "slot": "spirit",
+      "tier": 3,
+      "purchases": 7413,
+      "usage_rate": 2.45,
+      "has_icon": true
+    },
+    {
+      "id": 2417568017,
+      "name": "Scourge",
+      "name_ja": "スカージ",
+      "slot": "spirit",
+      "tier": 4,
+      "purchases": 7285,
+      "usage_rate": 2.41,
+      "has_icon": true
+    },
+    {
+      "id": 2061878743,
+      "name": "Disarming Hex",
+      "name_ja": "ディスアームヘックス",
+      "slot": "spirit",
+      "tier": 3,
+      "purchases": 6957,
+      "usage_rate": 2.3,
+      "has_icon": true
+    },
+    {
+      "id": 1152158042,
+      "name": "Vortex Web",
+      "name_ja": "ボルテックスウェブ",
+      "slot": "spirit",
+      "tier": 4,
+      "purchases": 6886,
+      "usage_rate": 2.27,
+      "has_icon": true
+    },
+    {
+      "id": 2462046703,
+      "name": "Golden Goose Egg",
+      "name_ja": "ガチョウの黄金の卵",
+      "slot": "spirit",
+      "tier": 1,
+      "purchases": 5036,
+      "usage_rate": 1.66,
+      "has_icon": true
+    },
+    {
+      "id": 1219329868,
+      "name": "Spirit Sap",
+      "name_ja": "スピリットドレイン",
+      "slot": "spirit",
+      "tier": 2,
+      "purchases": 4821,
+      "usage_rate": 1.59,
+      "has_icon": true
+    },
+    {
+      "id": 630839635,
+      "name": "Echo Shard",
+      "name_ja": "エコーシャード",
+      "slot": "spirit",
+      "tier": 4,
+      "purchases": 4770,
+      "usage_rate": 1.57,
+      "has_icon": true
+    },
+    {
+      "id": 493591231,
+      "name": "Lightning Scroll",
+      "name_ja": "ライトニングスクロール",
+      "slot": "spirit",
+      "tier": 4,
+      "purchases": 4304,
+      "usage_rate": 1.42,
+      "has_icon": true
+    },
+    {
+      "id": 619484391,
+      "name": "Silence Wave",
+      "name_ja": "サイレンスウェーブ",
+      "slot": "spirit",
+      "tier": 3,
+      "purchases": 2984,
+      "usage_rate": 0.99,
+      "has_icon": true
+    },
+    {
+      "id": 2142980412,
+      "name": "Focus Lens",
+      "name_ja": "フォーカスレンズ",
+      "slot": "spirit",
+      "tier": 4,
+      "purchases": 2556,
+      "usage_rate": 0.84,
+      "has_icon": true
+    },
+    {
+      "id": 2800629741,
+      "name": "Magic Carpet",
+      "name_ja": "マジックカーペット",
+      "slot": "spirit",
+      "tier": 4,
+      "purchases": 1643,
+      "usage_rate": 0.54,
+      "has_icon": true
+    },
+    {
+      "id": 1248737459,
+      "name": "Ammo Scavenger",
+      "name_ja": "アモ・スカベンジャー",
+      "slot": "spirit",
+      "tier": 1,
+      "purchases": 0,
+      "usage_rate": 0,
+      "has_icon": true
+    },
+    {
+      "id": 2068250483,
+      "name": "Frostbite Charm",
+      "name_ja": "凍傷のチャーム",
+      "slot": "spirit",
+      "tier": 5,
+      "purchases": 0,
+      "usage_rate": 0,
+      "has_icon": true
+    },
+    {
+      "id": 3927044172,
+      "name": "Haunting Scream",
+      "name_ja": "ホーンテッドスクリーム",
+      "slot": "spirit",
+      "tier": 5,
+      "purchases": 0,
+      "usage_rate": 0,
+      "has_icon": true
+    },
+    {
+      "id": 2331566268,
+      "name": "Hex-Sealed Knuckles",
+      "name_ja": "ヘックスシールドナックル",
+      "slot": "spirit",
+      "tier": 3,
+      "purchases": 0,
+      "usage_rate": 0,
+      "has_icon": true
+    },
+    {
+      "id": 4050602737,
+      "name": "Mystic Conduit",
+      "name_ja": "ミスティックコンジット",
+      "slot": "spirit",
+      "tier": 5,
+      "purchases": 0,
+      "usage_rate": 0,
+      "has_icon": true
+    },
+    {
+      "id": 2054088113,
+      "name": "Mystical Piano",
+      "name_ja": "ミスティカルピアノ",
+      "slot": "spirit",
+      "tier": 5,
+      "purchases": 0,
+      "usage_rate": 0,
+      "has_icon": true
+    },
+    {
+      "id": 424779525,
+      "name": "Omnicharge Signet",
+      "name_ja": "オムニチャージ",
+      "slot": "spirit",
+      "tier": 5,
+      "purchases": 0,
+      "usage_rate": 0,
+      "has_icon": true
+    },
+    {
+      "id": 1132564516,
+      "name": "Prism Blast",
+      "name_ja": "プリズムブラスト",
+      "slot": "spirit",
+      "tier": 5,
+      "purchases": 0,
+      "usage_rate": 0,
+      "has_icon": true
+    },
+    {
+      "id": 2329546537,
+      "name": "Rebirth",
+      "name_ja": "リザレクション",
+      "slot": "spirit",
+      "tier": 3,
+      "purchases": 0,
+      "usage_rate": 0,
+      "has_icon": true
+    },
+    {
+      "id": 4121584236,
+      "name": "Shrink Ray",
+      "name_ja": "シュリンクレイ",
+      "slot": "spirit",
+      "tier": 5,
+      "purchases": 0,
+      "usage_rate": 0,
+      "has_icon": true
+    },
+    {
+      "id": 3913864662,
+      "name": "Soul Explosion",
+      "name_ja": "ソウルエクスプロージョン",
+      "slot": "spirit",
+      "tier": 3,
+      "purchases": 0,
+      "usage_rate": 0,
+      "has_icon": true
+    },
+    {
+      "id": 3893702034,
+      "name": "Timeless Emblem",
+      "name_ja": "不朽の紋章",
+      "slot": "spirit",
+      "tier": 5,
+      "purchases": 0,
+      "usage_rate": 0,
+      "has_icon": true
+    },
+    {
+      "id": 1558545403,
+      "name": "Unstable Concoction",
+      "name_ja": "不安定な調合薬",
+      "slot": "spirit",
+      "tier": 5,
+      "purchases": 0,
+      "usage_rate": 0,
+      "has_icon": true
+    },
+    {
+      "id": 2603935618,
+      "name": "Healbane",
+      "name_ja": "ヒールベイン",
+      "slot": "vitality",
+      "tier": 2,
+      "purchases": 109175,
+      "usage_rate": 36.05,
+      "has_icon": true
+    },
+    {
+      "id": 3399065363,
+      "name": "Sprint Boots",
+      "name_ja": "スプリントブーツ",
+      "slot": "vitality",
+      "tier": 1,
+      "purchases": 86753,
+      "usage_rate": 28.64,
+      "has_icon": true
+    },
+    {
+      "id": 2163598980,
+      "name": "Spirit Resilience",
+      "name_ja": "スピリットレジリエンス",
+      "slot": "vitality",
+      "tier": 3,
+      "purchases": 78630,
+      "usage_rate": 25.96,
+      "has_icon": true
+    },
+    {
+      "id": 4139877411,
+      "name": "Extra Stamina",
+      "name_ja": "エクストラスタミナ",
+      "slot": "vitality",
+      "tier": 1,
+      "purchases": 78205,
+      "usage_rate": 25.82,
+      "has_icon": true
+    },
+    {
+      "id": 3731635960,
+      "name": "Dispel Magic",
+      "name_ja": "ディスペルマジック",
+      "slot": "vitality",
+      "tier": 3,
+      "purchases": 75386,
+      "usage_rate": 24.89,
+      "has_icon": true
+    },
+    {
+      "id": 1235347618,
+      "name": "Battle Vest",
+      "name_ja": "バトルベスト",
+      "slot": "vitality",
+      "tier": 2,
+      "purchases": 71230,
+      "usage_rate": 23.52,
+      "has_icon": true
+    },
+    {
+      "id": 2447176615,
+      "name": "Enduring Speed",
+      "name_ja": "ウィングブーツ",
+      "slot": "vitality",
+      "tier": 2,
+      "purchases": 65480,
+      "usage_rate": 21.62,
+      "has_icon": true
+    },
+    {
+      "id": 1672893796,
+      "name": "Grit",
+      "name_ja": "不屈の心",
+      "slot": "vitality",
+      "tier": 1,
+      "purchases": 65228,
+      "usage_rate": 21.54,
+      "has_icon": true
+    },
+    {
+      "id": 3970837787,
+      "name": "Enchanter's Emblem",
+      "name_ja": "妖術師の紋章",
+      "slot": "vitality",
+      "tier": 2,
+      "purchases": 58988,
+      "usage_rate": 19.48,
+      "has_icon": true
+    },
+    {
+      "id": 876563814,
+      "name": "Spirit Lifesteal",
+      "name_ja": "スピリットライフスティール",
+      "slot": "vitality",
+      "tier": 2,
+      "purchases": 58241,
+      "usage_rate": 19.23,
+      "has_icon": true
+    },
+    {
+      "id": 3633614685,
+      "name": "Extra Health",
+      "name_ja": "エクストラヘルス",
+      "slot": "vitality",
+      "tier": 1,
+      "purchases": 58071,
+      "usage_rate": 19.17,
+      "has_icon": true
+    },
+    {
+      "id": 2829638276,
+      "name": "Extra Regen",
+      "name_ja": "エクストラリジェネ",
+      "slot": "vitality",
+      "tier": 1,
+      "purchases": 55859,
+      "usage_rate": 18.44,
+      "has_icon": true
+    },
+    {
+      "id": 334300056,
+      "name": "Stamina Mastery",
+      "name_ja": "スタミナマスタリー",
+      "slot": "vitality",
+      "tier": 3,
+      "purchases": 52752,
+      "usage_rate": 17.42,
+      "has_icon": true
+    },
+    {
+      "id": 1437614329,
+      "name": "Melee Lifesteal",
+      "name_ja": "メレーライフスティール",
+      "slot": "vitality",
+      "tier": 1,
+      "purchases": 49567,
+      "usage_rate": 16.37,
+      "has_icon": true
+    },
+    {
+      "id": 3585132399,
+      "name": "Fortitude",
+      "name_ja": "フォルティチュード",
+      "slot": "vitality",
+      "tier": 3,
+      "purchases": 44288,
+      "usage_rate": 14.62,
+      "has_icon": true
+    },
+    {
+      "id": 3074274290,
+      "name": "Trophy Collector",
+      "name_ja": "トロフィーコレクター",
+      "slot": "vitality",
+      "tier": 2,
+      "purchases": 44000,
+      "usage_rate": 14.53,
+      "has_icon": true
+    },
+    {
+      "id": 1047818222,
+      "name": "Debuff Reducer",
+      "name_ja": "デバフリデューサー",
+      "slot": "vitality",
+      "tier": 2,
+      "purchases": 43165,
+      "usage_rate": 14.25,
+      "has_icon": true
+    },
+    {
+      "id": 3270001687,
+      "name": "Warp Stone",
+      "name_ja": "ワープストーン",
+      "slot": "vitality",
+      "tier": 3,
+      "purchases": 41171,
+      "usage_rate": 13.59,
+      "has_icon": true
+    },
+    {
+      "id": 1644605047,
+      "name": "Reactive Barrier",
+      "name_ja": "リアクティブバリア",
+      "slot": "vitality",
+      "tier": 2,
+      "purchases": 37645,
+      "usage_rate": 12.43,
+      "has_icon": true
+    },
+    {
+      "id": 2566692615,
+      "name": "Healing Booster",
+      "name_ja": "ヒーリングブースター",
+      "slot": "vitality",
+      "tier": 2,
+      "purchases": 36515,
+      "usage_rate": 12.06,
+      "has_icon": true
+    },
+    {
+      "id": 112198670,
+      "name": "Spirit Shielding",
+      "name_ja": "スピリットシールド",
+      "slot": "vitality",
+      "tier": 2,
+      "purchases": 36079,
+      "usage_rate": 11.91,
+      "has_icon": true
+    },
+    {
+      "id": 1414025773,
+      "name": "Counterspell",
+      "name_ja": "カウンタースペル",
+      "slot": "vitality",
+      "tier": 3,
+      "purchases": 32551,
+      "usage_rate": 10.75,
+      "has_icon": true
+    },
+    {
+      "id": 499683006,
+      "name": "Bullet Lifesteal",
+      "name_ja": "バレットライフスティール",
+      "slot": "vitality",
+      "tier": 2,
+      "purchases": 28677,
+      "usage_rate": 9.47,
+      "has_icon": true
+    },
+    {
+      "id": 3357231760,
+      "name": "Unstoppable",
+      "name_ja": "アンストッパブル",
+      "slot": "vitality",
+      "tier": 4,
+      "purchases": 28581,
+      "usage_rate": 9.44,
+      "has_icon": true
+    },
+    {
+      "id": 1252627263,
+      "name": "Lifestrike",
+      "name_ja": "ライフストライク",
+      "slot": "vitality",
+      "tier": 3,
+      "purchases": 27697,
+      "usage_rate": 9.14,
+      "has_icon": true
+    },
+    {
+      "id": 3491236900,
+      "name": "Plated Armor",
+      "name_ja": "プレートアーマー",
+      "slot": "vitality",
+      "tier": 4,
+      "purchases": 21684,
+      "usage_rate": 7.16,
+      "has_icon": true
+    },
+    {
+      "id": 951866250,
+      "name": "Indomitable",
+      "name_ja": "インドミタブル",
+      "slot": "vitality",
+      "tier": 4,
+      "purchases": 18902,
+      "usage_rate": 6.24,
+      "has_icon": true
+    },
+    {
+      "id": 1955841979,
+      "name": "Spellbreaker",
+      "name_ja": "スペルブレイカー",
+      "slot": "vitality",
+      "tier": 4,
+      "purchases": 18248,
+      "usage_rate": 6.03,
+      "has_icon": true
+    },
+    {
+      "id": 1282141666,
+      "name": "Siphon Bullets",
+      "name_ja": "サイフォンバレット",
+      "slot": "vitality",
+      "tier": 4,
+      "purchases": 17445,
+      "usage_rate": 5.76,
+      "has_icon": true
+    },
+    {
+      "id": 857669956,
+      "name": "Guardian Ward",
+      "name_ja": "ガーディアンワード",
+      "slot": "vitality",
+      "tier": 2,
+      "purchases": 15379,
+      "usage_rate": 5.08,
+      "has_icon": true
+    },
+    {
+      "id": 4204808176,
+      "name": "Rebuttal",
+      "name_ja": "プロテスト",
+      "slot": "vitality",
+      "tier": 1,
+      "purchases": 13973,
+      "usage_rate": 4.61,
+      "has_icon": true
+    },
+    {
+      "id": 1250307611,
+      "name": "Juggernaut",
+      "name_ja": "ジャガーノート",
+      "slot": "vitality",
+      "tier": 4,
+      "purchases": 13559,
+      "usage_rate": 4.48,
+      "has_icon": true
+    },
+    {
+      "id": 805079544,
+      "name": "Weapon Shielding",
+      "name_ja": "ウェポンシールド",
+      "slot": "vitality",
+      "tier": 2,
+      "purchases": 12549,
+      "usage_rate": 4.14,
+      "has_icon": true
+    },
+    {
+      "id": 1378931225,
+      "name": "Metal Skin",
+      "name_ja": "メタルスキン",
+      "slot": "vitality",
+      "tier": 3,
+      "purchases": 12153,
+      "usage_rate": 4.01,
+      "has_icon": true
+    },
+    {
+      "id": 1055679805,
+      "name": "Vampiric Burst",
+      "name_ja": "ヴァンパイアバースト",
+      "slot": "vitality",
+      "tier": 4,
+      "purchases": 12021,
+      "usage_rate": 3.97,
+      "has_icon": true
+    },
+    {
+      "id": 3028234315,
+      "name": "Witchmail",
+      "name_ja": "ウィッチメイル",
+      "slot": "vitality",
+      "tier": 4,
+      "purchases": 11937,
+      "usage_rate": 3.94,
+      "has_icon": true
+    },
+    {
+      "id": 1371725689,
+      "name": "Phantom Strike",
+      "name_ja": "ファントムストライク",
+      "slot": "vitality",
+      "tier": 4,
+      "purchases": 11375,
+      "usage_rate": 3.76,
+      "has_icon": true
+    },
+    {
+      "id": 1710079648,
+      "name": "Healing Rite",
+      "name_ja": "ヒーリングリチュアル",
+      "slot": "vitality",
+      "tier": 1,
+      "purchases": 11193,
+      "usage_rate": 3.7,
+      "has_icon": true
+    },
+    {
+      "id": 3361811174,
+      "name": "Cheat Death",
+      "name_ja": "デスチーター",
+      "slot": "vitality",
+      "tier": 4,
+      "purchases": 10683,
+      "usage_rate": 3.53,
+      "has_icon": true
+    },
+    {
+      "id": 1662311306,
+      "name": "Divine Barrier",
+      "name_ja": "ディバインバリア",
+      "slot": "vitality",
+      "tier": 4,
+      "purchases": 10498,
+      "usage_rate": 3.47,
+      "has_icon": true
+    },
+    {
+      "id": 865846625,
+      "name": "Leech",
+      "name_ja": "ライフドレイン",
+      "slot": "vitality",
+      "tier": 4,
+      "purchases": 9653,
+      "usage_rate": 3.19,
+      "has_icon": true
+    },
+    {
+      "id": 3140772621,
+      "name": "Bullet Resilience",
+      "name_ja": "バレットレジリエンス",
+      "slot": "vitality",
+      "tier": 3,
+      "purchases": 9251,
+      "usage_rate": 3.05,
+      "has_icon": true
+    },
+    {
+      "id": 1797283378,
+      "name": "Infuser",
+      "name_ja": "インフューザー",
+      "slot": "vitality",
+      "tier": 4,
+      "purchases": 9087,
+      "usage_rate": 3,
+      "has_icon": true
+    },
+    {
+      "id": 865958998,
+      "name": "Veil Walker",
+      "name_ja": "ベールウォーカー",
+      "slot": "vitality",
+      "tier": 3,
+      "purchases": 8996,
+      "usage_rate": 2.97,
+      "has_icon": true
+    },
+    {
+      "id": 2820116164,
+      "name": "Diviner's Kevlar",
+      "name_ja": "ディバイナーズケブラー",
+      "slot": "vitality",
+      "tier": 4,
+      "purchases": 8231,
+      "usage_rate": 2.72,
+      "has_icon": true
+    },
+    {
+      "id": 2037039379,
+      "name": "Inhibitor",
+      "name_ja": "インヒビター",
+      "slot": "vitality",
+      "tier": 4,
+      "purchases": 8104,
+      "usage_rate": 2.68,
+      "has_icon": true
+    },
+    {
+      "id": 600033864,
+      "name": "Majestic Leap",
+      "name_ja": "マジェスティックリープ",
+      "slot": "vitality",
+      "tier": 3,
+      "purchases": 8064,
+      "usage_rate": 2.66,
+      "has_icon": true
+    },
+    {
+      "id": 1427630806,
+      "name": "Healing Tempo",
+      "name_ja": "ヒーリングテンポ",
+      "slot": "vitality",
+      "tier": 4,
+      "purchases": 7389,
+      "usage_rate": 2.44,
+      "has_icon": true
+    },
+    {
+      "id": 2059712766,
+      "name": "Restorative Locket",
+      "name_ja": "ヒーリングロケット",
+      "slot": "vitality",
+      "tier": 2,
+      "purchases": 5213,
+      "usage_rate": 1.72,
+      "has_icon": true
+    },
+    {
+      "id": 1804594021,
+      "name": "Rescue Beam",
+      "name_ja": "レスキュービーム",
+      "slot": "vitality",
+      "tier": 3,
+      "purchases": 5121,
+      "usage_rate": 1.69,
+      "has_icon": true
+    },
+    {
+      "id": 3361075077,
+      "name": "Return Fire",
+      "name_ja": "リターンファイア",
+      "slot": "vitality",
+      "tier": 2,
+      "purchases": 4588,
+      "usage_rate": 1.51,
+      "has_icon": true
+    },
+    {
+      "id": 2407781327,
+      "name": "Colossus",
+      "name_ja": "コロッサス",
+      "slot": "vitality",
+      "tier": 4,
+      "purchases": 4405,
+      "usage_rate": 1.45,
+      "has_icon": true
+    },
+    {
+      "id": 2956256701,
+      "name": "Healing Nova",
+      "name_ja": "ヒーリングノヴァ",
+      "slot": "vitality",
+      "tier": 3,
+      "purchases": 3339,
+      "usage_rate": 1.1,
+      "has_icon": true
+    },
+    {
+      "id": 1409190604,
+      "name": "Fury Trance",
+      "name_ja": "フューリートランス",
+      "slot": "vitality",
+      "tier": 3,
+      "purchases": 1958,
+      "usage_rate": 0.65,
+      "has_icon": true
+    },
+    {
+      "id": 564937160,
+      "name": "Aerial Supremacy",
+      "name_ja": "エアリアルマスタリー",
+      "slot": "vitality",
+      "tier": 5,
+      "purchases": 0,
+      "usage_rate": 0,
+      "has_icon": true
+    },
+    {
+      "id": 4238249888,
+      "name": "Ancient Shield",
+      "name_ja": "エンシェントシールド",
+      "slot": "vitality",
+      "tier": 5,
+      "purchases": 0,
+      "usage_rate": 0,
+      "has_icon": true
+    },
+    {
+      "id": 3713423303,
+      "name": "Bullet Armor",
+      "name_ja": "バレットアーマー",
+      "slot": "vitality",
+      "tier": 2,
+      "purchases": 0,
+      "usage_rate": 0,
+      "has_icon": true
+    },
+    {
+      "id": 3729138568,
+      "name": "Celestial Blessing",
+      "name_ja": "天の祝福",
+      "slot": "vitality",
+      "tier": 5,
+      "purchases": 0,
+      "usage_rate": 0,
+      "has_icon": true
+    },
+    {
+      "id": 3523480953,
+      "name": "Cloak of Opportunity",
+      "name_ja": "加護のマント",
+      "slot": "vitality",
+      "tier": 5,
+      "purchases": 0,
+      "usage_rate": 0,
+      "has_icon": true
+    },
+    {
+      "id": 1825399334,
+      "name": "Electric Slippers",
+      "name_ja": "エレクトリックブーツ",
+      "slot": "vitality",
+      "tier": 5,
+      "purchases": 0,
+      "usage_rate": 0,
+      "has_icon": true
+    },
+    {
+      "id": 558396679,
+      "name": "Enduring Spirit",
+      "name_ja": "スピリットサステイン",
+      "slot": "vitality",
+      "tier": 1,
+      "purchases": 0,
+      "usage_rate": 0,
+      "has_icon": true
+    },
+    {
+      "id": 230297145,
+      "name": "Eternal Gift",
+      "name_ja": "エターナルギフト",
+      "slot": "vitality",
+      "tier": 5,
+      "purchases": 0,
+      "usage_rate": 0,
+      "has_icon": true
+    },
+    {
+      "id": 1200177229,
+      "name": "Hexafoil Ward",
+      "name_ja": "ヘクサフォイルワード",
+      "slot": "vitality",
+      "tier": 3,
+      "purchases": 0,
+      "usage_rate": 0,
+      "has_icon": true
+    },
+    {
+      "id": 3830846077,
+      "name": "Majestic Leap - Disabled",
+      "name_ja": "マジェスティックリープ - 無効",
+      "slot": "vitality",
+      "tier": 3,
+      "purchases": 0,
+      "usage_rate": 0,
+      "has_icon": true
+    },
+    {
+      "id": 3949773228,
+      "name": "Nullification Burst",
+      "name_ja": "虚無の波動",
+      "slot": "vitality",
+      "tier": 5,
+      "purchases": 0,
+      "usage_rate": 0,
+      "has_icon": true
+    },
+    {
+      "id": 138320648,
+      "name": "Patron's Healing",
+      "name_ja": "パトロンヒーリング",
+      "slot": "vitality",
+      "tier": 1,
+      "purchases": 0,
+      "usage_rate": 0,
+      "has_icon": true
+    },
+    {
+      "id": 1736094134,
+      "name": "Seraphim Wings",
+      "name_ja": "セラフィムウィング",
+      "slot": "vitality",
+      "tier": 5,
+      "purchases": 0,
+      "usage_rate": 0,
+      "has_icon": true
+    },
+    {
+      "id": 3456645009,
+      "name": "Shadow Step",
+      "name_ja": "シャドウステップ",
+      "slot": "vitality",
+      "tier": 5,
+      "purchases": 0,
+      "usage_rate": 0,
+      "has_icon": true
+    },
+    {
+      "id": 2319629810,
+      "name": "Shadow Strike",
+      "name_ja": "シャドウストライク",
+      "slot": "vitality",
+      "tier": 5,
+      "purchases": 0,
+      "usage_rate": 0,
+      "has_icon": true
+    },
+    {
+      "id": 4003032160,
+      "name": "Soul Rebirth",
+      "name_ja": "ソウルリザレクション",
+      "slot": "vitality",
+      "tier": 4,
+      "purchases": 0,
+      "usage_rate": 0,
+      "has_icon": true
+    },
+    {
+      "id": 223594321,
+      "name": "Spirit Armor",
+      "name_ja": "スピリットアーマー",
+      "slot": "vitality",
+      "tier": 2,
+      "purchases": 0,
+      "usage_rate": 0,
+      "has_icon": true
+    },
+    {
+      "id": 2858617477,
+      "name": "Toughness",
+      "name_ja": "タフネス",
+      "slot": "vitality",
+      "tier": 2,
+      "purchases": 0,
+      "usage_rate": 0,
+      "has_icon": false
+    },
+    {
+      "id": 4104549924,
+      "name": "Swift Striker",
+      "name_ja": "スイフトストライカー",
+      "slot": "weapon",
+      "tier": 2,
+      "purchases": 79128,
+      "usage_rate": 26.13,
+      "has_icon": true
+    },
+    {
+      "id": 668299740,
+      "name": "Rapid Rounds",
+      "name_ja": "ラピッドラウンド",
+      "slot": "weapon",
+      "tier": 1,
+      "purchases": 73223,
+      "usage_rate": 24.18,
+      "has_icon": true
+    },
+    {
+      "id": 1009965641,
+      "name": "Monster Rounds",
+      "name_ja": "モンスターラウンド",
+      "slot": "weapon",
+      "tier": 1,
+      "purchases": 70870,
+      "usage_rate": 23.4,
+      "has_icon": true
+    },
+    {
+      "id": 3077079169,
+      "name": "High-Velocity Rounds",
+      "name_ja": "ハイスピードラウンド",
+      "slot": "weapon",
+      "tier": 1,
+      "purchases": 69286,
+      "usage_rate": 22.88,
+      "has_icon": true
+    },
+    {
+      "id": 3862866912,
+      "name": "Restorative Shot",
+      "name_ja": "ヒーリングショット",
+      "slot": "weapon",
+      "tier": 1,
+      "purchases": 62492,
+      "usage_rate": 20.63,
+      "has_icon": true
+    },
+    {
+      "id": 1342610602,
+      "name": "Close Quarters",
+      "name_ja": "クローズクォーター",
+      "slot": "weapon",
+      "tier": 1,
+      "purchases": 54320,
+      "usage_rate": 17.94,
+      "has_icon": true
+    },
+    {
+      "id": 98582110,
+      "name": "Stalker",
+      "name_ja": "ストーカー",
+      "slot": "weapon",
+      "tier": 2,
+      "purchases": 50516,
+      "usage_rate": 16.68,
+      "has_icon": true
+    },
+    {
+      "id": 2064029594,
+      "name": "Opening Rounds",
+      "name_ja": "オープニングラウンド",
+      "slot": "weapon",
+      "tier": 2,
+      "purchases": 48759,
+      "usage_rate": 16.1,
+      "has_icon": true
+    },
+    {
+      "id": 2356412290,
+      "name": "Titanic Magazine",
+      "name_ja": "巨大拡張マガジン",
+      "slot": "weapon",
+      "tier": 2,
+      "purchases": 44762,
+      "usage_rate": 14.78,
+      "has_icon": true
+    },
+    {
+      "id": 1548066885,
+      "name": "Extended Magazine",
+      "name_ja": "基礎拡張マガジン",
+      "slot": "weapon",
+      "tier": 1,
+      "purchases": 43466,
+      "usage_rate": 14.35,
+      "has_icon": true
+    },
+    {
+      "id": 3696726732,
+      "name": "Toxic Bullets",
+      "name_ja": "トキシックバレット",
+      "slot": "weapon",
+      "tier": 3,
+      "purchases": 39241,
+      "usage_rate": 12.96,
+      "has_icon": true
+    },
+    {
+      "id": 2481177645,
+      "name": "Hunter's Aura",
+      "name_ja": "ハンターオーラ",
+      "slot": "weapon",
+      "tier": 3,
+      "purchases": 39001,
+      "usage_rate": 12.88,
+      "has_icon": true
+    },
+    {
+      "id": 811521119,
+      "name": "Tesla Bullets",
+      "name_ja": "テスラバレット",
+      "slot": "weapon",
+      "tier": 3,
+      "purchases": 36244,
+      "usage_rate": 11.97,
+      "has_icon": true
+    },
+    {
+      "id": 709540378,
+      "name": "Cultist Sacrifice",
+      "name_ja": "サクリファイス",
+      "slot": "weapon",
+      "tier": 3,
+      "purchases": 31838,
+      "usage_rate": 10.51,
+      "has_icon": true
+    },
+    {
+      "id": 3403085434,
+      "name": "Fleetfoot",
+      "name_ja": "フリートフット",
+      "slot": "weapon",
+      "tier": 2,
+      "purchases": 31555,
+      "usage_rate": 10.42,
+      "has_icon": true
+    },
+    {
+      "id": 2739107182,
+      "name": "Burst Fire",
+      "name_ja": "バーストファイア",
+      "slot": "weapon",
+      "tier": 3,
+      "purchases": 30483,
+      "usage_rate": 10.06,
+      "has_icon": true
+    },
+    {
+      "id": 2010028405,
+      "name": "Headshot Booster",
+      "name_ja": "ヘッドショットブースター",
+      "slot": "weapon",
+      "tier": 1,
+      "purchases": 30400,
+      "usage_rate": 10.04,
+      "has_icon": true
+    },
+    {
+      "id": 26002154,
+      "name": "Melee Charge",
+      "name_ja": "メレーチャージ",
+      "slot": "weapon",
+      "tier": 2,
+      "purchases": 30114,
+      "usage_rate": 9.94,
+      "has_icon": true
+    },
+    {
+      "id": 395867183,
+      "name": "Mystic Shot",
+      "name_ja": "ミスティックショット",
+      "slot": "weapon",
+      "tier": 2,
+      "purchases": 29241,
+      "usage_rate": 9.65,
+      "has_icon": true
+    },
+    {
+      "id": 710436191,
+      "name": "Capacitor",
+      "name_ja": "コンデンサー",
+      "slot": "weapon",
+      "tier": 4,
+      "purchases": 28154,
+      "usage_rate": 9.3,
+      "has_icon": true
+    },
+    {
+      "id": 2152872419,
+      "name": "Sharpshooter",
+      "name_ja": "シャープシューター",
+      "slot": "weapon",
+      "tier": 3,
+      "purchases": 26941,
+      "usage_rate": 8.9,
+      "has_icon": true
+    },
+    {
+      "id": 2480592370,
+      "name": "Ricochet",
+      "name_ja": "リコシェ",
+      "slot": "weapon",
+      "tier": 4,
+      "purchases": 25976,
+      "usage_rate": 8.58,
+      "has_icon": true
+    },
+    {
+      "id": 1763073141,
+      "name": "Recharging Rush",
+      "name_ja": "リチャージラッシュ",
+      "slot": "weapon",
+      "tier": 2,
+      "purchases": 25034,
+      "usage_rate": 8.27,
+      "has_icon": true
+    },
+    {
+      "id": 3331811235,
+      "name": "Long Range",
+      "name_ja": "ロングレンジ",
+      "slot": "weapon",
+      "tier": 2,
+      "purchases": 25027,
+      "usage_rate": 8.26,
+      "has_icon": true
+    },
+    {
+      "id": 4053935515,
+      "name": "Headhunter",
+      "name_ja": "ヘッドハンター",
+      "slot": "weapon",
+      "tier": 3,
+      "purchases": 23685,
+      "usage_rate": 7.82,
+      "has_icon": true
+    },
+    {
+      "id": 2226497419,
+      "name": "Spiritual Overflow",
+      "name_ja": "スピリットオーバーフロー",
+      "slot": "weapon",
+      "tier": 4,
+      "purchases": 22027,
+      "usage_rate": 7.27,
+      "has_icon": true
+    },
+    {
+      "id": 690458959,
+      "name": "Express Shot",
+      "name_ja": "エクスプレスショット",
+      "slot": "weapon",
+      "tier": 3,
+      "purchases": 21919,
+      "usage_rate": 7.24,
+      "has_icon": true
+    },
+    {
+      "id": 1414319208,
+      "name": "Berserker",
+      "name_ja": "バーサーカー",
+      "slot": "weapon",
+      "tier": 3,
+      "purchases": 21724,
+      "usage_rate": 7.17,
+      "has_icon": true
+    },
+    {
+      "id": 1113837674,
+      "name": "Silencer",
+      "name_ja": "サイレンサー",
+      "slot": "weapon",
+      "tier": 4,
+      "purchases": 20633,
+      "usage_rate": 6.81,
+      "has_icon": true
+    },
+    {
+      "id": 2095565695,
+      "name": "Point Blank",
+      "name_ja": "ポイントブランク",
+      "slot": "weapon",
+      "tier": 3,
+      "purchases": 19396,
+      "usage_rate": 6.4,
+      "has_icon": true
+    },
+    {
+      "id": 381961617,
+      "name": "Active Reload",
+      "name_ja": "アクティブリロード",
+      "slot": "weapon",
+      "tier": 2,
+      "purchases": 18086,
+      "usage_rate": 5.97,
+      "has_icon": true
+    },
+    {
+      "id": 1770441818,
+      "name": "Weakening Headshot",
+      "name_ja": "イグゾーストヘッドショット",
+      "slot": "weapon",
+      "tier": 2,
+      "purchases": 16980,
+      "usage_rate": 5.61,
+      "has_icon": true
+    },
+    {
+      "id": 1144549437,
+      "name": "Spirit Shredder",
+      "name_ja": "スピリットシュレッダー",
+      "slot": "weapon",
+      "tier": 2,
+      "purchases": 16693,
+      "usage_rate": 5.51,
+      "has_icon": true
+    },
+    {
+      "id": 800008313,
+      "name": "Crushing Fists",
+      "name_ja": "クラッシュフィスト",
+      "slot": "weapon",
+      "tier": 4,
+      "purchases": 12989,
+      "usage_rate": 4.29,
+      "has_icon": true
+    },
+    {
+      "id": 3791587546,
+      "name": "Weighted Shots",
+      "name_ja": "ヘヴィショット",
+      "slot": "weapon",
+      "tier": 3,
+      "purchases": 12905,
+      "usage_rate": 4.26,
+      "has_icon": true
+    },
+    {
+      "id": 3977876567,
+      "name": "Kinetic Dash",
+      "name_ja": "キネティックダッシュ",
+      "slot": "weapon",
+      "tier": 2,
+      "purchases": 12829,
+      "usage_rate": 4.24,
+      "has_icon": true
+    },
+    {
+      "id": 2678489038,
+      "name": "Hollow Point",
+      "name_ja": "ホロウポイント",
+      "slot": "weapon",
+      "tier": 3,
+      "purchases": 12555,
+      "usage_rate": 4.15,
+      "has_icon": true
+    },
+    {
+      "id": 1396247347,
+      "name": "Lucky Shot",
+      "name_ja": "ラッキーショット",
+      "slot": "weapon",
+      "tier": 4,
+      "purchases": 12476,
+      "usage_rate": 4.12,
+      "has_icon": true
+    },
+    {
+      "id": 3884003354,
+      "name": "Crippling Headshot",
+      "name_ja": "クリップリングショット",
+      "slot": "weapon",
+      "tier": 4,
+      "purchases": 11296,
+      "usage_rate": 3.73,
+      "has_icon": true
+    },
+    {
+      "id": 1798666702,
+      "name": "Shadow Weave",
+      "name_ja": "シャドウウィーブ",
+      "slot": "weapon",
+      "tier": 3,
+      "purchases": 11118,
+      "usage_rate": 3.67,
+      "has_icon": true
+    },
+    {
+      "id": 393974127,
+      "name": "Slowing Bullets",
+      "name_ja": "スロウバレット",
+      "slot": "weapon",
+      "tier": 2,
+      "purchases": 10025,
+      "usage_rate": 3.31,
+      "has_icon": true
+    },
+    {
+      "id": 4075861416,
+      "name": "Spirit Rend",
+      "name_ja": "スピリットキラー",
+      "slot": "weapon",
+      "tier": 3,
+      "purchases": 9483,
+      "usage_rate": 3.13,
+      "has_icon": true
+    },
+    {
+      "id": 2108215830,
+      "name": "Heroic Aura",
+      "name_ja": "ヒロイックオーラ",
+      "slot": "weapon",
+      "tier": 3,
+      "purchases": 8430,
+      "usage_rate": 2.78,
+      "has_icon": true
+    },
+    {
+      "id": 2221211450,
+      "name": "Spellslinger",
+      "name_ja": "スペルスリンガー",
+      "slot": "weapon",
+      "tier": 4,
+      "purchases": 7694,
+      "usage_rate": 2.54,
+      "has_icon": true
+    },
+    {
+      "id": 3647584222,
+      "name": "Split Shot",
+      "name_ja": "スプリットショット",
+      "slot": "weapon",
+      "tier": 2,
+      "purchases": 7259,
+      "usage_rate": 2.4,
+      "has_icon": true
+    },
+    {
+      "id": 2463960640,
+      "name": "Escalating Resilience",
+      "name_ja": "エスカレートレジリエンス",
+      "slot": "weapon",
+      "tier": 3,
+      "purchases": 7002,
+      "usage_rate": 2.31,
+      "has_icon": true
+    },
+    {
+      "id": 1932939246,
+      "name": "Alchemical Fire",
+      "name_ja": "アルケミカルファイア",
+      "slot": "weapon",
+      "tier": 3,
+      "purchases": 6120,
+      "usage_rate": 2.02,
+      "has_icon": true
+    },
+    {
+      "id": 2407033488,
+      "name": "Intensifying Magazine",
+      "name_ja": "連射強化マガジン",
+      "slot": "weapon",
+      "tier": 2,
+      "purchases": 5942,
+      "usage_rate": 1.96,
+      "has_icon": true
+    },
+    {
+      "id": 673001892,
+      "name": "Armor Piercer",
+      "name_ja": "アーマーピアサー",
+      "slot": "weapon",
+      "tier": 4,
+      "purchases": 5726,
+      "usage_rate": 1.89,
+      "has_icon": true
+    },
+    {
+      "id": 3294954488,
+      "name": "Ballistic Enchantment",
+      "name_ja": "バリスティックエンチャント",
+      "slot": "weapon",
+      "tier": 3,
+      "purchases": 4980,
+      "usage_rate": 1.64,
+      "has_icon": true
+    },
+    {
+      "id": 365620721,
+      "name": "Glass Cannon",
+      "name_ja": "グラスキャノン",
+      "slot": "weapon",
+      "tier": 4,
+      "purchases": 4867,
+      "usage_rate": 1.61,
+      "has_icon": true
+    },
+    {
+      "id": 989206714,
+      "name": "Blood Tribute",
+      "name_ja": "ブラッドトリビュート",
+      "slot": "weapon",
+      "tier": 3,
+      "purchases": 3255,
+      "usage_rate": 1.07,
+      "has_icon": true
+    },
+    {
+      "id": 339443430,
+      "name": "Frenzy",
+      "name_ja": "フレンジー",
+      "slot": "weapon",
+      "tier": 4,
+      "purchases": 2631,
+      "usage_rate": 0.87,
+      "has_icon": true
+    },
+    {
+      "id": 4149380528,
+      "name": "Apex Combat",
+      "name_ja": "エーペックスコンバット",
+      "slot": "weapon",
+      "tier": 5,
+      "purchases": 0,
+      "usage_rate": 0,
+      "has_icon": true
+    },
+    {
+      "id": 194116661,
+      "name": "Conjure Missiles",
+      "name_ja": "サモンミサイル",
+      "slot": "weapon",
+      "tier": 4,
+      "purchases": 0,
+      "usage_rate": 0,
+      "has_icon": true
+    },
+    {
+      "id": 3346798998,
+      "name": "Endless Magazine",
+      "name_ja": "エンドレスマガジン",
+      "slot": "weapon",
+      "tier": 4,
+      "purchases": 0,
+      "usage_rate": 0,
+      "has_icon": false
+    },
+    {
+      "id": 1497973293,
+      "name": "Glass Cannon v2",
+      "name_ja": "グラスキャノン v2",
+      "slot": "weapon",
+      "tier": 4,
+      "purchases": 0,
+      "usage_rate": 0,
+      "has_icon": true
+    },
+    {
+      "id": 3568217437,
+      "name": "Haunting Shot",
+      "name_ja": "ホーンテッドショット",
+      "slot": "weapon",
+      "tier": 5,
+      "purchases": 0,
+      "usage_rate": 0,
+      "has_icon": true
+    },
+    {
+      "id": 3269957497,
+      "name": "Infinite Rounds",
+      "name_ja": "インフィニットラウンド",
+      "slot": "weapon",
+      "tier": 5,
+      "purchases": 0,
+      "usage_rate": 0,
+      "has_icon": true
+    },
+    {
+      "id": 64550694,
+      "name": "Runed Gauntlets",
+      "name_ja": "ルーンガントレット",
+      "slot": "weapon",
+      "tier": 5,
+      "purchases": 0,
+      "usage_rate": 0,
+      "has_icon": true
+    },
+    {
+      "id": 3133167885,
+      "name": "Silencer",
+      "name_ja": "サイレンサー",
+      "slot": "weapon",
+      "tier": 4,
+      "purchases": 0,
+      "usage_rate": 0,
+      "has_icon": true
+    }
+  ],
+  "previous": null
+}
