@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-20T20:12:46.448Z",
+  "generatedAt": "2026-11-20T22:11:24.391Z",
   "week": {
     "start": "2026-11-14",
     "end": "2026-11-20",
@@ -9,10 +9,10 @@
     "min": 86,
     "en": "Oracle 6",
     "ja": "オラクル 6",
-    "share": 10.2
+    "share": 10.1
   },
-  "matches": 23392,
-  "players": 280704,
+  "matches": 23400,
+  "players": 280800,
   "csv": "data/items/2026/11/week-2.csv",
   "items": [
     {
@@ -21,7 +21,7 @@
       "name_ja": "エクストラスピリット",
       "slot": "spirit",
       "tier": 1,
-      "purchases": 124162,
+      "purchases": 124201,
       "usage_rate": 44.23,
       "has_icon": true
     },
@@ -31,7 +31,7 @@
       "name_ja": "グレータースピリット",
       "slot": "spirit",
       "tier": 2,
-      "purchases": 110489,
+      "purchases": 110527,
       "usage_rate": 39.36,
       "has_icon": true
     },
@@ -41,7 +41,7 @@
       "name_ja": "ミスティックバースト",
       "slot": "spirit",
       "tier": 1,
-      "purchases": 102536,
+      "purchases": 102563,
       "usage_rate": 36.53,
       "has_icon": true
     },
@@ -51,7 +51,7 @@
       "name_ja": "タンクバスター",
       "slot": "spirit",
       "tier": 3,
-      "purchases": 93667,
+      "purchases": 93690,
       "usage_rate": 33.37,
       "has_icon": true
     },
@@ -61,8 +61,8 @@
       "name_ja": "ミスティックエクスパンダー",
       "slot": "spirit",
       "tier": 1,
-      "purchases": 93326,
-      "usage_rate": 33.25,
+      "purchases": 93348,
+      "usage_rate": 33.24,
       "has_icon": true
     },
     {
@@ -71,7 +71,7 @@
       "name_ja": "クールダウンブースト",
       "slot": "spirit",
       "tier": 3,
-      "purchases": 86490,
+      "purchases": 86512,
       "usage_rate": 30.81,
       "has_icon": true
     },
@@ -81,7 +81,7 @@
       "name_ja": "エクストラチャージ",
       "slot": "spirit",
       "tier": 1,
-      "purchases": 85487,
+      "purchases": 85512,
       "usage_rate": 30.45,
       "has_icon": true
     },
@@ -91,7 +91,7 @@
       "name_ja": "コンプレッサー",
       "slot": "spirit",
       "tier": 2,
-      "purchases": 83830,
+      "purchases": 83852,
       "usage_rate": 29.86,
       "has_icon": true
     },
@@ -101,7 +101,7 @@
       "name_ja": "バウンドレススピリット",
       "slot": "spirit",
       "tier": 4,
-      "purchases": 69665,
+      "purchases": 69688,
       "usage_rate": 24.82,
       "has_icon": true
     },
@@ -111,7 +111,7 @@
       "name_ja": "グレーターエクスパンダー",
       "slot": "spirit",
       "tier": 3,
-      "purchases": 69054,
+      "purchases": 69071,
       "usage_rate": 24.6,
       "has_icon": true
     },
@@ -121,7 +121,7 @@
       "name_ja": "ラピッドリチャージ",
       "slot": "spirit",
       "tier": 3,
-      "purchases": 63613,
+      "purchases": 63630,
       "usage_rate": 22.66,
       "has_icon": true
     },
@@ -131,7 +131,7 @@
       "name_ja": "ヴァルネラビリティ",
       "slot": "spirit",
       "tier": 2,
-      "purchases": 63121,
+      "purchases": 63145,
       "usage_rate": 22.49,
       "has_icon": true
     },
@@ -141,7 +141,7 @@
       "name_ja": "スーパーエクステンダー",
       "slot": "spirit",
       "tier": 3,
-      "purchases": 54519,
+      "purchases": 54533,
       "usage_rate": 19.42,
       "has_icon": true
     },
@@ -151,7 +151,7 @@
       "name_ja": "クイックシルバーリロード",
       "slot": "spirit",
       "tier": 2,
-      "purchases": 54294,
+      "purchases": 54309,
       "usage_rate": 19.34,
       "has_icon": true
     },
@@ -161,7 +161,7 @@
       "name_ja": "レジストシュレッダー",
       "slot": "spirit",
       "tier": 2,
-      "purchases": 51935,
+      "purchases": 51948,
       "usage_rate": 18.5,
       "has_icon": true
     },
@@ -171,7 +171,7 @@
       "name_ja": "スピリットバーン",
       "slot": "spirit",
       "tier": 4,
-      "purchases": 50752,
+      "purchases": 50762,
       "usage_rate": 18.08,
       "has_icon": true
     },
@@ -181,7 +181,7 @@
       "name_ja": "スピリットスナッチ",
       "slot": "spirit",
       "tier": 3,
-      "purchases": 50688,
+      "purchases": 50699,
       "usage_rate": 18.06,
       "has_icon": true
     },
@@ -191,7 +191,7 @@
       "name_ja": "スピリットストライク",
       "slot": "spirit",
       "tier": 1,
-      "purchases": 50135,
+      "purchases": 50148,
       "usage_rate": 17.86,
       "has_icon": true
     },
@@ -201,7 +201,7 @@
       "name_ja": "エクスポージャー",
       "slot": "spirit",
       "tier": 4,
-      "purchases": 47782,
+      "purchases": 47799,
       "usage_rate": 17.02,
       "has_icon": true
     },
@@ -211,7 +211,7 @@
       "name_ja": "エクステンダー",
       "slot": "spirit",
       "tier": 2,
-      "purchases": 46254,
+      "purchases": 46267,
       "usage_rate": 16.48,
       "has_icon": true
     },
@@ -221,8 +221,8 @@
       "name_ja": "スロウヘックス",
       "slot": "spirit",
       "tier": 2,
-      "purchases": 42148,
-      "usage_rate": 15.02,
+      "purchases": 42161,
+      "usage_rate": 15.01,
       "has_icon": true
     },
     {
@@ -231,7 +231,7 @@
       "name_ja": "トーメントパルス",
       "slot": "spirit",
       "tier": 3,
-      "purchases": 30816,
+      "purchases": 30826,
       "usage_rate": 10.98,
       "has_icon": true
     },
@@ -241,7 +241,7 @@
       "name_ja": "アーケインサージ",
       "slot": "spirit",
       "tier": 2,
-      "purchases": 30212,
+      "purchases": 30221,
       "usage_rate": 10.76,
       "has_icon": true
     },
@@ -251,7 +251,7 @@
       "name_ja": "ミスティックリバーブ",
       "slot": "spirit",
       "tier": 4,
-      "purchases": 29797,
+      "purchases": 29807,
       "usage_rate": 10.62,
       "has_icon": true
     },
@@ -261,7 +261,7 @@
       "name_ja": "トランセンデント",
       "slot": "spirit",
       "tier": 4,
-      "purchases": 27351,
+      "purchases": 27354,
       "usage_rate": 9.74,
       "has_icon": true
     },
@@ -271,7 +271,7 @@
       "name_ja": "パワーサージ",
       "slot": "spirit",
       "tier": 3,
-      "purchases": 24597,
+      "purchases": 24609,
       "usage_rate": 8.76,
       "has_icon": true
     },
@@ -281,7 +281,7 @@
       "name_ja": "コールドフロント",
       "slot": "spirit",
       "tier": 2,
-      "purchases": 21695,
+      "purchases": 21700,
       "usage_rate": 7.73,
       "has_icon": true
     },
@@ -291,7 +291,7 @@
       "name_ja": "サプレッサー",
       "slot": "spirit",
       "tier": 2,
-      "purchases": 19553,
+      "purchases": 19558,
       "usage_rate": 6.97,
       "has_icon": true
     },
@@ -301,7 +301,7 @@
       "name_ja": "マーキュリーマグナム",
       "slot": "spirit",
       "tier": 4,
-      "purchases": 18765,
+      "purchases": 18770,
       "usage_rate": 6.68,
       "has_icon": true
     },
@@ -311,7 +311,7 @@
       "name_ja": "リフレッシャー",
       "slot": "spirit",
       "tier": 4,
-      "purchases": 15428,
+      "purchases": 15432,
       "usage_rate": 5.5,
       "has_icon": true
     },
@@ -321,7 +321,7 @@
       "name_ja": "呪いの遺物",
       "slot": "spirit",
       "tier": 4,
-      "purchases": 15252,
+      "purchases": 15257,
       "usage_rate": 5.43,
       "has_icon": true
     },
@@ -331,7 +331,7 @@
       "name_ja": "ノックダウン",
       "slot": "spirit",
       "tier": 3,
-      "purchases": 11683,
+      "purchases": 11688,
       "usage_rate": 4.16,
       "has_icon": true
     },
@@ -341,7 +341,7 @@
       "name_ja": "アークティックブラスト",
       "slot": "spirit",
       "tier": 4,
-      "purchases": 11061,
+      "purchases": 11062,
       "usage_rate": 3.94,
       "has_icon": true
     },
@@ -351,7 +351,7 @@
       "name_ja": "ミスティックリジェネ",
       "slot": "spirit",
       "tier": 1,
-      "purchases": 9880,
+      "purchases": 9883,
       "usage_rate": 3.52,
       "has_icon": true
     },
@@ -361,7 +361,7 @@
       "name_ja": "エーテリアルシフト",
       "slot": "spirit",
       "tier": 4,
-      "purchases": 9018,
+      "purchases": 9019,
       "usage_rate": 3.21,
       "has_icon": true
     },
@@ -371,7 +371,7 @@
       "name_ja": "コロッシブバレル",
       "slot": "spirit",
       "tier": 1,
-      "purchases": 8524,
+      "purchases": 8526,
       "usage_rate": 3.04,
       "has_icon": true
     },
@@ -381,7 +381,7 @@
       "name_ja": "ディケイ",
       "slot": "spirit",
       "tier": 3,
-      "purchases": 8219,
+      "purchases": 8221,
       "usage_rate": 2.93,
       "has_icon": true
     },
@@ -391,7 +391,7 @@
       "name_ja": "ミスティックスロウ",
       "slot": "spirit",
       "tier": 2,
-      "purchases": 7598,
+      "purchases": 7600,
       "usage_rate": 2.71,
       "has_icon": true
     },
@@ -401,7 +401,7 @@
       "name_ja": "ボルテックスウェブ",
       "slot": "spirit",
       "tier": 4,
-      "purchases": 6599,
+      "purchases": 6601,
       "usage_rate": 2.35,
       "has_icon": true
     },
@@ -411,7 +411,7 @@
       "name_ja": "レディアントリジェネ",
       "slot": "spirit",
       "tier": 3,
-      "purchases": 6572,
+      "purchases": 6576,
       "usage_rate": 2.34,
       "has_icon": true
     },
@@ -421,7 +421,7 @@
       "name_ja": "スカージ",
       "slot": "spirit",
       "tier": 4,
-      "purchases": 6379,
+      "purchases": 6380,
       "usage_rate": 2.27,
       "has_icon": true
     },
@@ -511,7 +511,7 @@
       "name_ja": "ヒールベイン",
       "slot": "vitality",
       "tier": 2,
-      "purchases": 100141,
+      "purchases": 100175,
       "usage_rate": 35.67,
       "has_icon": true
     },
@@ -521,7 +521,7 @@
       "name_ja": "スプリントブーツ",
       "slot": "vitality",
       "tier": 1,
-      "purchases": 76646,
+      "purchases": 76668,
       "usage_rate": 27.3,
       "has_icon": true
     },
@@ -531,7 +531,7 @@
       "name_ja": "エクストラスタミナ",
       "slot": "vitality",
       "tier": 1,
-      "purchases": 75424,
+      "purchases": 75452,
       "usage_rate": 26.87,
       "has_icon": true
     },
@@ -541,8 +541,8 @@
       "name_ja": "バトルベスト",
       "slot": "vitality",
       "tier": 2,
-      "purchases": 73335,
-      "usage_rate": 26.13,
+      "purchases": 73353,
+      "usage_rate": 26.12,
       "has_icon": true
     },
     {
@@ -551,8 +551,8 @@
       "name_ja": "スピリットレジリエンス",
       "slot": "vitality",
       "tier": 3,
-      "purchases": 71286,
-      "usage_rate": 25.4,
+      "purchases": 71302,
+      "usage_rate": 25.39,
       "has_icon": true
     },
     {
@@ -561,7 +561,7 @@
       "name_ja": "ディスペルマジック",
       "slot": "vitality",
       "tier": 3,
-      "purchases": 67597,
+      "purchases": 67612,
       "usage_rate": 24.08,
       "has_icon": true
     },
@@ -571,7 +571,7 @@
       "name_ja": "妖術師の紋章",
       "slot": "vitality",
       "tier": 2,
-      "purchases": 62000,
+      "purchases": 62023,
       "usage_rate": 22.09,
       "has_icon": true
     },
@@ -581,7 +581,7 @@
       "name_ja": "不屈の心",
       "slot": "vitality",
       "tier": 1,
-      "purchases": 61283,
+      "purchases": 61296,
       "usage_rate": 21.83,
       "has_icon": true
     },
@@ -591,7 +591,7 @@
       "name_ja": "ウィングブーツ",
       "slot": "vitality",
       "tier": 2,
-      "purchases": 57409,
+      "purchases": 57431,
       "usage_rate": 20.45,
       "has_icon": true
     },
@@ -601,7 +601,7 @@
       "name_ja": "スピリットライフスティール",
       "slot": "vitality",
       "tier": 2,
-      "purchases": 57192,
+      "purchases": 57210,
       "usage_rate": 20.37,
       "has_icon": true
     },
@@ -611,7 +611,7 @@
       "name_ja": "エクストラリジェネ",
       "slot": "vitality",
       "tier": 1,
-      "purchases": 50796,
+      "purchases": 50813,
       "usage_rate": 18.1,
       "has_icon": true
     },
@@ -621,7 +621,7 @@
       "name_ja": "エクストラヘルス",
       "slot": "vitality",
       "tier": 1,
-      "purchases": 48399,
+      "purchases": 48411,
       "usage_rate": 17.24,
       "has_icon": true
     },
@@ -631,7 +631,7 @@
       "name_ja": "スタミナマスタリー",
       "slot": "vitality",
       "tier": 3,
-      "purchases": 47489,
+      "purchases": 47509,
       "usage_rate": 16.92,
       "has_icon": true
     },
@@ -641,7 +641,7 @@
       "name_ja": "デバフリデューサー",
       "slot": "vitality",
       "tier": 2,
-      "purchases": 44961,
+      "purchases": 44971,
       "usage_rate": 16.02,
       "has_icon": true
     },
@@ -651,7 +651,7 @@
       "name_ja": "メレーライフスティール",
       "slot": "vitality",
       "tier": 1,
-      "purchases": 43825,
+      "purchases": 43837,
       "usage_rate": 15.61,
       "has_icon": true
     },
@@ -661,7 +661,7 @@
       "name_ja": "ワープストーン",
       "slot": "vitality",
       "tier": 3,
-      "purchases": 42215,
+      "purchases": 42226,
       "usage_rate": 15.04,
       "has_icon": true
     },
@@ -671,8 +671,8 @@
       "name_ja": "トロフィーコレクター",
       "slot": "vitality",
       "tier": 2,
-      "purchases": 38304,
-      "usage_rate": 13.65,
+      "purchases": 38315,
+      "usage_rate": 13.64,
       "has_icon": true
     },
     {
@@ -681,7 +681,7 @@
       "name_ja": "フォルティチュード",
       "slot": "vitality",
       "tier": 3,
-      "purchases": 37414,
+      "purchases": 37422,
       "usage_rate": 13.33,
       "has_icon": true
     },
@@ -691,8 +691,8 @@
       "name_ja": "リアクティブバリア",
       "slot": "vitality",
       "tier": 2,
-      "purchases": 35244,
-      "usage_rate": 12.56,
+      "purchases": 35251,
+      "usage_rate": 12.55,
       "has_icon": true
     },
     {
@@ -701,7 +701,7 @@
       "name_ja": "スピリットシールド",
       "slot": "vitality",
       "tier": 2,
-      "purchases": 35043,
+      "purchases": 35053,
       "usage_rate": 12.48,
       "has_icon": true
     },
@@ -711,7 +711,7 @@
       "name_ja": "カウンタースペル",
       "slot": "vitality",
       "tier": 3,
-      "purchases": 31717,
+      "purchases": 31726,
       "usage_rate": 11.3,
       "has_icon": true
     },
@@ -721,7 +721,7 @@
       "name_ja": "ヒーリングブースター",
       "slot": "vitality",
       "tier": 2,
-      "purchases": 29710,
+      "purchases": 29720,
       "usage_rate": 10.58,
       "has_icon": true
     },
@@ -731,7 +731,7 @@
       "name_ja": "バレットライフスティール",
       "slot": "vitality",
       "tier": 2,
-      "purchases": 26803,
+      "purchases": 26808,
       "usage_rate": 9.55,
       "has_icon": true
     },
@@ -741,7 +741,7 @@
       "name_ja": "アンストッパブル",
       "slot": "vitality",
       "tier": 4,
-      "purchases": 25814,
+      "purchases": 25824,
       "usage_rate": 9.2,
       "has_icon": true
     },
@@ -751,7 +751,7 @@
       "name_ja": "スペルブレイカー",
       "slot": "vitality",
       "tier": 4,
-      "purchases": 24641,
+      "purchases": 24649,
       "usage_rate": 8.78,
       "has_icon": true
     },
@@ -761,7 +761,7 @@
       "name_ja": "ライフストライク",
       "slot": "vitality",
       "tier": 3,
-      "purchases": 24302,
+      "purchases": 24313,
       "usage_rate": 8.66,
       "has_icon": true
     },
@@ -771,7 +771,7 @@
       "name_ja": "プレートアーマー",
       "slot": "vitality",
       "tier": 4,
-      "purchases": 18902,
+      "purchases": 18908,
       "usage_rate": 6.73,
       "has_icon": true
     },
@@ -781,7 +781,7 @@
       "name_ja": "インドミタブル",
       "slot": "vitality",
       "tier": 4,
-      "purchases": 18190,
+      "purchases": 18192,
       "usage_rate": 6.48,
       "has_icon": true
     },
@@ -791,7 +791,7 @@
       "name_ja": "サイフォンバレット",
       "slot": "vitality",
       "tier": 4,
-      "purchases": 14608,
+      "purchases": 14611,
       "usage_rate": 5.2,
       "has_icon": true
     },
@@ -801,7 +801,7 @@
       "name_ja": "プロテスト",
       "slot": "vitality",
       "tier": 1,
-      "purchases": 14295,
+      "purchases": 14298,
       "usage_rate": 5.09,
       "has_icon": true
     },
@@ -811,7 +811,7 @@
       "name_ja": "ガーディアンワード",
       "slot": "vitality",
       "tier": 2,
-      "purchases": 13403,
+      "purchases": 13404,
       "usage_rate": 4.77,
       "has_icon": true
     },
@@ -821,7 +821,7 @@
       "name_ja": "ジャガーノート",
       "slot": "vitality",
       "tier": 4,
-      "purchases": 13072,
+      "purchases": 13077,
       "usage_rate": 4.66,
       "has_icon": true
     },
@@ -831,7 +831,7 @@
       "name_ja": "デスチーター",
       "slot": "vitality",
       "tier": 4,
-      "purchases": 12450,
+      "purchases": 12454,
       "usage_rate": 4.44,
       "has_icon": true
     },
@@ -841,7 +841,7 @@
       "name_ja": "ウェポンシールド",
       "slot": "vitality",
       "tier": 2,
-      "purchases": 12421,
+      "purchases": 12423,
       "usage_rate": 4.42,
       "has_icon": true
     },
@@ -851,7 +851,7 @@
       "name_ja": "ヴァンパイアバースト",
       "slot": "vitality",
       "tier": 4,
-      "purchases": 11057,
+      "purchases": 11060,
       "usage_rate": 3.94,
       "has_icon": true
     },
@@ -861,7 +861,7 @@
       "name_ja": "ファントムストライク",
       "slot": "vitality",
       "tier": 4,
-      "purchases": 10981,
+      "purchases": 10986,
       "usage_rate": 3.91,
       "has_icon": true
     },
@@ -871,8 +871,8 @@
       "name_ja": "メタルスキン",
       "slot": "vitality",
       "tier": 3,
-      "purchases": 10568,
-      "usage_rate": 3.76,
+      "purchases": 10575,
+      "usage_rate": 3.77,
       "has_icon": true
     },
     {
@@ -881,7 +881,7 @@
       "name_ja": "ウィッチメイル",
       "slot": "vitality",
       "tier": 4,
-      "purchases": 10035,
+      "purchases": 10036,
       "usage_rate": 3.57,
       "has_icon": true
     },
@@ -891,7 +891,7 @@
       "name_ja": "ライフドレイン",
       "slot": "vitality",
       "tier": 4,
-      "purchases": 9910,
+      "purchases": 9914,
       "usage_rate": 3.53,
       "has_icon": true
     },
@@ -921,7 +921,7 @@
       "name_ja": "バレットレジリエンス",
       "slot": "vitality",
       "tier": 3,
-      "purchases": 8344,
+      "purchases": 8349,
       "usage_rate": 2.97,
       "has_icon": true
     },
@@ -931,7 +931,7 @@
       "name_ja": "インフューザー",
       "slot": "vitality",
       "tier": 4,
-      "purchases": 8096,
+      "purchases": 8101,
       "usage_rate": 2.88,
       "has_icon": true
     },
@@ -941,7 +941,7 @@
       "name_ja": "ベールウォーカー",
       "slot": "vitality",
       "tier": 3,
-      "purchases": 8060,
+      "purchases": 8063,
       "usage_rate": 2.87,
       "has_icon": true
     },
@@ -961,7 +961,7 @@
       "name_ja": "ディバイナーズケブラー",
       "slot": "vitality",
       "tier": 4,
-      "purchases": 6828,
+      "purchases": 6831,
       "usage_rate": 2.43,
       "has_icon": true
     },
@@ -971,8 +971,8 @@
       "name_ja": "インヒビター",
       "slot": "vitality",
       "tier": 4,
-      "purchases": 6555,
-      "usage_rate": 2.34,
+      "purchases": 6556,
+      "usage_rate": 2.33,
       "has_icon": true
     },
     {
@@ -981,7 +981,7 @@
       "name_ja": "ヒーリングテンポ",
       "slot": "vitality",
       "tier": 4,
-      "purchases": 6284,
+      "purchases": 6286,
       "usage_rate": 2.24,
       "has_icon": true
     },
@@ -1001,8 +1001,8 @@
       "name_ja": "コロッサス",
       "slot": "vitality",
       "tier": 4,
-      "purchases": 3888,
-      "usage_rate": 1.39,
+      "purchases": 3889,
+      "usage_rate": 1.38,
       "has_icon": true
     },
     {
@@ -1011,7 +1011,7 @@
       "name_ja": "リターンファイア",
       "slot": "vitality",
       "tier": 2,
-      "purchases": 3672,
+      "purchases": 3673,
       "usage_rate": 1.31,
       "has_icon": true
     },
@@ -1041,7 +1041,7 @@
       "name_ja": "フューリートランス",
       "slot": "vitality",
       "tier": 3,
-      "purchases": 1652,
+      "purchases": 1653,
       "usage_rate": 0.59,
       "has_icon": true
     },
@@ -1051,7 +1051,7 @@
       "name_ja": "スイフトストライカー",
       "slot": "weapon",
       "tier": 2,
-      "purchases": 72575,
+      "purchases": 72599,
       "usage_rate": 25.85,
       "has_icon": true
     },
@@ -1061,7 +1061,7 @@
       "name_ja": "ラピッドラウンド",
       "slot": "weapon",
       "tier": 1,
-      "purchases": 66955,
+      "purchases": 66976,
       "usage_rate": 23.85,
       "has_icon": true
     },
@@ -1071,7 +1071,7 @@
       "name_ja": "ハイスピードラウンド",
       "slot": "weapon",
       "tier": 1,
-      "purchases": 64716,
+      "purchases": 64738,
       "usage_rate": 23.05,
       "has_icon": true
     },
@@ -1081,8 +1081,8 @@
       "name_ja": "モンスターラウンド",
       "slot": "weapon",
       "tier": 1,
-      "purchases": 63933,
-      "usage_rate": 22.78,
+      "purchases": 63952,
+      "usage_rate": 22.77,
       "has_icon": true
     },
     {
@@ -1091,7 +1091,7 @@
       "name_ja": "ヒーリングショット",
       "slot": "weapon",
       "tier": 1,
-      "purchases": 58975,
+      "purchases": 58993,
       "usage_rate": 21.01,
       "has_icon": true
     },
@@ -1101,7 +1101,7 @@
       "name_ja": "クローズクォーター",
       "slot": "weapon",
       "tier": 1,
-      "purchases": 51039,
+      "purchases": 51054,
       "usage_rate": 18.18,
       "has_icon": true
     },
@@ -1111,7 +1111,7 @@
       "name_ja": "ストーカー",
       "slot": "weapon",
       "tier": 2,
-      "purchases": 46038,
+      "purchases": 46051,
       "usage_rate": 16.4,
       "has_icon": true
     },
@@ -1121,7 +1121,7 @@
       "name_ja": "オープニングラウンド",
       "slot": "weapon",
       "tier": 2,
-      "purchases": 43805,
+      "purchases": 43819,
       "usage_rate": 15.61,
       "has_icon": true
     },
@@ -1131,7 +1131,7 @@
       "name_ja": "巨大拡張マガジン",
       "slot": "weapon",
       "tier": 2,
-      "purchases": 40424,
+      "purchases": 40437,
       "usage_rate": 14.4,
       "has_icon": true
     },
@@ -1141,7 +1141,7 @@
       "name_ja": "基礎拡張マガジン",
       "slot": "weapon",
       "tier": 1,
-      "purchases": 38849,
+      "purchases": 38861,
       "usage_rate": 13.84,
       "has_icon": true
     },
@@ -1151,7 +1151,7 @@
       "name_ja": "トキシックバレット",
       "slot": "weapon",
       "tier": 3,
-      "purchases": 36088,
+      "purchases": 36104,
       "usage_rate": 12.86,
       "has_icon": true
     },
@@ -1161,8 +1161,8 @@
       "name_ja": "ハンターオーラ",
       "slot": "weapon",
       "tier": 3,
-      "purchases": 35301,
-      "usage_rate": 12.58,
+      "purchases": 35310,
+      "usage_rate": 12.57,
       "has_icon": true
     },
     {
@@ -1171,7 +1171,7 @@
       "name_ja": "テスラバレット",
       "slot": "weapon",
       "tier": 3,
-      "purchases": 34418,
+      "purchases": 34431,
       "usage_rate": 12.26,
       "has_icon": true
     },
@@ -1181,7 +1181,7 @@
       "name_ja": "シャープシューター",
       "slot": "weapon",
       "tier": 3,
-      "purchases": 29535,
+      "purchases": 29545,
       "usage_rate": 10.52,
       "has_icon": true
     },
@@ -1191,7 +1191,7 @@
       "name_ja": "メレーチャージ",
       "slot": "weapon",
       "tier": 2,
-      "purchases": 28902,
+      "purchases": 28911,
       "usage_rate": 10.3,
       "has_icon": true
     },
@@ -1201,7 +1201,7 @@
       "name_ja": "フリートフット",
       "slot": "weapon",
       "tier": 2,
-      "purchases": 28477,
+      "purchases": 28483,
       "usage_rate": 10.14,
       "has_icon": true
     },
@@ -1211,7 +1211,7 @@
       "name_ja": "バーストファイア",
       "slot": "weapon",
       "tier": 3,
-      "purchases": 28285,
+      "purchases": 28298,
       "usage_rate": 10.08,
       "has_icon": true
     },
@@ -1221,7 +1221,7 @@
       "name_ja": "サクリファイス",
       "slot": "weapon",
       "tier": 3,
-      "purchases": 28005,
+      "purchases": 28011,
       "usage_rate": 9.98,
       "has_icon": true
     },
@@ -1231,7 +1231,7 @@
       "name_ja": "コンデンサー",
       "slot": "weapon",
       "tier": 4,
-      "purchases": 27740,
+      "purchases": 27748,
       "usage_rate": 9.88,
       "has_icon": true
     },
@@ -1241,7 +1241,7 @@
       "name_ja": "ヘッドショットブースター",
       "slot": "weapon",
       "tier": 1,
-      "purchases": 27689,
+      "purchases": 27695,
       "usage_rate": 9.86,
       "has_icon": true
     },
@@ -1251,7 +1251,7 @@
       "name_ja": "ロングレンジ",
       "slot": "weapon",
       "tier": 2,
-      "purchases": 26915,
+      "purchases": 26924,
       "usage_rate": 9.59,
       "has_icon": true
     },
@@ -1261,8 +1261,8 @@
       "name_ja": "ミスティックショット",
       "slot": "weapon",
       "tier": 2,
-      "purchases": 26486,
-      "usage_rate": 9.44,
+      "purchases": 26493,
+      "usage_rate": 9.43,
       "has_icon": true
     },
     {
@@ -1271,7 +1271,7 @@
       "name_ja": "リチャージラッシュ",
       "slot": "weapon",
       "tier": 2,
-      "purchases": 22867,
+      "purchases": 22875,
       "usage_rate": 8.15,
       "has_icon": true
     },
@@ -1281,7 +1281,7 @@
       "name_ja": "リコシェ",
       "slot": "weapon",
       "tier": 4,
-      "purchases": 21555,
+      "purchases": 21564,
       "usage_rate": 7.68,
       "has_icon": true
     },
@@ -1291,7 +1291,7 @@
       "name_ja": "エクスプレスショット",
       "slot": "weapon",
       "tier": 3,
-      "purchases": 21064,
+      "purchases": 21074,
       "usage_rate": 7.5,
       "has_icon": true
     },
@@ -1301,8 +1301,8 @@
       "name_ja": "ヘッドハンター",
       "slot": "weapon",
       "tier": 3,
-      "purchases": 21039,
-      "usage_rate": 7.5,
+      "purchases": 21044,
+      "usage_rate": 7.49,
       "has_icon": true
     },
     {
@@ -1311,7 +1311,7 @@
       "name_ja": "スピリットオーバーフロー",
       "slot": "weapon",
       "tier": 4,
-      "purchases": 19924,
+      "purchases": 19928,
       "usage_rate": 7.1,
       "has_icon": true
     },
@@ -1321,7 +1321,7 @@
       "name_ja": "バーサーカー",
       "slot": "weapon",
       "tier": 3,
-      "purchases": 18987,
+      "purchases": 18992,
       "usage_rate": 6.76,
       "has_icon": true
     },
@@ -1331,7 +1331,7 @@
       "name_ja": "ポイントブランク",
       "slot": "weapon",
       "tier": 3,
-      "purchases": 17750,
+      "purchases": 17756,
       "usage_rate": 6.32,
       "has_icon": true
     },
@@ -1341,8 +1341,8 @@
       "name_ja": "スピリットシュレッダー",
       "slot": "weapon",
       "tier": 2,
-      "purchases": 17728,
-      "usage_rate": 6.32,
+      "purchases": 17732,
+      "usage_rate": 6.31,
       "has_icon": true
     },
     {
@@ -1351,7 +1351,7 @@
       "name_ja": "サイレンサー",
       "slot": "weapon",
       "tier": 4,
-      "purchases": 17221,
+      "purchases": 17222,
       "usage_rate": 6.13,
       "has_icon": true
     },
@@ -1361,7 +1361,7 @@
       "name_ja": "アクティブリロード",
       "slot": "weapon",
       "tier": 2,
-      "purchases": 16271,
+      "purchases": 16277,
       "usage_rate": 5.8,
       "has_icon": true
     },
@@ -1371,7 +1371,7 @@
       "name_ja": "イグゾーストヘッドショット",
       "slot": "weapon",
       "tier": 2,
-      "purchases": 15273,
+      "purchases": 15276,
       "usage_rate": 5.44,
       "has_icon": true
     },
@@ -1381,7 +1381,7 @@
       "name_ja": "ラッキーショット",
       "slot": "weapon",
       "tier": 4,
-      "purchases": 12993,
+      "purchases": 12997,
       "usage_rate": 4.63,
       "has_icon": true
     },
@@ -1391,7 +1391,7 @@
       "name_ja": "ホロウポイント",
       "slot": "weapon",
       "tier": 3,
-      "purchases": 12951,
+      "purchases": 12956,
       "usage_rate": 4.61,
       "has_icon": true
     },
@@ -1401,7 +1401,7 @@
       "name_ja": "クラッシュフィスト",
       "slot": "weapon",
       "tier": 4,
-      "purchases": 12683,
+      "purchases": 12688,
       "usage_rate": 4.52,
       "has_icon": true
     },
@@ -1411,7 +1411,7 @@
       "name_ja": "ヘヴィショット",
       "slot": "weapon",
       "tier": 3,
-      "purchases": 11340,
+      "purchases": 11342,
       "usage_rate": 4.04,
       "has_icon": true
     },
@@ -1421,7 +1421,7 @@
       "name_ja": "キネティックダッシュ",
       "slot": "weapon",
       "tier": 2,
-      "purchases": 11162,
+      "purchases": 11163,
       "usage_rate": 3.98,
       "has_icon": true
     },
@@ -1432,7 +1432,7 @@
       "slot": "weapon",
       "tier": 4,
       "purchases": 10205,
-      "usage_rate": 3.64,
+      "usage_rate": 3.63,
       "has_icon": true
     },
     {
@@ -1441,7 +1441,7 @@
       "name_ja": "シャドウウィーブ",
       "slot": "weapon",
       "tier": 3,
-      "purchases": 9988,
+      "purchases": 9990,
       "usage_rate": 3.56,
       "has_icon": true
     },
@@ -1451,7 +1451,7 @@
       "name_ja": "スピリットキラー",
       "slot": "weapon",
       "tier": 3,
-      "purchases": 9901,
+      "purchases": 9904,
       "usage_rate": 3.53,
       "has_icon": true
     },
@@ -1461,7 +1461,7 @@
       "name_ja": "スロウバレット",
       "slot": "weapon",
       "tier": 2,
-      "purchases": 8898,
+      "purchases": 8900,
       "usage_rate": 3.17,
       "has_icon": true
     },
@@ -1471,7 +1471,7 @@
       "name_ja": "スペルスリンガー",
       "slot": "weapon",
       "tier": 4,
-      "purchases": 8000,
+      "purchases": 8003,
       "usage_rate": 2.85,
       "has_icon": true
     },
@@ -1481,8 +1481,8 @@
       "name_ja": "スプリットショット",
       "slot": "weapon",
       "tier": 2,
-      "purchases": 7648,
-      "usage_rate": 2.72,
+      "purchases": 7653,
+      "usage_rate": 2.73,
       "has_icon": true
     },
     {
@@ -1491,7 +1491,7 @@
       "name_ja": "ヒロイックオーラ",
       "slot": "weapon",
       "tier": 3,
-      "purchases": 7089,
+      "purchases": 7092,
       "usage_rate": 2.53,
       "has_icon": true
     },
@@ -1511,7 +1511,7 @@
       "name_ja": "バリスティックエンチャント",
       "slot": "weapon",
       "tier": 3,
-      "purchases": 5534,
+      "purchases": 5536,
       "usage_rate": 1.97,
       "has_icon": true
     },
@@ -1521,7 +1521,7 @@
       "name_ja": "連射強化マガジン",
       "slot": "weapon",
       "tier": 2,
-      "purchases": 5237,
+      "purchases": 5240,
       "usage_rate": 1.87,
       "has_icon": true
     },
@@ -1531,7 +1531,7 @@
       "name_ja": "アルケミカルファイア",
       "slot": "weapon",
       "tier": 3,
-      "purchases": 4902,
+      "purchases": 4904,
       "usage_rate": 1.75,
       "has_icon": true
     },
@@ -1541,7 +1541,7 @@
       "name_ja": "アーマーピアサー",
       "slot": "weapon",
       "tier": 4,
-      "purchases": 4830,
+      "purchases": 4831,
       "usage_rate": 1.72,
       "has_icon": true
     },
@@ -1551,7 +1551,7 @@
       "name_ja": "グラスキャノン",
       "slot": "weapon",
       "tier": 4,
-      "purchases": 4685,
+      "purchases": 4690,
       "usage_rate": 1.67,
       "has_icon": true
     },
@@ -1571,7 +1571,7 @@
       "name_ja": "フレンジー",
       "slot": "weapon",
       "tier": 4,
-      "purchases": 2320,
+      "purchases": 2321,
       "usage_rate": 0.83,
       "has_icon": true
     }

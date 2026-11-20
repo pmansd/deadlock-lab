@@ -1,21 +1,21 @@
 {
-  "generatedAt": "2026-11-20T20:12:28.768Z",
+  "generatedAt": "2026-11-20T22:11:08.996Z",
   "week": {
     "start": "2026-11-14",
     "end": "2026-11-20",
     "timezone": "Asia/Tokyo"
   },
-  "games": 29,
+  "games": 36,
   "csv": "data/2026/11/week-2.csv",
   "heroes": [
     {
       "hero": "Abrams",
       "hero_ja": "エイブラムス",
-      "picks": 24,
-      "wins": 10,
-      "pick_rate": 82.8,
-      "win_rate": 41.7,
-      "bans": 3,
+      "picks": 29,
+      "wins": 13,
+      "pick_rate": 80.6,
+      "win_rate": 44.8,
+      "bans": 4,
       "ban_rate": 25,
       "items": [
         {
@@ -382,7 +382,7 @@
       "hero_ja": "アポロ",
       "picks": 4,
       "wins": 1,
-      "pick_rate": 13.8,
+      "pick_rate": 11.1,
       "win_rate": 25,
       "bans": 0,
       "ban_rate": 0,
@@ -604,9 +604,9 @@
       "hero_ja": "バーバ",
       "picks": 2,
       "wins": 1,
-      "pick_rate": 6.9,
+      "pick_rate": 5.6,
       "win_rate": 50,
-      "bans": 12,
+      "bans": 16,
       "ban_rate": 100,
       "items": [
         {
@@ -789,10 +789,10 @@
     {
       "hero": "Bebop",
       "hero_ja": "ビバップ",
-      "picks": 6,
+      "picks": 7,
       "wins": 1,
-      "pick_rate": 20.7,
-      "win_rate": 16.7,
+      "pick_rate": 19.4,
+      "win_rate": 14.3,
       "bans": 0,
       "ban_rate": 0,
       "items": [
@@ -881,6 +881,13 @@
           "tier": 3
         },
         {
+          "id": 1662311306,
+          "name": "Divine Barrier",
+          "name_ja": "ディバインバリア",
+          "slot": "vitality",
+          "tier": 4
+        },
+        {
           "id": 3970837787,
           "name": "Enchanter's Emblem",
           "name_ja": "妖術師の紋章",
@@ -934,6 +941,20 @@
           "name": "Fleetfoot",
           "name_ja": "フリートフット",
           "slot": "weapon",
+          "tier": 2
+        },
+        {
+          "id": 1672893796,
+          "name": "Grit",
+          "name_ja": "不屈の心",
+          "slot": "vitality",
+          "tier": 1
+        },
+        {
+          "id": 857669956,
+          "name": "Guardian Ward",
+          "name_ja": "ガーディアンワード",
+          "slot": "vitality",
           "tier": 2
         },
         {
@@ -1018,6 +1039,13 @@
           "name": "Restorative Shot",
           "name_ja": "ヒーリングショット",
           "slot": "weapon",
+          "tier": 1
+        },
+        {
+          "id": 2922054143,
+          "name": "Rusted Barrel",
+          "name_ja": "コロッシブバレル",
+          "slot": "spirit",
           "tier": 1
         },
         {
@@ -1109,12 +1137,12 @@
     {
       "hero": "Billy",
       "hero_ja": "ビリー",
-      "picks": 22,
-      "wins": 15,
-      "pick_rate": 75.9,
-      "win_rate": 68.2,
+      "picks": 29,
+      "wins": 18,
+      "pick_rate": 80.6,
+      "win_rate": 62.1,
       "bans": 1,
-      "ban_rate": 8.3,
+      "ban_rate": 6.3,
       "items": [
         {
           "id": 1932939246,
@@ -1471,19 +1499,47 @@
     {
       "hero": "Calico",
       "hero_ja": "キャリコ",
-      "picks": 1,
-      "wins": 0,
-      "pick_rate": 3.4,
-      "win_rate": 0,
+      "picks": 2,
+      "wins": 1,
+      "pick_rate": 5.6,
+      "win_rate": 50,
       "bans": 0,
       "ban_rate": 0,
       "items": [
+        {
+          "id": 381961617,
+          "name": "Active Reload",
+          "name_ja": "アクティブリロード",
+          "slot": "weapon",
+          "tier": 2
+        },
         {
           "id": 3812615317,
           "name": "Arctic Blast",
           "name_ja": "アークティックブラスト",
           "slot": "spirit",
           "tier": 4
+        },
+        {
+          "id": 1235347618,
+          "name": "Battle Vest",
+          "name_ja": "バトルベスト",
+          "slot": "vitality",
+          "tier": 2
+        },
+        {
+          "id": 499683006,
+          "name": "Bullet Lifesteal",
+          "name_ja": "バレットライフスティール",
+          "slot": "vitality",
+          "tier": 2
+        },
+        {
+          "id": 1342610602,
+          "name": "Close Quarters",
+          "name_ja": "クローズクォーター",
+          "slot": "weapon",
+          "tier": 1
         },
         {
           "id": 1976391348,
@@ -1507,11 +1563,32 @@
           "tier": 2
         },
         {
+          "id": 3403085434,
+          "name": "Fleetfoot",
+          "name_ja": "フリートフット",
+          "slot": "weapon",
+          "tier": 2
+        },
+        {
+          "id": 365620721,
+          "name": "Glass Cannon",
+          "name_ja": "グラスキャノン",
+          "slot": "weapon",
+          "tier": 4
+        },
+        {
           "id": 2603935618,
           "name": "Healbane",
           "name_ja": "ヒールベイン",
           "slot": "vitality",
           "tier": 2
+        },
+        {
+          "id": 2678489038,
+          "name": "Hollow Point",
+          "name_ja": "ホロウポイント",
+          "slot": "weapon",
+          "tier": 3
         },
         {
           "id": 2481177645,
@@ -1521,10 +1598,24 @@
           "tier": 3
         },
         {
+          "id": 3977876567,
+          "name": "Kinetic Dash",
+          "name_ja": "キネティックダッシュ",
+          "slot": "weapon",
+          "tier": 2
+        },
+        {
           "id": 1437614329,
           "name": "Melee Lifesteal",
           "name_ja": "メレーライフスティール",
           "slot": "vitality",
+          "tier": 1
+        },
+        {
+          "id": 668299740,
+          "name": "Rapid Rounds",
+          "name_ja": "ラピッドラウンド",
+          "slot": "weapon",
           "tier": 1
         },
         {
@@ -1570,6 +1661,20 @@
           "tier": 2
         },
         {
+          "id": 4104549924,
+          "name": "Swift Striker",
+          "name_ja": "スイフトストライカー",
+          "slot": "weapon",
+          "tier": 2
+        },
+        {
+          "id": 2356412290,
+          "name": "Titanic Magazine",
+          "name_ja": "巨大拡張マガジン",
+          "slot": "weapon",
+          "tier": 2
+        },
+        {
           "id": 395944548,
           "name": "Torment Pulse",
           "name_ja": "トーメントパルス",
@@ -1581,10 +1686,10 @@
     {
       "hero": "Celeste",
       "hero_ja": "セレステ",
-      "picks": 2,
+      "picks": 3,
       "wins": 1,
-      "pick_rate": 6.9,
-      "win_rate": 50,
+      "pick_rate": 8.3,
+      "win_rate": 33.3,
       "bans": 0,
       "ban_rate": 0,
       "items": [
@@ -1755,6 +1860,13 @@
           "name_ja": "ワープストーン",
           "slot": "vitality",
           "tier": 3
+        },
+        {
+          "id": 805079544,
+          "name": "Weapon Shielding",
+          "name_ja": "ウェポンシールド",
+          "slot": "vitality",
+          "tier": 2
         }
       ]
     },
@@ -1763,7 +1875,7 @@
       "hero_ja": "デッドマン・ダニー",
       "picks": 2,
       "wins": 1,
-      "pick_rate": 6.9,
+      "pick_rate": 5.6,
       "win_rate": 50,
       "bans": 0,
       "ban_rate": 0,
@@ -1920,10 +2032,10 @@
     {
       "hero": "Drifter",
       "hero_ja": "ドリフター",
-      "picks": 4,
+      "picks": 5,
       "wins": 1,
-      "pick_rate": 13.8,
-      "win_rate": 25,
+      "pick_rate": 13.9,
+      "win_rate": 20,
       "bans": 0,
       "ban_rate": 0,
       "items": [
@@ -2012,6 +2124,20 @@
           "tier": 1
         },
         {
+          "id": 4139877411,
+          "name": "Extra Stamina",
+          "name_ja": "エクストラスタミナ",
+          "slot": "vitality",
+          "tier": 1
+        },
+        {
+          "id": 3585132399,
+          "name": "Fortitude",
+          "name_ja": "フォルティチュード",
+          "slot": "vitality",
+          "tier": 3
+        },
+        {
           "id": 2603935618,
           "name": "Healbane",
           "name_ja": "ヒールベイン",
@@ -2029,6 +2155,13 @@
           "id": 3977876567,
           "name": "Kinetic Dash",
           "name_ja": "キネティックダッシュ",
+          "slot": "weapon",
+          "tier": 2
+        },
+        {
+          "id": 26002154,
+          "name": "Melee Charge",
+          "name_ja": "メレーチャージ",
           "slot": "weapon",
           "tier": 2
         },
@@ -2066,6 +2199,13 @@
           "name_ja": "シャドウウィーブ",
           "slot": "weapon",
           "tier": 3
+        },
+        {
+          "id": 1813726886,
+          "name": "Slowing Hex",
+          "name_ja": "スロウヘックス",
+          "slot": "spirit",
+          "tier": 2
         },
         {
           "id": 1955841979,
@@ -2142,18 +2282,25 @@
     {
       "hero": "Dynamo",
       "hero_ja": "ダイナモ",
-      "picks": 1,
-      "wins": 1,
-      "pick_rate": 3.4,
+      "picks": 2,
+      "wins": 2,
+      "pick_rate": 5.6,
       "win_rate": 100,
       "bans": 1,
-      "ban_rate": 8.3,
+      "ban_rate": 6.3,
       "items": [
         {
           "id": 1150006784,
           "name": "Arcane Surge",
           "name_ja": "アーケインサージ",
           "slot": "spirit",
+          "tier": 2
+        },
+        {
+          "id": 1235347618,
+          "name": "Battle Vest",
+          "name_ja": "バトルベスト",
+          "slot": "vitality",
           "tier": 2
         },
         {
@@ -2164,11 +2311,39 @@
           "tier": 2
         },
         {
+          "id": 380806748,
+          "name": "Compress Cooldown",
+          "name_ja": "コンプレッサー",
+          "slot": "spirit",
+          "tier": 2
+        },
+        {
           "id": 709540378,
           "name": "Cultist Sacrifice",
           "name_ja": "サクリファイス",
           "slot": "weapon",
           "tier": 3
+        },
+        {
+          "id": 1047818222,
+          "name": "Debuff Reducer",
+          "name_ja": "デバフリデューサー",
+          "slot": "vitality",
+          "tier": 2
+        },
+        {
+          "id": 2951612397,
+          "name": "Duration Extender",
+          "name_ja": "エクステンダー",
+          "slot": "spirit",
+          "tier": 2
+        },
+        {
+          "id": 2447176615,
+          "name": "Enduring Speed",
+          "name_ja": "ウィングブーツ",
+          "slot": "vitality",
+          "tier": 2
         },
         {
           "id": 3776945997,
@@ -2199,6 +2374,13 @@
           "tier": 3
         },
         {
+          "id": 4053935515,
+          "name": "Headhunter",
+          "name_ja": "ヘッドハンター",
+          "slot": "weapon",
+          "tier": 3
+        },
+        {
           "id": 2010028405,
           "name": "Headshot Booster",
           "name_ja": "ヘッドショットブースター",
@@ -2220,6 +2402,13 @@
           "tier": 1
         },
         {
+          "id": 787198704,
+          "name": "Rapid Recharge",
+          "name_ja": "ラピッドリチャージ",
+          "slot": "spirit",
+          "tier": 3
+        },
+        {
           "id": 1763073141,
           "name": "Recharging Rush",
           "name_ja": "リチャージラッシュ",
@@ -2232,6 +2421,27 @@
           "name_ja": "リフレッシャー",
           "slot": "spirit",
           "tier": 4
+        },
+        {
+          "id": 2922054143,
+          "name": "Rusted Barrel",
+          "name_ja": "コロッシブバレル",
+          "slot": "spirit",
+          "tier": 1
+        },
+        {
+          "id": 1813726886,
+          "name": "Slowing Hex",
+          "name_ja": "スロウヘックス",
+          "slot": "spirit",
+          "tier": 2
+        },
+        {
+          "id": 3399065363,
+          "name": "Sprint Boots",
+          "name_ja": "スプリントブーツ",
+          "slot": "vitality",
+          "tier": 1
         },
         {
           "id": 3261353684,
@@ -2291,10 +2501,10 @@
     {
       "hero": "Grey Talon",
       "hero_ja": "グレイタロン",
-      "picks": 13,
-      "wins": 4,
-      "pick_rate": 44.8,
-      "win_rate": 30.8,
+      "picks": 17,
+      "wins": 5,
+      "pick_rate": 47.2,
+      "win_rate": 29.4,
       "bans": 0,
       "ban_rate": 0,
       "items": [
@@ -2365,6 +2575,13 @@
           "id": 3633614685,
           "name": "Extra Health",
           "name_ja": "エクストラヘルス",
+          "slot": "vitality",
+          "tier": 1
+        },
+        {
+          "id": 2829638276,
+          "name": "Extra Regen",
+          "name_ja": "エクストラリジェネ",
           "slot": "vitality",
           "tier": 1
         },
@@ -2571,7 +2788,7 @@
       "hero_ja": "ヘイズ",
       "picks": 5,
       "wins": 0,
-      "pick_rate": 17.2,
+      "pick_rate": 13.9,
       "win_rate": 0,
       "bans": 0,
       "ban_rate": 0,
@@ -2742,12 +2959,12 @@
     {
       "hero": "Holliday",
       "hero_ja": "ホリデイ",
-      "picks": 16,
-      "wins": 9,
-      "pick_rate": 55.2,
-      "win_rate": 56.3,
-      "bans": 5,
-      "ban_rate": 41.7,
+      "picks": 19,
+      "wins": 11,
+      "pick_rate": 52.8,
+      "win_rate": 57.9,
+      "bans": 7,
+      "ban_rate": 43.8,
       "items": [
         {
           "id": 1235347618,
@@ -3122,12 +3339,12 @@
     {
       "hero": "Ivy",
       "hero_ja": "アイビー",
-      "picks": 17,
+      "picks": 20,
       "wins": 11,
-      "pick_rate": 58.6,
-      "win_rate": 64.7,
+      "pick_rate": 55.6,
+      "win_rate": 55,
       "bans": 3,
-      "ban_rate": 25,
+      "ban_rate": 18.8,
       "items": [
         {
           "id": 381961617,
@@ -3396,6 +3613,13 @@
           "tier": 4
         },
         {
+          "id": 3331811235,
+          "name": "Long Range",
+          "name_ja": "ロングレンジ",
+          "slot": "weapon",
+          "tier": 2
+        },
+        {
           "id": 1009965641,
           "name": "Monster Rounds",
           "name_ja": "モンスターラウンド",
@@ -3459,6 +3683,13 @@
           "tier": 4
         },
         {
+          "id": 2152872419,
+          "name": "Sharpshooter",
+          "name_ja": "シャープシューター",
+          "slot": "weapon",
+          "tier": 3
+        },
+        {
           "id": 3133167885,
           "name": "Silencer",
           "name_ja": "サイレンサー",
@@ -3499,6 +3730,13 @@
           "name_ja": "スピリットレジリエンス",
           "slot": "vitality",
           "tier": 3
+        },
+        {
+          "id": 3647584222,
+          "name": "Split Shot",
+          "name_ja": "スプリットショット",
+          "slot": "weapon",
+          "tier": 2
         },
         {
           "id": 3399065363,
@@ -3582,12 +3820,12 @@
     {
       "hero": "Kelvin",
       "hero_ja": "ケルビン",
-      "picks": 7,
+      "picks": 9,
       "wins": 4,
-      "pick_rate": 24.1,
-      "win_rate": 57.1,
-      "bans": 1,
-      "ban_rate": 8.3,
+      "pick_rate": 25,
+      "win_rate": 44.4,
+      "bans": 3,
+      "ban_rate": 18.8,
       "items": [
         {
           "id": 1150006784,
@@ -3681,6 +3919,13 @@
           "tier": 1
         },
         {
+          "id": 4139877411,
+          "name": "Extra Stamina",
+          "name_ja": "エクストラスタミナ",
+          "slot": "vitality",
+          "tier": 1
+        },
+        {
           "id": 1193964439,
           "name": "Greater Expansion",
           "name_ja": "グレーターエクスパンダー",
@@ -3714,6 +3959,13 @@
           "name_ja": "ヒーリングリチュアル",
           "slot": "vitality",
           "tier": 1
+        },
+        {
+          "id": 2108215830,
+          "name": "Heroic Aura",
+          "name_ja": "ヒロイックオーラ",
+          "slot": "weapon",
+          "tier": 3
         },
         {
           "id": 3077079169,
@@ -3846,12 +4098,12 @@
     {
       "hero": "Lady Geist",
       "hero_ja": "レディガイスト",
-      "picks": 16,
+      "picks": 18,
       "wins": 9,
-      "pick_rate": 55.2,
-      "win_rate": 56.3,
-      "bans": 7,
-      "ban_rate": 58.3,
+      "pick_rate": 50,
+      "win_rate": 50,
+      "bans": 9,
+      "ban_rate": 56.3,
       "items": [
         {
           "id": 1150006784,
@@ -4089,13 +4341,20 @@
     {
       "hero": "Lash",
       "hero_ja": "ラッシュ",
-      "picks": 2,
-      "wins": 1,
-      "pick_rate": 6.9,
-      "win_rate": 50,
+      "picks": 5,
+      "wins": 2,
+      "pick_rate": 13.9,
+      "win_rate": 40,
       "bans": 0,
       "ban_rate": 0,
       "items": [
+        {
+          "id": 1235347618,
+          "name": "Battle Vest",
+          "name_ja": "バトルベスト",
+          "slot": "vitality",
+          "tier": 2
+        },
         {
           "id": 2971868509,
           "name": "Bullet Resist Shredder",
@@ -4139,6 +4398,27 @@
           "tier": 1
         },
         {
+          "id": 968099481,
+          "name": "Extra Spirit",
+          "name_ja": "エクストラスピリット",
+          "slot": "spirit",
+          "tier": 1
+        },
+        {
+          "id": 4139877411,
+          "name": "Extra Stamina",
+          "name_ja": "エクストラスタミナ",
+          "slot": "vitality",
+          "tier": 1
+        },
+        {
+          "id": 2462046703,
+          "name": "Golden Goose Egg",
+          "name_ja": "ガチョウの黄金の卵",
+          "slot": "spirit",
+          "tier": 1
+        },
+        {
           "id": 4053935515,
           "name": "Headhunter",
           "name_ja": "ヘッドハンター",
@@ -4160,6 +4440,13 @@
           "tier": 2
         },
         {
+          "id": 7409189,
+          "name": "Improved Spirit",
+          "name_ja": "グレータースピリット",
+          "slot": "spirit",
+          "tier": 2
+        },
+        {
           "id": 3331811235,
           "name": "Long Range",
           "name_ja": "ロングレンジ",
@@ -4177,6 +4464,13 @@
           "id": 1998374645,
           "name": "Mystic Burst",
           "name_ja": "ミスティックバースト",
+          "slot": "spirit",
+          "tier": 1
+        },
+        {
+          "id": 754480263,
+          "name": "Mystic Expansion",
+          "name_ja": "ミスティックエクスパンダー",
           "slot": "spirit",
           "tier": 1
         },
@@ -4259,12 +4553,12 @@
     {
       "hero": "Mina",
       "hero_ja": "ミナ",
-      "picks": 20,
-      "wins": 8,
-      "pick_rate": 69,
-      "win_rate": 40,
-      "bans": 3,
-      "ban_rate": 25,
+      "picks": 25,
+      "wins": 12,
+      "pick_rate": 69.4,
+      "win_rate": 48,
+      "bans": 5,
+      "ban_rate": 31.3,
       "items": [
         {
           "id": 2519598785,
@@ -4323,6 +4617,13 @@
           "tier": 4
         },
         {
+          "id": 2533252781,
+          "name": "Ethereal Shift",
+          "name_ja": "エーテリアルシフト",
+          "slot": "spirit",
+          "tier": 4
+        },
+        {
           "id": 3633614685,
           "name": "Extra Health",
           "name_ja": "エクストラヘルス",
@@ -4363,6 +4664,13 @@
           "name_ja": "不屈の心",
           "slot": "vitality",
           "tier": 1
+        },
+        {
+          "id": 2603935618,
+          "name": "Healbane",
+          "name_ja": "ヒールベイン",
+          "slot": "vitality",
+          "tier": 2
         },
         {
           "id": 7409189,
@@ -4412,6 +4720,13 @@
           "name_ja": "リアクティブバリア",
           "slot": "vitality",
           "tier": 2
+        },
+        {
+          "id": 4204808176,
+          "name": "Rebuttal",
+          "name_ja": "プロテスト",
+          "slot": "vitality",
+          "tier": 1
         },
         {
           "id": 2922054143,
@@ -4523,12 +4838,12 @@
     {
       "hero": "Mirage",
       "hero_ja": "ミラージュ",
-      "picks": 16,
-      "wins": 7,
-      "pick_rate": 55.2,
-      "win_rate": 43.8,
-      "bans": 5,
-      "ban_rate": 41.7,
+      "picks": 19,
+      "wins": 10,
+      "pick_rate": 52.8,
+      "win_rate": 52.6,
+      "bans": 6,
+      "ban_rate": 37.5,
       "items": [
         {
           "id": 3812615317,
@@ -4585,6 +4900,13 @@
           "name_ja": "デバフリデューサー",
           "slot": "vitality",
           "tier": 2
+        },
+        {
+          "id": 3144988365,
+          "name": "Decay",
+          "name_ja": "ディケイ",
+          "slot": "spirit",
+          "tier": 3
         },
         {
           "id": 2061878743,
@@ -4776,6 +5098,13 @@
           "tier": 4
         },
         {
+          "id": 1813726886,
+          "name": "Slowing Hex",
+          "name_ja": "スロウヘックス",
+          "slot": "spirit",
+          "tier": 2
+        },
+        {
           "id": 1955841979,
           "name": "Spellbreaker",
           "name_ja": "スペルブレイカー",
@@ -4864,10 +5193,10 @@
     {
       "hero": "Mo & Krill",
       "hero_ja": "モー＆クリル",
-      "picks": 3,
+      "picks": 4,
       "wins": 2,
-      "pick_rate": 10.3,
-      "win_rate": 66.7,
+      "pick_rate": 11.1,
+      "win_rate": 50,
       "bans": 0,
       "ban_rate": 0,
       "items": [
@@ -5047,6 +5376,13 @@
           "tier": 4
         },
         {
+          "id": 865958998,
+          "name": "Veil Walker",
+          "name_ja": "ベールウォーカー",
+          "slot": "vitality",
+          "tier": 3
+        },
+        {
           "id": 3270001687,
           "name": "Warp Stone",
           "name_ja": "ワープストーン",
@@ -5065,12 +5401,12 @@
     {
       "hero": "Nurse Harrow",
       "hero_ja": "ナース・ハロウ",
-      "picks": 9,
-      "wins": 6,
-      "pick_rate": 31,
-      "win_rate": 66.7,
-      "bans": 5,
-      "ban_rate": 41.7,
+      "picks": 13,
+      "wins": 8,
+      "pick_rate": 36.1,
+      "win_rate": 61.5,
+      "bans": 6,
+      "ban_rate": 37.5,
       "items": [
         {
           "id": 1150006784,
@@ -5308,10 +5644,10 @@
     {
       "hero": "Paige",
       "hero_ja": "ペイジ",
-      "picks": 8,
-      "wins": 2,
-      "pick_rate": 27.6,
-      "win_rate": 25,
+      "picks": 11,
+      "wins": 3,
+      "pick_rate": 30.6,
+      "win_rate": 27.3,
       "bans": 0,
       "ban_rate": 0,
       "items": [
@@ -5327,6 +5663,13 @@
           "name": "Arcane Surge",
           "name_ja": "アーケインサージ",
           "slot": "spirit",
+          "tier": 2
+        },
+        {
+          "id": 1235347618,
+          "name": "Battle Vest",
+          "name_ja": "バトルベスト",
+          "slot": "vitality",
           "tier": 2
         },
         {
@@ -5363,6 +5706,13 @@
           "name_ja": "呪いの遺物",
           "slot": "spirit",
           "tier": 4
+        },
+        {
+          "id": 1047818222,
+          "name": "Debuff Reducer",
+          "name_ja": "デバフリデューサー",
+          "slot": "vitality",
+          "tier": 2
         },
         {
           "id": 3144988365,
@@ -5463,6 +5813,13 @@
           "tier": 2
         },
         {
+          "id": 2108215830,
+          "name": "Heroic Aura",
+          "name_ja": "ヒロイックオーラ",
+          "slot": "weapon",
+          "tier": 3
+        },
+        {
           "id": 3077079169,
           "name": "High-Velocity Rounds",
           "name_ja": "ハイスピードラウンド",
@@ -5554,6 +5911,13 @@
           "tier": 2
         },
         {
+          "id": 1955841979,
+          "name": "Spellbreaker",
+          "name_ja": "スペルブレイカー",
+          "slot": "vitality",
+          "tier": 4
+        },
+        {
           "id": 112198670,
           "name": "Spirit Shielding",
           "name_ja": "スピリットシールド",
@@ -5593,12 +5957,12 @@
     {
       "hero": "Paradox",
       "hero_ja": "パラドックス",
-      "picks": 14,
-      "wins": 9,
-      "pick_rate": 48.3,
-      "win_rate": 64.3,
-      "bans": 5,
-      "ban_rate": 41.7,
+      "picks": 19,
+      "wins": 13,
+      "pick_rate": 52.8,
+      "win_rate": 68.4,
+      "bans": 6,
+      "ban_rate": 37.5,
       "items": [
         {
           "id": 1235347618,
@@ -5699,6 +6063,13 @@
           "tier": 1
         },
         {
+          "id": 857669956,
+          "name": "Guardian Ward",
+          "name_ja": "ガーディアンワード",
+          "slot": "vitality",
+          "tier": 2
+        },
+        {
           "id": 4053935515,
           "name": "Headhunter",
           "name_ja": "ヘッドハンター",
@@ -5769,10 +6140,24 @@
           "tier": 4
         },
         {
+          "id": 395867183,
+          "name": "Mystic Shot",
+          "name_ja": "ミスティックショット",
+          "slot": "weapon",
+          "tier": 2
+        },
+        {
           "id": 2064029594,
           "name": "Opening Rounds",
           "name_ja": "オープニングラウンド",
           "slot": "weapon",
+          "tier": 2
+        },
+        {
+          "id": 1644605047,
+          "name": "Reactive Barrier",
+          "name_ja": "リアクティブバリア",
+          "slot": "vitality",
           "tier": 2
         },
         {
@@ -5878,12 +6263,12 @@
     {
       "hero": "Pocket",
       "hero_ja": "ポケット",
-      "picks": 19,
-      "wins": 8,
-      "pick_rate": 65.5,
-      "win_rate": 42.1,
-      "bans": 5,
-      "ban_rate": 41.7,
+      "picks": 23,
+      "wins": 10,
+      "pick_rate": 63.9,
+      "win_rate": 43.5,
+      "bans": 7,
+      "ban_rate": 43.8,
       "items": [
         {
           "id": 3812615317,
@@ -6193,7 +6578,7 @@
       "hero_ja": "ラットキング",
       "picks": 3,
       "wins": 1,
-      "pick_rate": 10.3,
+      "pick_rate": 8.3,
       "win_rate": 33.3,
       "bans": 0,
       "ban_rate": 0,
@@ -6427,12 +6812,12 @@
     {
       "hero": "Rem",
       "hero_ja": "レム",
-      "picks": 12,
-      "wins": 6,
-      "pick_rate": 41.4,
+      "picks": 14,
+      "wins": 7,
+      "pick_rate": 38.9,
       "win_rate": 50,
       "bans": 2,
-      "ban_rate": 16.7,
+      "ban_rate": 12.5,
       "items": [
         {
           "id": 1150006784,
@@ -6803,10 +7188,10 @@
     {
       "hero": "Seven",
       "hero_ja": "セブン",
-      "picks": 9,
-      "wins": 4,
-      "pick_rate": 31,
-      "win_rate": 44.4,
+      "picks": 14,
+      "wins": 9,
+      "pick_rate": 38.9,
+      "win_rate": 64.3,
       "bans": 0,
       "ban_rate": 0,
       "items": [
@@ -7035,6 +7420,13 @@
           "tier": 2
         },
         {
+          "id": 677738769,
+          "name": "Refresher",
+          "name_ja": "リフレッシャー",
+          "slot": "spirit",
+          "tier": 4
+        },
+        {
           "id": 3862866912,
           "name": "Restorative Shot",
           "name_ja": "ヒーリングショット",
@@ -7130,11 +7522,11 @@
     {
       "hero": "Shiv",
       "hero_ja": "シヴ",
-      "picks": 19,
-      "wins": 9,
-      "pick_rate": 65.5,
-      "win_rate": 47.4,
-      "bans": 3,
+      "picks": 23,
+      "wins": 11,
+      "pick_rate": 63.9,
+      "win_rate": 47.8,
+      "bans": 4,
       "ban_rate": 25,
       "items": [
         {
@@ -7527,12 +7919,12 @@
     {
       "hero": "Silver",
       "hero_ja": "シルバー",
-      "picks": 13,
-      "wins": 8,
-      "pick_rate": 44.8,
-      "win_rate": 61.5,
+      "picks": 15,
+      "wins": 9,
+      "pick_rate": 41.7,
+      "win_rate": 60,
       "bans": 2,
-      "ban_rate": 16.7,
+      "ban_rate": 12.5,
       "items": [
         {
           "id": 3812615317,
@@ -7759,6 +8151,13 @@
           "tier": 2
         },
         {
+          "id": 1371725689,
+          "name": "Phantom Strike",
+          "name_ja": "ファントムストライク",
+          "slot": "vitality",
+          "tier": 4
+        },
+        {
           "id": 3491236900,
           "name": "Plated Armor",
           "name_ja": "プレートアーマー",
@@ -7919,10 +8318,10 @@
       "hero_ja": "シンクレア",
       "picks": 3,
       "wins": 1,
-      "pick_rate": 10.3,
+      "pick_rate": 8.3,
       "win_rate": 33.3,
-      "bans": 0,
-      "ban_rate": 0,
+      "bans": 1,
+      "ban_rate": 6.3,
       "items": [
         {
           "id": 1932939246,
@@ -8155,7 +8554,7 @@
       "hero_ja": "ソロモン",
       "picks": 3,
       "wins": 3,
-      "pick_rate": 10.3,
+      "pick_rate": 8.3,
       "win_rate": 100,
       "bans": 0,
       "ban_rate": 0,
@@ -8328,7 +8727,7 @@
       "hero_ja": "ドアマン",
       "picks": 1,
       "wins": 0,
-      "pick_rate": 3.4,
+      "pick_rate": 2.8,
       "win_rate": 0,
       "bans": 0,
       "ban_rate": 0,
@@ -8438,7 +8837,7 @@
       "hero_ja": "ヴェナトル",
       "picks": 10,
       "wins": 4,
-      "pick_rate": 34.5,
+      "pick_rate": 27.8,
       "win_rate": 40,
       "bans": 0,
       "ban_rate": 0,
@@ -8750,11 +9149,11 @@
     {
       "hero": "Violet",
       "hero_ja": "バイオレット",
-      "picks": 13,
-      "wins": 8,
-      "pick_rate": 44.8,
-      "win_rate": 61.5,
-      "bans": 3,
+      "picks": 17,
+      "wins": 10,
+      "pick_rate": 47.2,
+      "win_rate": 58.8,
+      "bans": 4,
       "ban_rate": 25,
       "items": [
         {
@@ -9024,6 +9423,13 @@
           "tier": 3
         },
         {
+          "id": 3862866912,
+          "name": "Restorative Shot",
+          "name_ja": "ヒーリングショット",
+          "slot": "weapon",
+          "tier": 1
+        },
+        {
           "id": 2922054143,
           "name": "Rusted Barrel",
           "name_ja": "コロッシブバレル",
@@ -9107,7 +9513,7 @@
       "hero_ja": "ヴィスカス",
       "picks": 3,
       "wins": 1,
-      "pick_rate": 10.3,
+      "pick_rate": 8.3,
       "win_rate": 33.3,
       "bans": 0,
       "ban_rate": 0,
@@ -9299,23 +9705,185 @@
     {
       "hero": "Vyper",
       "hero_ja": "ヴァイパー",
-      "picks": 0,
-      "wins": 0,
-      "pick_rate": 0,
-      "win_rate": 0,
+      "picks": 3,
+      "wins": 1,
+      "pick_rate": 8.3,
+      "win_rate": 33.3,
       "bans": 0,
       "ban_rate": 0,
-      "items": []
+      "items": [
+        {
+          "id": 499683006,
+          "name": "Bullet Lifesteal",
+          "name_ja": "バレットライフスティール",
+          "slot": "vitality",
+          "tier": 2
+        },
+        {
+          "id": 2971868509,
+          "name": "Bullet Resist Shredder",
+          "name_ja": "レジストシュレッダー",
+          "slot": "spirit",
+          "tier": 2
+        },
+        {
+          "id": 2739107182,
+          "name": "Burst Fire",
+          "name_ja": "バーストファイア",
+          "slot": "weapon",
+          "tier": 3
+        },
+        {
+          "id": 710436191,
+          "name": "Capacitor",
+          "name_ja": "コンデンサー",
+          "slot": "weapon",
+          "tier": 4
+        },
+        {
+          "id": 1342610602,
+          "name": "Close Quarters",
+          "name_ja": "クローズクォーター",
+          "slot": "weapon",
+          "tier": 1
+        },
+        {
+          "id": 1047818222,
+          "name": "Debuff Reducer",
+          "name_ja": "デバフリデューサー",
+          "slot": "vitality",
+          "tier": 2
+        },
+        {
+          "id": 2829638276,
+          "name": "Extra Regen",
+          "name_ja": "エクストラリジェネ",
+          "slot": "vitality",
+          "tier": 1
+        },
+        {
+          "id": 968099481,
+          "name": "Extra Spirit",
+          "name_ja": "エクストラスピリット",
+          "slot": "spirit",
+          "tier": 1
+        },
+        {
+          "id": 4139877411,
+          "name": "Extra Stamina",
+          "name_ja": "エクストラスタミナ",
+          "slot": "vitality",
+          "tier": 1
+        },
+        {
+          "id": 3403085434,
+          "name": "Fleetfoot",
+          "name_ja": "フリートフット",
+          "slot": "weapon",
+          "tier": 2
+        },
+        {
+          "id": 1672893796,
+          "name": "Grit",
+          "name_ja": "不屈の心",
+          "slot": "vitality",
+          "tier": 1
+        },
+        {
+          "id": 7409189,
+          "name": "Improved Spirit",
+          "name_ja": "グレータースピリット",
+          "slot": "spirit",
+          "tier": 2
+        },
+        {
+          "id": 3919289022,
+          "name": "Mercurial Magnum",
+          "name_ja": "マーキュリーマグナム",
+          "slot": "spirit",
+          "tier": 4
+        },
+        {
+          "id": 84321454,
+          "name": "Quicksilver Reload",
+          "name_ja": "クイックシルバーリロード",
+          "slot": "spirit",
+          "tier": 2
+        },
+        {
+          "id": 668299740,
+          "name": "Rapid Rounds",
+          "name_ja": "ラピッドラウンド",
+          "slot": "weapon",
+          "tier": 1
+        },
+        {
+          "id": 1644605047,
+          "name": "Reactive Barrier",
+          "name_ja": "リアクティブバリア",
+          "slot": "vitality",
+          "tier": 2
+        },
+        {
+          "id": 1955841979,
+          "name": "Spellbreaker",
+          "name_ja": "スペルブレイカー",
+          "slot": "vitality",
+          "tier": 4
+        },
+        {
+          "id": 2163598980,
+          "name": "Spirit Resilience",
+          "name_ja": "スピリットレジリエンス",
+          "slot": "vitality",
+          "tier": 3
+        },
+        {
+          "id": 112198670,
+          "name": "Spirit Shielding",
+          "name_ja": "スピリットシールド",
+          "slot": "vitality",
+          "tier": 2
+        },
+        {
+          "id": 3647584222,
+          "name": "Split Shot",
+          "name_ja": "スプリットショット",
+          "slot": "weapon",
+          "tier": 2
+        },
+        {
+          "id": 334300056,
+          "name": "Stamina Mastery",
+          "name_ja": "スタミナマスタリー",
+          "slot": "vitality",
+          "tier": 3
+        },
+        {
+          "id": 4104549924,
+          "name": "Swift Striker",
+          "name_ja": "スイフトストライカー",
+          "slot": "weapon",
+          "tier": 2
+        },
+        {
+          "id": 811521119,
+          "name": "Tesla Bullets",
+          "name_ja": "テスラバレット",
+          "slot": "weapon",
+          "tier": 3
+        }
+      ]
     },
     {
       "hero": "Warden",
       "hero_ja": "ウォーデン",
       "picks": 3,
       "wins": 2,
-      "pick_rate": 10.3,
+      "pick_rate": 8.3,
       "win_rate": 66.7,
       "bans": 1,
-      "ban_rate": 8.3,
+      "ban_rate": 6.3,
       "items": [
         {
           "id": 1235347618,
@@ -9504,12 +10072,12 @@
     {
       "hero": "Wraith",
       "hero_ja": "レイス",
-      "picks": 16,
-      "wins": 11,
-      "pick_rate": 55.2,
-      "win_rate": 68.8,
-      "bans": 5,
-      "ban_rate": 41.7,
+      "picks": 19,
+      "wins": 12,
+      "pick_rate": 52.8,
+      "win_rate": 63.2,
+      "bans": 8,
+      "ban_rate": 50,
       "items": [
         {
           "id": 1235347618,
@@ -9545,6 +10113,13 @@
           "name_ja": "レジストシュレッダー",
           "slot": "spirit",
           "tier": 2
+        },
+        {
+          "id": 2739107182,
+          "name": "Burst Fire",
+          "name_ja": "バーストファイア",
+          "slot": "weapon",
+          "tier": 3
         },
         {
           "id": 710436191,
@@ -9603,6 +10178,13 @@
           "tier": 2
         },
         {
+          "id": 2447176615,
+          "name": "Enduring Speed",
+          "name_ja": "ウィングブーツ",
+          "slot": "vitality",
+          "tier": 2
+        },
+        {
           "id": 3005970438,
           "name": "Escalating Exposure",
           "name_ja": "エクスポージャー",
@@ -9615,6 +10197,13 @@
           "name_ja": "エスカレートレジリエンス",
           "slot": "weapon",
           "tier": 3
+        },
+        {
+          "id": 3633614685,
+          "name": "Extra Health",
+          "name_ja": "エクストラヘルス",
+          "slot": "vitality",
+          "tier": 1
         },
         {
           "id": 2829638276,
@@ -9778,11 +10367,25 @@
           "tier": 2
         },
         {
+          "id": 2226497419,
+          "name": "Spiritual Overflow",
+          "name_ja": "スピリットオーバーフロー",
+          "slot": "weapon",
+          "tier": 4
+        },
+        {
           "id": 3647584222,
           "name": "Split Shot",
           "name_ja": "スプリットショット",
           "slot": "weapon",
           "tier": 2
+        },
+        {
+          "id": 3399065363,
+          "name": "Sprint Boots",
+          "name_ja": "スプリントブーツ",
+          "slot": "vitality",
+          "tier": 1
         },
         {
           "id": 3261353684,
@@ -9845,10 +10448,10 @@
     {
       "hero": "Yamato",
       "hero_ja": "ヤマト",
-      "picks": 7,
-      "wins": 4,
-      "pick_rate": 24.1,
-      "win_rate": 57.1,
+      "picks": 9,
+      "wins": 5,
+      "pick_rate": 25,
+      "win_rate": 55.6,
       "bans": 0,
       "ban_rate": 0,
       "items": [
