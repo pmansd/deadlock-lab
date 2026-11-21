@@ -8,25 +8,32 @@ jobs:
     steps:
       - run: |
           A=https://api.deadlock-api.com
-          NOW=$(date +%s); FROM=$(( NOW - 7*86400 ))
-          curl -sS $A/openapi.json -o o.json
-          python3 -c "
-          import json; o=json.load(open('o.json'))
-          g=o['paths']['/v1/analytics/hero-stats']['get']
-          print('hero-stats params:', [x['name'] for x in g.get('parameters',[])])
-          "
-          echo "== badge dist ranked"; curl -sS "$A/v1/analytics/badge-distribution?match_mode=ranked&min_unix_timestamp=$FROM&max_unix_timestamp=$NOW" > bd.json
-          python3 -c "
-          import json; b=json.load(open('bd.json')); tot=sum(x['total_matches'] for x in b); print('total',tot, 'max badge', max(x['badge_level'] for x in b))
-          acc=0
-          for x in sorted(b,key=lambda x:-x['badge_level']):
-            acc+=x['total_matches']; print(x['badge_level'], x['total_matches'], round(acc/tot*100,1))
-            if acc/tot>0.2: break
-          "
-          echo "== hero-stats sum (badge>=81)"; curl -sS "$A/v1/analytics/hero-stats?match_mode=ranked&min_unix_timestamp=$FROM&max_unix_timestamp=$NOW&min_average_badge=81" > hs.json; python3 -c "
-          import json; h=json.load(open('hs.json')); print(type(h).__name__, len(h)); print(json.dumps(h[0])[:400]); print('sum matches', sum(x.get('matches',0) for x in h))"
-          echo "== item-stats (badge>=81)"; curl -sS "$A/v1/analytics/item-stats?match_mode=ranked&min_unix_timestamp=$FROM&max_unix_timestamp=$NOW&min_average_badge=81&min_matches=1" > is.json; python3 -c "
-          import json; i=json.load(open('is.json')); print(len(i)); print('max matches', max(x['matches'] for x in i))"
-          echo "== ranks"; curl -sS "$A/v1/assets/ranks?language=japanese" | head -c 1200; echo
-          echo "== item image fields"; curl -sS "$A/v1/assets/items/by-type/upgrade?language=english" | python3 -c "
-          import json,sys; it=[x for x in json.load(sys.stdin) if x.get('shopable')]; print(len(it)); x=it[0]; print({k:x.get(k) for k in ['id','name','image','image_webp','shop_image','shop_image_webp','item_slot_type','item_tier']})"
+          curl -sS "$A/v1/assets/items/by-type/upgrade?language=english" -o items.json
+          curl -sS "$A/v1/assets/generic-data" -o gd.json
+          python3 - <<'PY'
+          import json,re
+          it=[i for i in json.load(open('items.json')) if i.get('shopable')]
+          print('== items with spirit-power-ish properties')
+          for i in sorted(it,key=lambda x:(x.get('item_slot_type'),x.get('item_tier'))):
+            props=i.get('properties') or {}
+            hit={k:(v.get('value'),v.get('label') or v.get('postfix'),v.get('provided_property_type')) for k,v in props.items() if isinstance(v,dict) and re.search(r'TechPower|SpiritPower|Tech_?Power|BonusSpirit|PowerPercent',k,re.I) and str(v.get('value')) not in ('0','0.0','','None')}
+            if hit: print(i['item_slot_type'],'T%s'%i['item_tier'],i['cost'],i['name'],'|',hit)
+          print('== Recharging Rush / Boundless / Silencer full props')
+          for i in it:
+            if i['name'] in ('Recharging Rush','Boundless Spirit','Silencer','Echo Shard'):
+              print(i['name'],i['item_slot_type'],i['item_tier'],i['cost']); 
+              for k,v in (i.get('properties') or {}).items():
+                if isinstance(v,dict) and str(v.get('value')) not in ('0','0.0','','None'): print('   ',k,v.get('value'),v.get('label'))
+              print('   desc:',re.sub('<[^>]+>','',str(i.get('description')))[:500])
+          g=json.load(open('gd.json'))
+          def walk(o,p=''):
+            if isinstance(o,dict):
+              for k,v in o.items(): walk(v,p+'.'+k)
+            elif isinstance(o,list):
+              if p and re.search(r'invest|bonus|tier|spirit|tech',p,re.I) and len(str(o))<1500: print(p,'=',json.dumps(o)[:1500])
+              else:
+                for n,v in enumerate(o[:3]): walk(v,p+'[%d]'%n)
+            else:
+              if re.search(r'invest|spirit|tech',p,re.I): print(p,'=',o)
+          print('== generic data (investment-related)'); walk(g)
+          PY
