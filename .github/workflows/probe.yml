@@ -9,31 +9,23 @@ jobs:
       - run: |
           A=https://api.deadlock-api.com
           curl -sS "$A/v1/assets/items/by-type/upgrade?language=english" -o items.json
-          curl -sS "$A/v1/assets/generic-data" -o gd.json
+          curl -sS "$A/v1/assets/heroes?language=english&only_active=true" -o heroes.json
           python3 - <<'PY'
           import json,re
           it=[i for i in json.load(open('items.json')) if i.get('shopable')]
-          print('== items with spirit-power-ish properties')
-          for i in sorted(it,key=lambda x:(x.get('item_slot_type'),x.get('item_tier'))):
-            props=i.get('properties') or {}
-            hit={k:(v.get('value'),v.get('label') or v.get('postfix'),v.get('provided_property_type')) for k,v in props.items() if isinstance(v,dict) and re.search(r'TechPower|SpiritPower|Tech_?Power|BonusSpirit|PowerPercent',k,re.I) and str(v.get('value')) not in ('0','0.0','','None')}
-            if hit: print(i['item_slot_type'],'T%s'%i['item_tier'],i['cost'],i['name'],'|',hit)
-          print('== Recharging Rush / Boundless / Silencer full props')
+          print('== spirit T4 + vitality T2 images')
           for i in it:
-            if i['name'] in ('Recharging Rush','Boundless Spirit','Silencer','Echo Shard'):
-              print(i['name'],i['item_slot_type'],i['item_tier'],i['cost']); 
-              for k,v in (i.get('properties') or {}).items():
-                if isinstance(v,dict) and str(v.get('value')) not in ('0','0.0','','None'): print('   ',k,v.get('value'),v.get('label'))
-              print('   desc:',re.sub('<[^>]+>','',str(i.get('description')))[:500])
-          g=json.load(open('gd.json'))
-          def walk(o,p=''):
-            if isinstance(o,dict):
-              for k,v in o.items(): walk(v,p+'.'+k)
-            elif isinstance(o,list):
-              if p and re.search(r'invest|bonus|tier|spirit|tech',p,re.I) and len(str(o))<1500: print(p,'=',json.dumps(o)[:1500])
-              else:
-                for n,v in enumerate(o[:3]): walk(v,p+'[%d]'%n)
-            else:
-              if re.search(r'invest|spirit|tech',p,re.I): print(p,'=',o)
-          print('== generic data (investment-related)'); walk(g)
+            if (i['item_slot_type'],i['item_tier']) in (('spirit',4),('vitality',2),('weapon',2)):
+              print(i['item_slot_type'],i['item_tier'],i['name'],'|',(i.get('shop_image') or '').split('/')[-1])
+          for n in ("Enchanter's Emblem",):
+            i=[x for x in it if x['name']==n][0]
+            print('==',n)
+            for k,v in (i.get('properties') or {}).items():
+              if isinstance(v,dict) and str(v.get('value')) not in ('0','0.0','','None'): print('   ',k,v.get('value'),v.get('label'))
+            print('   desc:',re.sub('<[^>]+>','',json.dumps(i.get('description')))[:600])
+          h=[x for x in json.load(open('heroes.json')) if x['name']=='Graves'][0]
+          print('== Graves item_slot_info'); print(json.dumps(h.get('item_slot_info'))[:3000])
+          print('== Graves level_info sample'); li=h.get('level_info'); print(json.dumps(li)[:1500] if li else None)
+          print('== standard_level_up_upgrades'); print(json.dumps(h.get('standard_level_up_upgrades'))[:800])
+          print('== purchase_bonuses'); print(json.dumps(h.get('purchase_bonuses'))[:3000])
           PY
