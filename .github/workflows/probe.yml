@@ -13,19 +13,18 @@ jobs:
           python3 - <<'PY'
           import json,re
           it=[i for i in json.load(open('items.json')) if i.get('shopable')]
-          print('== spirit T4 + vitality T2 images')
-          for i in it:
-            if (i['item_slot_type'],i['item_tier']) in (('spirit',4),('vitality',2),('weapon',2)):
-              print(i['item_slot_type'],i['item_tier'],i['name'],'|',(i.get('shop_image') or '').split('/')[-1])
-          for n in ("Enchanter's Emblem",):
+          for n in ("Spiritual Overflow","Boundless Spirit","Recharging Rush"):
             i=[x for x in it if x['name']==n][0]
-            print('==',n)
+            print('==',n,i['item_slot_type'],i['item_tier'],i['cost'])
             for k,v in (i.get('properties') or {}).items():
-              if isinstance(v,dict) and str(v.get('value')) not in ('0','0.0','','None'): print('   ',k,v.get('value'),v.get('label'))
-            print('   desc:',re.sub('<[^>]+>','',json.dumps(i.get('description')))[:600])
-          h=[x for x in json.load(open('heroes.json')) if x['name']=='Graves'][0]
-          print('== Graves item_slot_info'); print(json.dumps(h.get('item_slot_info'))[:3000])
-          print('== Graves level_info sample'); li=h.get('level_info'); print(json.dumps(li)[:1500] if li else None)
-          print('== standard_level_up_upgrades'); print(json.dumps(h.get('standard_level_up_upgrades'))[:800])
-          print('== purchase_bonuses'); print(json.dumps(h.get('purchase_bonuses'))[:3000])
+              if isinstance(v,dict) and str(v.get('value')) not in ('0','0.0','','None'): print('   ',k,v.get('value'),'|',v.get('label'),'|',v.get('postfix'),'|',v.get('conditional') if 'conditional' in v else '')
+            print('   desc:',re.sub(r'\s+',' ',re.sub('<[^>]+>','',json.dumps(i.get('description'))))[:900])
+            for s in (i.get('tooltip_sections') or [])[:4]:
+              print('   section:',re.sub(r'\s+',' ',re.sub('<[^>]+>','',json.dumps(s)))[:900])
+          hs=json.load(open('heroes.json'))
+          print('== heroes with purchase_bonuses:', [h['name'] for h in hs if h.get('purchase_bonuses')])
+          g=[x for x in hs if x['name']=='Graves'][0]
+          ss=g.get('starting_stats') or {}
+          print('== Graves starting spirit-ish:', {k:v for k,v in ss.items() if re.search('tech|spirit',k,re.I)})
+          li=g['level_info']; print('max level', max(int(k) for k in li), 'gold for levels:', {k:li[k]['required_gold'] for k in li if int(k) in (20,25,30,33,35,40,45)})
           PY
