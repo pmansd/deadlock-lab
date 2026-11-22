@@ -7,24 +7,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          A=https://api.deadlock-api.com
-          curl -sS "$A/v1/assets/items/by-type/upgrade?language=english" -o items.json
-          curl -sS "$A/v1/assets/heroes?language=english&only_active=true" -o heroes.json
+          curl -sS "https://api.deadlock-api.com/v1/assets/items/by-type/upgrade?language=english" -o items.json
           python3 - <<'PY'
           import json,re
           it=[i for i in json.load(open('items.json')) if i.get('shopable')]
-          for n in ("Spiritual Overflow","Boundless Spirit","Recharging Rush"):
-            i=[x for x in it if x['name']==n][0]
-            print('==',n,i['item_slot_type'],i['item_tier'],i['cost'])
-            for k,v in (i.get('properties') or {}).items():
-              if isinstance(v,dict) and str(v.get('value')) not in ('0','0.0','','None'): print('   ',k,v.get('value'),'|',v.get('label'),'|',v.get('postfix'),'|',v.get('conditional') if 'conditional' in v else '')
-            print('   desc:',re.sub(r'\s+',' ',re.sub('<[^>]+>','',json.dumps(i.get('description'))))[:900])
-            for s in (i.get('tooltip_sections') or [])[:4]:
-              print('   section:',re.sub(r'\s+',' ',re.sub('<[^>]+>','',json.dumps(s)))[:900])
-          hs=json.load(open('heroes.json'))
-          print('== heroes with purchase_bonuses:', [h['name'] for h in hs if h.get('purchase_bonuses')])
-          g=[x for x in hs if x['name']=='Graves'][0]
-          ss=g.get('starting_stats') or {}
-          print('== Graves starting spirit-ish:', {k:v for k,v in ss.items() if re.search('tech|spirit',k,re.I)})
-          li=g['level_info']; print('max level', max(int(k) for k in li), 'gold for levels:', {k:li[k]['required_gold'] for k in li if int(k) in (20,25,30,33,35,40,45)})
+          def txt(i):
+            parts=[json.dumps(i.get('description'))]
+            for s in i.get('tooltip_sections') or []:
+              for a in s.get('section_attributes',[]): parts.append(a.get('loc_string') or '')
+            return re.sub(r'\s+',' ',re.sub('<[^>]+>','',' '.join(parts)))
+          for i in sorted(it,key=lambda x:(x['item_slot_type'],x['item_tier'])):
+            t=txt(i)
+            if re.search(r'spirit damage|ability damage|abilities deal|deal(ing)? .{0,20}spirit',t,re.I):
+              props={k:(v.get('value'),v.get('label')) for k,v in (i.get('properties') or {}).items() if isinstance(v,dict) and v.get('label') and str(v.get('value')) not in ('0','0.0','','-1','-1.0','None')}
+              print('##',i['item_slot_type'],'T%d'%i['item_tier'],i['cost'],i['name'],'::',t[:420]); print('   ',json.dumps(props)[:700])
           PY
